@@ -58,6 +58,10 @@
 
         .logo { font-weight: 800; color: var(--text-main); text-decoration: none; font-size: 1.2rem; }
         .logo span { color: var(--accent-color); }
+
+        /* Responsive Logo Settings */
+        .logo-short { display: none; }
+
         .nav-tools-btn { color: var(--accent-color); text-decoration: none; font-weight: 700; border: 1px solid var(--accent-color); padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; transition: background 0.2s; }
         .nav-tools-btn:hover { background: rgba(0, 242, 254, 0.1); }
 
@@ -238,6 +242,8 @@
         }
 
         @media (max-width: 600px) {
+            .logo-full { display: none; }
+            .logo-short { display: inline-block; font-weight: 900; letter-spacing: 1px; }
             .tools-banner { flex-direction: column; text-align: center; }
             .hero h1 { font-size: 2.1rem; }
         }
@@ -246,7 +252,10 @@
 <body>
 
     <header>
-        <a href="index.html" class="logo">COLDBLOODED<span>TRADERS</span></a>
+        <a href="index.html" class="logo">
+            <span class="logo-full">COLDBLOODED<span>TRADERS</span></span>
+            <span class="logo-short">CBT</span>
+        </a>
         <a href="calculator.html" class="nav-tools-btn">🧮 Calculator Tool</a>
     </header>
 
@@ -278,7 +287,7 @@
             </div>
         </div>
 
-        <!-- Articles Grid -->
+        <!-- Articles Grid (Total: 6 Articles) -->
         <div class="articles-grid" id="articlesGrid">
             
             <a href="position-sizing.html" class="article-card" data-category="RISK">
@@ -287,7 +296,7 @@
                     <h2>Position Sizing Framework in Volatile Markets</h2>
                     <p>Mathematical calculations for optimal position size, drawdown prevention, and risk exposure.</p>
                 </div>
-                <div class="article-meta">August 2026 • 5 min read</div>
+                <div class="article-meta">August 2026 • 8 min read</div>
             </a>
 
             <a href="funding-rates.html" class="article-card" data-category="DERIVATIVES">
@@ -306,6 +315,33 @@
                     <p>How institutional operators sweep stop-loss clusters before major expansion moves.</p>
                 </div>
                 <div class="article-meta">August 2026 • 6 min read</div>
+            </a>
+
+            <a href="macro-liquidity.html" class="article-card" data-category="LIQUIDITY">
+                <div>
+                    <span class="article-tag">MACRO LIQUIDITY</span>
+                    <h2>Global Liquidity Shifts & Market Cycles</h2>
+                    <p>Analyzing central bank liquidity, stablecoin supply growth, and macro tailwinds in crypto.</p>
+                </div>
+                <div class="article-meta">August 2026 • 7 min read</div>
+            </a>
+
+            <a href="onchain-analysis.html" class="article-card" data-category="LIQUIDITY">
+                <div>
+                    <span class="article-tag">ON-CHAIN</span>
+                    <h2>Institutional On-Chain & Exchange Flow Dynamics</h2>
+                    <p>Tracking miner reserves, exchange netflows, and whale distribution patterns.</p>
+                </div>
+                <div class="article-meta">August 2026 • 6 min read</div>
+            </a>
+
+            <a href="portfolio-rebalancing.html" class="article-card" data-category="RISK">
+                <div>
+                    <span class="article-tag">PORTFOLIO MANAGEMENT</span>
+                    <h2>Dynamic Portfolio Rebalancing & Hedging</h2>
+                    <p>Systematic risk mitigation strategies using spot-futures arbitrage and delta-neutral hedging.</p>
+                </div>
+                <div class="article-meta">August 2026 • 8 min read</div>
             </a>
 
         </div>
