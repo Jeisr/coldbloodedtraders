@@ -13,6 +13,31 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta name="description" content="Analyzing global M2 money supply growth, central bank balance sheets, and their systemic correlation with crypto market cycles.">
+    
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "How does global M2 money supply affect crypto markets?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Global M2 aggregated across major central banks represents total net liquid currency, and historical data indicates a high positive correlation between M2 year-over-year growth and Bitcoin structural bull cycles."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What components make up the Net Liquidity Index?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Net Liquidity Index uses three key Fed balance sheet components: Federal Reserve Total Assets, the Treasury General Account (TGA), and the Reverse Repurchase Facility (RRP)."
+        }
+      }]
+    }
+    </script>
+
     <style>
         :root {
             --bg-color: #0b0e14;
@@ -92,6 +117,35 @@
             background-color: var(--table-header-bg);
             color: var(--accent-color);
             font-weight: 700;
+        }
+
+        /* FAQ Section Styling */
+        .faq-section {
+            margin-top: 3.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .faq-title {
+            color: var(--accent-color);
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item h4 {
+            margin: 0 0 0.4rem 0;
+            color: var(--text-main);
+            font-size: 1.05rem;
+        }
+
+        .faq-item p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.95rem;
         }
 
         /* Related Articles Box */
@@ -214,6 +268,21 @@
             <li><strong>Expansionary Regimes:</strong> Maximize spot accumulation allocation and extend position holding time horizons.</li>
             <li><strong>Contractionary Regimes:</strong> Increase capital preservation ratios, hedge spot holdings via short perpetuals, or hold yielding cash equivalents. <em>(Before placing hedges, monitor carrying costs using our <a href="funding-rates.html" style="color: var(--accent-color); text-decoration: underline;">Funding Rates & Volatility Guide</a>)</em>.</li>
         </ol>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h3 class="faq-title">Frequently Asked Questions</h3>
+            
+            <div class="faq-item">
+                <h4>How does global M2 money supply affect crypto markets?</h4>
+                <p>Global M2 aggregated across major central banks represents total net liquid currency, and historical data indicates a high positive correlation between M2 year-over-year growth and Bitcoin structural bull cycles.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>What components make up the Net Liquidity Index?</h4>
+                <p>The Net Liquidity Index uses three key Fed balance sheet components: Federal Reserve Total Assets, the Treasury General Account (TGA), and the Reverse Repurchase Facility (RRP).</p>
+            </div>
+        </section>
 
         <!-- Related Frameworks / Internal Links -->
         <div class="related-articles">
