@@ -77,7 +77,8 @@
         .faq-item p { color: var(--text-muted); font-size: 0.95rem; margin: 0; }
 
         footer { border-top: 1px solid var(--border-color); padding: 2.5rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); margin-top: 4rem; }
-        .disclaimer { font-size: 0.75rem; color: var(--text-muted); max-width: 600px; margin: 0.8rem auto 0 auto; opacity: 0.8; line-height: 1.5; }
+        .footer-content { max-width: 700px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.8rem; }
+        .disclaimer { font-size: 0.78rem; color: var(--text-muted); line-height: 1.6; opacity: 0.85; }
 
         @media (max-width: 600px) { .logo-full { display: none; } .logo-short { display: inline-block; } }
     </style>
@@ -146,8 +147,10 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 ColdBloodedTraders. All rights reserved.</p>
-        <p class="disclaimer">Content published on ColdBloodedTraders is for educational and informational purposes only. Nothing here constitutes financial or investment advice. Always manage your own risk (DYOR).</p>
+        <div class="footer-content">
+            <p>&copy; 2026 ColdBloodedTraders. All rights reserved.</p>
+            <p class="disclaimer">Content published on ColdBloodedTraders is for educational and informational purposes only. Nothing here constitutes financial or investment advice. Always manage your own risk (DYOR).</p>
+        </div>
     </footer>
 
     <script>
