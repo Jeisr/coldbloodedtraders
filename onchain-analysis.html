@@ -88,6 +88,52 @@
             font-weight: 700;
         }
 
+        /* Related Articles Box */
+        .related-articles {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .related-title {
+            font-size: 1.2rem;
+            margin-bottom: 1.2rem;
+            color: var(--text-main);
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .related-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            text-decoration: none;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+            display: block;
+        }
+
+        .related-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-color);
+        }
+
+        .related-card h4 {
+            color: var(--text-main);
+            font-size: 0.95rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .related-card span {
+            color: var(--accent-color);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
         footer {
             border-top: 1px solid var(--border-color);
             padding: 2rem 1.5rem;
@@ -135,24 +181,26 @@
                     <td>Aggressive spot profit taking & risk reduction</td>
                 </tr>
                 <tr>
-                    <td>1.0 < MVRV < 2.5</td>
+                    <td>1.0 &lt; MVRV &lt; 2.5</td>
                     <td>Equilibrium Growth Zone</td>
                     <td>Trend following & strategic position scaling</td>
                 </tr>
                 <tr>
-                    <td>MVRV < 1.0</td>
+                    <td>MVRV &lt; 1.0</td>
                     <td>Macro Undervaluation / Capitulation</td>
                     <td>Systematic spot accumulation (DCA)</td>
                 </tr>
             </tbody>
         </table>
 
+        <p><em>When MVRV reaches extreme valuation limits, execute predetermined profit allocation protocols using our <a href="portfolio-rebalancing.html" style="color: var(--accent-color); text-decoration: underline;">Systematic Portfolio Rebalancing Framework</a>.</em></p>
+
         <h2>2. Exchange Reserve Dynamics & Net Flows</h2>
         <p>Tracking coin deposits and withdrawals across centralized exchanges provides direct insight into supply availability:</p>
 
         <ul>
             <li><strong>Exchange Net Inflows (Positive Spike):</strong> High volume deposited to exchanges. Indicates potential selling pressure or margin collateral deployment.</li>
-            <li><strong>Exchange Net Outflows (Sustained Negative):</strong> Coins moving to cold storage or DeFi protocols. Reflects supply shock potential and long-term illiquidity.</li>
+            <li><strong>Exchange Net Outflows (Sustained Negative):</strong> Coins moving to cold storage or DeFi protocols. Reflects supply shock potential and long-term illiquidity. <em>(Cross-reference outflow surges with order book imbalances in our <a href="liquidity-pools.html" style="color: var(--accent-color); text-decoration: underline;">Order Flow & Liquidity Pools Guide</a>)</em>.</li>
             <li><strong>Stablecoin Supply Ratio (SSR):</strong> Ratio between market cap and total stablecoin supply. Low SSR signals high buying capacity waiting on sidelines.</li>
         </ul>
 
@@ -162,6 +210,21 @@
             <li>Do not open macro short positions when market price trades below the Aggregate Realized Price.</li>
             <li>Confirm structural price breakouts with negative Exchange Reserve trends to avoid fakeouts.</li>
         </ol>
+
+        <!-- Related Frameworks / Internal Links -->
+        <div class="related-articles">
+            <h3 class="related-title">Related Frameworks</h3>
+            <div class="related-grid">
+                <a href="macro-liquidity.html" class="related-card">
+                    <span>MACRO DYNAMICS</span>
+                    <h4>Global Liquidity & Central Bank Balance Sheets &rarr;</h4>
+                </a>
+                <a href="position-sizing.html" class="related-card">
+                    <span>RISK MANAGEMENT</span>
+                    <h4>Position Sizing Framework in Volatile Markets &rarr;</h4>
+                </a>
+            </div>
+        </div>
 
     </main>
 
