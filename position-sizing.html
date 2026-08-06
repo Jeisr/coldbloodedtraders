@@ -14,6 +14,31 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta name="description" content="A comprehensive mathematical framework for calculating position size, managing drawdown, and understanding leverage in perpetual crypto markets.">
+    
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What is the difference between leverage and position risk in crypto trading?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Leverage is simply a mechanism for capital efficiency, whereas position size and stop-loss distance dictate your actual dollar risk."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you calculate position size in perpetual markets?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Position Size in units is calculated by multiplying Account Equity by Risk Percentage, then dividing by the absolute distance between your Entry Price and Stop Loss Price."
+        }
+      }]
+    }
+    </script>
+
     <style>
         :root {
             --bg-color: #0b0e14;
@@ -111,6 +136,35 @@
         }
         tr:nth-child(even) {
             background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        /* FAQ Section Styling */
+        .faq-section {
+            margin-top: 3.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .faq-title {
+            color: var(--accent-color);
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item h4 {
+            margin: 0 0 0.4rem 0;
+            color: var(--text-main);
+            font-size: 1.05rem;
+        }
+
+        .faq-item p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.95rem;
         }
 
         /* Related Articles Box */
@@ -274,6 +328,21 @@
             <li><strong>Liquidation Price Check:</strong> Is your liquidation price safely beyond your technical stop-loss level?</li>
             <li><strong>Risk-to-Reward Ratio (R:R):</strong> Does the trade offer a minimum of 1:2 R:R to ensure positive long-term expectancy?</li>
         </ol>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h3 class="faq-title">Frequently Asked Questions</h3>
+            
+            <div class="faq-item">
+                <h4>What is the difference between leverage and position risk in crypto trading?</h4>
+                <p>Leverage is simply a mechanism for capital efficiency, whereas position size and stop-loss distance dictate your actual dollar risk.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>How do you calculate position size in perpetual markets?</h4>
+                <p>Position Size in units is calculated by multiplying Account Equity by Risk Percentage, then dividing by the absolute distance between your Entry Price and Stop Loss Price.</p>
+            </div>
+        </section>
 
         <!-- Related Frameworks / Internal Links -->
         <div class="related-articles">
