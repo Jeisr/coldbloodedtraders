@@ -1,63 +1,176 @@
-<!-- Bu kod risk-metrics.html dosyasına aittir -->
-<main class="container">
-    <div class="tool-header">
-        <h1>Risk Metrics Calculator</h1>
-        <p>Quantify your trade risk: R/R Ratio, Position Sizing, and Expected Value (EV).</p>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Metrics Calculator | ColdBloodedTraders</title>
+    <link rel="icon" type="image/png" href="assets/cbt-logo.png">
+    
+    <style>
+        :root {
+            --bg-color: #0b0e14;
+            --card-bg: rgba(22, 27, 34, 0.75);
+            --accent-color: #00f2fe;
+            --text-main: #f0f6fc;
+            --text-muted: #8b949e;
+            --border-color: rgba(240, 246, 252, 0.1);
+            --success-color: #00e676;
+        }
 
-    <div class="calc-card">
-        <div class="input-panel">
-            <div class="form-group">
-                <label>Account Balance ($)</label>
-                <input type="number" id="balance" value="10000">
-            </div>
-            <div class="form-group">
-                <label>Risk Per Trade (%)</label>
-                <input type="number" id="riskPercent" value="1" step="0.1">
-            </div>
-            <div class="form-group">
-                <label>Stop Loss Distance (%)</label>
-                <input type="number" id="slDistance" value="2" step="0.1">
-            </div>
-            <div class="form-group">
-                <label>Target Profit Distance (%)</label>
-                <input type="number" id="tpDistance" value="6" step="0.1">
+        * { box-sizing: border-box; }
+
+        body { 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; 
+            margin: 0; 
+            line-height: 1.6; 
+        }
+
+        header {
+            position: sticky; top: 0; backdrop-filter: blur(12px); background: rgba(11, 14, 20, 0.85);
+            padding: 1.2rem 2rem; border-bottom: 1px solid var(--border-color);
+            display: flex; justify-content: space-between; align-items: center; z-index: 1000;
+        }
+
+        .logo { font-weight: 800; color: var(--text-main); text-decoration: none; font-size: 1.2rem; }
+        .logo-full span { color: var(--accent-color); }
+        .logo-short { display: none; color: var(--text-main); }
+        .logo-short span { color: var(--accent-color); }
+
+        /* Tools Dropdown Menu */
+        .dropdown { position: relative; display: inline-block; }
+        .dropdown-btn { color: var(--accent-color); background: transparent; font-weight: 700; border: 1px solid var(--accent-color); padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; cursor: pointer; transition: background 0.2s, color 0.2s; display: flex; align-items: center; gap: 0.4rem; }
+        .dropdown-btn:hover { background: rgba(0, 242, 254, 0.1); }
+        
+        .dropdown-content { display: none; position: absolute; right: 0; top: 120%; background-color: #161b22; min-width: 220px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5); border: 1px solid var(--border-color); border-radius: 8px; z-index: 1001; overflow: hidden; }
+        .dropdown-content a { color: var(--text-main); padding: 0.75rem 1rem; text-decoration: none; display: block; font-size: 0.85rem; font-weight: 600; border-bottom: 1px solid rgba(240, 246, 252, 0.05); transition: background 0.2s, color 0.2s; }
+        .dropdown-content a:hover { background-color: rgba(0, 242, 254, 0.1); color: var(--accent-color); }
+        .dropdown.active .dropdown-content { display: block; }
+
+        .container { max-width: 850px; margin: 3rem auto 5rem auto; padding: 0 1.5rem; }
+        
+        .tool-header { margin-bottom: 2rem; text-align: left; }
+        .tool-header h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--text-main); }
+        .tool-header p { color: var(--text-muted); font-size: 1.05rem; margin: 0; }
+
+        .calc-card { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 2rem; 
+            background: var(--card-bg); 
+            border: 1px solid var(--border-color); 
+            border-radius: 12px; 
+            padding: 2.5rem; 
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+        }
+
+        .form-group { margin-bottom: 1.25rem; }
+        .form-group label { display: block; font-size: 0.8rem; font-weight: 700; color: var(--text-muted); margin-bottom: 0.5rem; text-transform: uppercase; }
+        .form-group input { width: 100%; background: #0b0e14; border: 1px solid var(--border-color); color: var(--text-main); padding: 0.8rem; border-radius: 6px; font-size: 1rem; outline: none; transition: border-color 0.2s; }
+        .form-group input:focus { border-color: var(--accent-color); }
+
+        .results-panel { display: flex; flex-direction: column; justify-content: center; gap: 1.5rem; background: rgba(11, 14, 20, 0.4); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color); }
+        .result-item .result-label { color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; font-weight: 700; margin-bottom: 0.2rem; }
+        .result-item .result-value { font-size: 1.8rem; font-weight: 800; color: var(--accent-color); }
+
+        footer { border-top: 1px solid var(--border-color); padding: 2.5rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); margin-top: auto; }
+
+        @media (max-width: 768px) { 
+            .calc-card { grid-template-columns: 1fr; }
+            .logo-full { display: none; } 
+            .logo-short { display: inline-block; } 
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <span class="logo-full">COLDBLOODED<span>TRADERS</span></span>
+            <span class="logo-short">CB<span>T</span></span>
+        </a>
+        <div class="dropdown" id="toolsDropdown">
+            <button class="dropdown-btn" onclick="toggleDropdown()">🧮 Tools &#9662;</button>
+            <div class="dropdown-content">
+                <a href="calculator.html">Position Size Calculator</a>
+                <a href="liquidation-calculator.html">Liquidation Price Calculator</a>
+                <a href="risk-metrics.html">Risk Metrics Calculator</a>
             </div>
         </div>
+    </header>
 
-        <div class="results-panel">
-            <div class="result-item">
-                <div class="result-label">Position Size Allowed</div>
-                <div class="result-value" id="posSize">$5,000.00</div>
+    <main class="container">
+        <div class="tool-header">
+            <h1>Risk Metrics Calculator</h1>
+            <p>Quantify your trade risk: R/R Ratio, Position Sizing, and Expected Value (EV).</p>
+        </div>
+
+        <div class="calc-card">
+            <div class="input-panel">
+                <div class="form-group">
+                    <label>Account Balance ($)</label>
+                    <input type="number" id="balance" value="10000">
+                </div>
+                <div class="form-group">
+                    <label>Risk Per Trade (%)</label>
+                    <input type="number" id="riskPercent" value="1" step="0.1">
+                </div>
+                <div class="form-group">
+                    <label>Stop Loss Distance (%)</label>
+                    <input type="number" id="slDistance" value="2" step="0.1">
+                </div>
+                <div class="form-group">
+                    <label>Target Profit Distance (%)</label>
+                    <input type="number" id="tpDistance" value="6" step="0.1">
+                </div>
             </div>
-            <div class="result-item">
-                <div class="result-label">Risk/Reward Ratio</div>
-                <div class="result-value" id="rrRatio">3.00</div>
-            </div>
-            <div class="result-item">
-                <div class="result-label">Potential Gain ($)</div>
-                <div class="result-value" id="potGain" style="color: var(--success-color)">+$300.00</div>
+
+            <div class="results-panel">
+                <div class="result-item">
+                    <div class="result-label">Position Size Allowed</div>
+                    <div class="result-value" id="posSize">$5,000.00</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-label">Risk/Reward Ratio</div>
+                    <div class="result-value" id="rrRatio">3.00</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-label">Potential Gain ($)</div>
+                    <div class="result-value" id="potGain" style="color: var(--success-color)">+$300.00</div>
+                </div>
             </div>
         </div>
-    </div>
-</main>
+    </main>
 
-<script>
-    function calcRisk() {
-        const balance = parseFloat(document.getElementById('balance').value);
-        const riskPct = parseFloat(document.getElementById('riskPercent').value) / 100;
-        const slDist = parseFloat(document.getElementById('slDistance').value) / 100;
-        const tpDist = parseFloat(document.getElementById('tpDistance').value) / 100;
+    <footer>
+        <p>&copy; 2026 ColdBloodedTraders. All rights reserved.</p>
+    </footer>
 
-        const riskAmount = balance * riskPct;
-        const posSize = riskAmount / slDist;
-        const rr = tpDist / slDist;
-        const gain = posSize * tpDist;
+    <script>
+        function toggleDropdown() { document.getElementById('toolsDropdown').classList.toggle('active'); }
+        window.onclick = function(e) { if (!e.target.closest('.dropdown')) document.getElementById('toolsDropdown').classList.remove('active'); }
 
-        document.getElementById('posSize').innerText = '$' + posSize.toLocaleString(undefined, {maximumFractionDigits: 2});
-        document.getElementById('rrRatio').innerText = rr.toFixed(2);
-        document.getElementById('potGain').innerText = '+$' + gain.toLocaleString(undefined, {maximumFractionDigits: 2});
-    }
-    document.querySelectorAll('input').forEach(i => i.addEventListener('input', calcRisk));
-    calcRisk();
-</script>
+        function calcRisk() {
+            const balance = parseFloat(document.getElementById('balance').value);
+            const riskPct = parseFloat(document.getElementById('riskPercent').value) / 100;
+            const slDist = parseFloat(document.getElementById('slDistance').value) / 100;
+            const tpDist = parseFloat(document.getElementById('tpDistance').value) / 100;
+
+            if (isNaN(balance) || isNaN(riskPct) || isNaN(slDist) || isNaN(tpDist) || slDist === 0) return;
+
+            const riskAmount = balance * riskPct;
+            const posSize = riskAmount / slDist;
+            const rr = tpDist / slDist;
+            const gain = posSize * tpDist;
+
+            document.getElementById('posSize').innerText = '$' + posSize.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+            document.getElementById('rrRatio').innerText = rr.toFixed(2);
+            document.getElementById('potGain').innerText = '+$' + gain.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        }
+        
+        document.querySelectorAll('input').forEach(i => i.addEventListener('input', calcRisk));
+        calcRisk();
+    </script>
+</body>
+</html>
