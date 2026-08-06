@@ -236,10 +236,26 @@
 
         footer {
             border-top: 1px solid var(--border-color);
-            padding: 2rem 1.5rem;
+            padding: 2.5rem 1.5rem;
             text-align: center;
             font-size: 0.85rem;
             color: var(--text-muted);
+        }
+
+        .footer-links {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 0.8rem;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
         }
 
         @media (max-width: 600px) {
@@ -288,7 +304,7 @@
             </div>
         </div>
 
-        <!-- Articles Grid (6 Articles + About Us) -->
+        <!-- Articles Grid (6 Articles) -->
         <div class="articles-grid" id="articlesGrid">
             
             <a href="position-sizing.html" class="article-card" data-category="RISK">
@@ -345,20 +361,14 @@
                 <div class="article-meta">August 2026 • 8 min read</div>
             </a>
 
-            <!-- About Us Card -->
-            <a href="about.html" class="article-card" data-category="all">
-                <div>
-                    <span class="article-tag">ABOUT US</span>
-                    <h2>About ColdBloodedTraders</h2>
-                    <p>Learn more about our mission, quantitative risk philosophy, and analytical frameworks.</p>
-                </div>
-                <div class="article-meta">Overview • Read More &rarr;</div>
-            </a>
-
         </div>
     </main>
 
     <footer>
+        <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="calculator.html">Position Calculator</a>
+        </div>
         <p>&copy; 2026 ColdBloodedTraders. All rights reserved.</p>
     </footer>
 
