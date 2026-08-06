@@ -1,38 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ColdBloodedTraders | Systematic Crypto Trading & Liquidity Insights</title>
-
-    <!-- Security Headers / Meta Tags -->
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta name="description" content="Unemotional, data-driven crypto trading strategies, perpetual execution, and liquidity analytics.">
-
-    <!-- Tarayıcı Sekme İkonu (Favicon) -->
-    <link rel="icon" type="image/png" href="assets/cbt-logo.png">
-    <link rel="apple-touch-icon" href="assets/cbt-logo.png">
-
-    <!-- Open Graph (Facebook, Telegram, Discord) -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://coldbloodedtraders.com/">
-    <meta property="og:title" content="ColdBloodedTraders | Systematic Crypto Trading & Liquidity Insights">
-    <meta property="og:description" content="Unemotional, data-driven crypto trading strategies, perpetual execution, and liquidity analytics.">
+    <meta property="og:url" content="https://coldbloodedtraders.com/index.html">
+    <meta property="og:title" content="ColdBloodedTraders | Quantitative Risk & Crypto Derivatives Frameworks">
+    <meta property="og:description" content="Institutional risk management, derivatives mechanics, order flow analysis, and position sizing tools for crypto traders.">
     <meta property="og:image" content="https://coldbloodedtraders.com/assets/cbt-logo.png">
 
-    <!-- Twitter / X -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@ColdBloodedTrad">
-    <meta name="twitter:title" content="ColdBloodedTraders | Systematic Crypto Trading & Liquidity Insights">
-    <meta name="twitter:description" content="Unemotional, data-driven crypto trading strategies, perpetual execution, and liquidity analytics.">
     <meta name="twitter:image" content="https://coldbloodedtraders.com/assets/cbt-logo.png">
-    
+
+    <link rel="icon" type="image/png" href="assets/cbt-logo.png">
+    <link rel="apple-touch-icon" href="assets/cbt-logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColdBloodedTraders | Risk & Crypto Derivatives Frameworks</title>
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta name="description" content="Institutional risk management, derivatives mechanics, order flow analysis, and position sizing tools for crypto traders.">
+
     <style>
         :root {
             --bg-color: #0b0e14;
-            --card-bg: rgba(22, 27, 34, 0.7);
+            --card-bg: rgba(22, 27, 34, 0.75);
             --accent-color: #00f2fe;
+            --accent-hover: #00c6ff;
             --text-main: #f0f6fc;
             --text-muted: #8b949e;
             --border-color: rgba(240, 246, 252, 0.1);
@@ -40,339 +32,326 @@
 
         * {
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
         }
 
-        /* Sticky Footer Yapısı İçin Body Kuralları */
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            line-height: 1.8;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
         }
 
-        /* Glassmorphism Header */
         header {
             position: sticky;
             top: 0;
             backdrop-filter: blur(12px);
             background: rgba(11, 14, 20, 0.85);
+            padding: 1.2rem 2rem;
             border-bottom: 1px solid var(--border-color);
-            z-index: 1000;
-            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            z-index: 1000;
         }
 
-        .logo {
-            font-weight: 800;
-            font-size: 1.3rem;
-            letter-spacing: 1px;
-            color: var(--text-main);
-            text-decoration: none;
-        }
+        .logo { font-weight: 800; color: var(--text-main); text-decoration: none; font-size: 1.2rem; }
+        .logo span { color: var(--accent-color); }
+        .nav-tools-btn { color: var(--accent-color); text-decoration: none; font-weight: 700; border: 1px solid var(--accent-color); padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; transition: background 0.2s; }
+        .nav-tools-btn:hover { background: rgba(0, 242, 254, 0.1); }
 
-        .logo span {
-            color: var(--accent-color);
-        }
-
-        nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            margin-left: 1.5rem;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: var(--accent-color);
-        }
-
-        /* Hero Section */
-        .hero {
-            max-width: 1100px;
-            margin: 4rem auto 1rem auto;
+        .container {
+            max-width: 1000px;
+            margin: 3rem auto 5rem auto;
             padding: 0 1.5rem;
+        }
+
+        .hero {
             text-align: center;
+            margin-bottom: 3.5rem;
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             font-weight: 800;
+            margin-bottom: 0.8rem;
             line-height: 1.2;
-            margin-bottom: 1rem;
-            background: linear-gradient(90deg, #ffffff, var(--accent-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
 
         .hero p {
-            font-size: 1.2rem;
             color: var(--text-muted);
-            max-width: 700px;
+            font-size: 1.15rem;
+            max-width: 650px;
             margin: 0 auto;
         }
 
-        /* Main Content & Sticky Flex Alanı */
-        .container {
-            max-width: 1100px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
-            flex: 1; /* İçerik kısa kalsa bile footer'ı ekranın en altına iter */
-        }
-
-        .section-title {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            border-left: 4px solid var(--accent-color);
-            padding-left: 0.75rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        /* Tools Banner */
+        .tools-banner {
+            background: linear-gradient(135deg, rgba(0, 242, 254, 0.1) 0%, rgba(11, 14, 20, 0.8) 100%);
+            border: 1px solid var(--accent-color);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             gap: 1.5rem;
         }
 
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.5rem;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-            height: 100%;
+        .tools-banner-text h3 { margin: 0 0 0.4rem 0; font-size: 1.2rem; color: #fff; }
+        .tools-banner-text p { margin: 0; color: var(--text-muted); font-size: 0.95rem; }
+
+        .btn-calc {
+            background: var(--accent-color);
+            color: #0b0e14;
+            text-decoration: none;
+            font-weight: 800;
+            padding: 0.75rem 1.25rem;
+            border-radius: 6px;
+            white-space: nowrap;
+            transition: background 0.2s, transform 0.2s;
         }
 
-        .card:hover {
-            transform: translateY(-4px);
+        .btn-calc:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Controls: Search & Category Filter */
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 640px) {
+            .controls {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        .search-box {
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .search-box input {
+            width: 100%;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.65rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            outline: none;
+        }
+
+        .search-box input:focus {
             border-color: var(--accent-color);
         }
 
-        .card-meta {
+        .filter-buttons {
             display: flex;
-            justify-content: space-between;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
             font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-bottom: 0.75rem;
-        }
-
-        .card-tag {
-            color: var(--accent-color);
             font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
         }
 
-        .card h2 {
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
-            color: var(--text-main);
+        .filter-btn.active, .filter-btn:hover {
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+            background: rgba(0, 242, 254, 0.05);
         }
 
-        .card p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-        }
-
-        /* Related Articles Stili (Makale sayfalarında alt kısımda kullanılacak) */
-        .related-articles {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .related-title {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            color: var(--text-main);
-        }
-
-        .related-grid {
+        /* Articles Grid */
+        .articles-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1rem;
+            gap: 1.5rem;
         }
 
-        .related-card {
+        .article-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1rem 1.25rem;
+            border-radius: 10px;
+            padding: 1.5rem;
             text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             transition: transform 0.2s ease, border-color 0.2s ease;
-            display: block;
         }
 
-        .related-card:hover {
-            transform: translateY(-2px);
+        .article-card:hover {
+            transform: translateY(-3px);
             border-color: var(--accent-color);
         }
 
-        .related-card h4 {
-            color: var(--text-main);
-            font-size: 0.95rem;
-            margin-bottom: 0.4rem;
-        }
-
-        .related-card span {
+        .article-tag {
             color: var(--accent-color);
-            font-size: 0.8rem;
-            font-weight: 600;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
         }
 
-        /* Footer - Tam Genişlik ve Alt Bant */
+        .article-card h2 {
+            color: var(--text-main);
+            font-size: 1.25rem;
+            margin: 0 0 0.8rem 0;
+            line-height: 1.35;
+        }
+
+        .article-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin: 0 0 1.2rem 0;
+        }
+
+        .article-meta {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
         footer {
-            width: 100%;
             border-top: 1px solid var(--border-color);
-            padding: 2.5rem 1.5rem;
+            padding: 2rem 1.5rem;
             text-align: center;
             font-size: 0.85rem;
             color: var(--text-muted);
-            background: #080a0f;
-            margin-top: auto;
         }
 
-        .disclaimer {
-            max-width: 800px;
-            margin: 1rem auto 0 auto;
-            font-size: 0.75rem;
-            opacity: 0.7;
-        }
-
-        /* Mobil Uyumlu Navigasyon */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.8rem;
-                padding: 1rem;
-            }
-            nav {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 1rem !important;
-                font-size: 0.85rem;
-            }
-            nav a {
-                margin-left: 0;
-            }
-            .hero h1 { 
-                font-size: 2.2rem; 
-            }
+        @media (max-width: 600px) {
+            .tools-banner { flex-direction: column; text-align: center; }
+            .hero h1 { font-size: 2.1rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
     <header>
         <a href="index.html" class="logo">COLDBLOODED<span>TRADERS</span></a>
-        <nav>
-            <a href="index.html" style="color: var(--text-main); font-weight: 500;">Home</a>
-            <a href="position-sizing.html" style="color: var(--text-main); font-weight: 500;">Strategies</a>
-            <a href="liquidity-pools.html" style="color: var(--text-main); font-weight: 500;">Liquidity</a>
-            <a href="about.html" style="color: var(--accent-color); font-weight: 600;">About</a>
-        </nav>
+        <a href="calculator.html" class="nav-tools-btn">🧮 Calculator Tool</a>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Systematic Crypto Execution & Risk Management</h1>
-        <p>Unemotional protocols, mathematical risk parameters, and liquidity analytics for modern spot & perpetual markets.</p>
-    </section>
-
-    <!-- Main Content Grid -->
     <main class="container">
-        <h2 class="section-title">Latest Analysis & Frameworks</h2>
-        
-        <div class="grid">
-            <!-- Card 1 -->
-            <a href="position-sizing.html" style="text-decoration: none;">
-                <article class="card">
-                    <div class="card-meta">
-                        <span class="card-tag">RISK MANAGEMENT</span>
-                        <span>5 MIN READ</span>
-                    </div>
-                    <h2>Position Sizing in Volatile Perpetual Markets</h2>
-                    <p>How to mathematically control drawdown using statistical expectancy instead of emotional intuition.</p>
-                </article>
+        <section class="hero">
+            <h1>Quantitative Risk & Market Dynamics</h1>
+            <p>Systematic frameworks for crypto derivatives, perpetual liquidity, and position management.</p>
+        </section>
+
+        <!-- Dynamic Tool Banner -->
+        <div class="tools-banner">
+            <div class="tools-banner-text">
+                <h3>Position Size & Risk Calculator</h3>
+                <p>Calculate precise contract size and risk metrics before executing trades.</p>
+            </div>
+            <a href="calculator.html" class="btn-calc">Open Calculator &rarr;</a>
+        </div>
+
+        <!-- Controls: Search & Category Filter -->
+        <div class="controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search frameworks or concepts...">
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="RISK">Risk</button>
+                <button class="filter-btn" data-category="DERIVATIVES">Derivatives</button>
+                <button class="filter-btn" data-category="LIQUIDITY">Liquidity</button>
+            </div>
+        </div>
+
+        <!-- Articles Grid -->
+        <div class="articles-grid" id="articlesGrid">
+            
+            <a href="position-sizing.html" class="article-card" data-category="RISK">
+                <div>
+                    <span class="article-tag">RISK MANAGEMENT</span>
+                    <h2>Position Sizing Framework in Volatile Markets</h2>
+                    <p>Mathematical calculations for optimal position size, drawdown prevention, and risk exposure.</p>
+                </div>
+                <div class="article-meta">August 2026 • 5 min read</div>
             </a>
 
-            <!-- Card 2 -->
-            <a href="liquidity-pools.html" style="text-decoration: none;">
-                <article class="card">
-                    <div class="card-meta">
-                        <span class="card-tag">LIQUIDITY</span>
-                        <span>7 MIN READ</span>
-                    </div>
-                    <h2>Identifying Order Flow & Liquidity Pools</h2>
-                    <p>Understanding institutional positioning, stop sweeps, and high-probability reversal zones.</p>
-                </article>
-            </a>
-
-            <!-- Card 3 -->
-            <a href="portfolio-rebalancing.html" style="text-decoration: none;">
-                <article class="card">
-                    <div class="card-meta">
-                        <span class="card-tag">SPOT STRATEGY</span>
-                        <span>6 MIN READ</span>
-                    </div>
-                    <h2>Systematic Portfolio Rebalancing Protocols</h2>
-                    <p>Automating long-term spot accumulation cycles while maintaining optimal cash reserves.</p>
-                </article>
-            </a>
-
-            <!-- Card 4 -->
-            <a href="funding-rates.html" style="text-decoration: none;">
-                <article class="card">
-                    <div class="card-meta">
-                        <span class="card-tag">DERIVATIVES RISK</span>
-                        <span>7 MIN READ</span>
-                    </div>
+            <a href="funding-rates.html" class="article-card" data-category="DERIVATIVES">
+                <div>
+                    <span class="article-tag">DERIVATIVES RISK</span>
                     <h2>Funding Rates & Implied Volatility Framework</h2>
-                    <p>Understanding perpetual swap mechanics, open interest anomalies, and avoiding leverage squeeze traps.</p>
-                </article>
+                    <p>Understanding perpetual swap mechanics, open interest spikes, and crowded squeeze traps.</p>
+                </div>
+                <div class="article-meta">August 2026 • 7 min read</div>
             </a>
 
-            <!-- Card 5 -->
-            <a href="macro-liquidity.html" style="text-decoration: none;">
-                <article class="card">
-                    <div class="card-meta">
-                        <span class="card-tag">MACRO DYNAMICS</span>
-                        <span>8 MIN READ</span>
-                    </div>
-                    <h2>Global Liquidity & Central Bank Balance Sheets</h2>
-                    <p>Analyzing global M2 money supply expansion, Fed net liquidity metrics, and macro cycle timing.</p>
-                </article>
+            <a href="liquidity-pools.html" class="article-card" data-category="LIQUIDITY">
+                <div>
+                    <span class="article-tag">LIQUIDITY</span>
+                    <h2>Identifying Order Flow & Liquidity Pools</h2>
+                    <p>How institutional operators sweep stop-loss clusters before major expansion moves.</p>
+                </div>
+                <div class="article-meta">August 2026 • 6 min read</div>
             </a>
 
-            <!-- Card 6 -->
-            <a href="onchain-analysis.html" style="text-decoration: none;">
-                <article class="card">
-                    <div class="card-meta">
-                        <span class="card-tag">ON-CHAIN METRICS</span>
-                        <span>7 MIN READ</span>
-                    </div>
-                    <h2>On-Chain Capital Flows & Realized Price Metrics</h2>
-                    <p>Analyzing MVRV Z-Score boundaries, exchange net inflows/outflows, and aggregate cost basis dynamics.</p>
-                </article>
-            </a>
         </div>
     </main>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 ColdBloodedTraders. All rights reserved.</p>
-        <p class="disclaimer">
-            Disclaimer: Content published on ColdBloodedTraders is for educational and informational purposes only. Nothing here constitutes financial or investment advice. Always manage your own risk (DYOR).
-        </p>
     </footer>
 
+    <!-- Interactive Search and Filter Script -->
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const articleCards = document.querySelectorAll('.article-card');
+
+        let activeCategory = 'all';
+
+        function filterArticles() {
+            const query = searchInput.value.toLowerCase();
+
+            articleCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                const title = card.querySelector('h2').textContent.toLowerCase();
+                const desc = card.querySelector('p').textContent.toLowerCase();
+
+                const matchesCategory = activeCategory === 'all' || category === activeCategory;
+                const matchesSearch = title.includes(query) || desc.includes(query);
+
+                if (matchesCategory && matchesSearch) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        searchInput.addEventListener('input', filterArticles);
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                activeCategory = btn.getAttribute('data-category');
+                filterArticles();
+            });
+        });
+    </script>
 </body>
 </html>
