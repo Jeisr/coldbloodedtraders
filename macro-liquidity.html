@@ -88,6 +88,52 @@
             font-weight: 700;
         }
 
+        /* Related Articles Box */
+        .related-articles {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .related-title {
+            font-size: 1.2rem;
+            margin-bottom: 1.2rem;
+            color: var(--text-main);
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .related-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            text-decoration: none;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+            display: block;
+        }
+
+        .related-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-color);
+        }
+
+        .related-card h4 {
+            color: var(--text-main);
+            font-size: 0.95rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .related-card span {
+            color: var(--accent-color);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
         footer {
             border-top: 1px solid var(--border-color);
             padding: 2rem 1.5rem;
@@ -111,7 +157,7 @@
 
         <p>Cryptocurrency is often analyzed through micro-level lenses—chart patterns, order books, and protocol upgrades. However, asset valuations across digital markets remain overwhelmingly driven by global fiat currency expansion and central bank liquidity conditions.</p>
 
-        <p>Understanding the systemic relationship between the global <strong>M2 Money Supply</strong> and high-beta risk assets is essential for long-term spot positioning and cycle timing.</p>
+        <p>Understanding the systemic relationship between the global <strong>M2 Money Supply</strong> and high-beta risk assets is essential for long-term spot positioning and cycle timing. Aligning macro liquidity cycles with our <a href="portfolio-rebalancing.html" style="color: var(--accent-color); text-decoration: underline;">Systematic Portfolio Rebalancing Protocols</a> helps maximize yield while systematically controlling drawdowns.</p>
 
         <blockquote>
             "Price trends in liquid risk assets are fundamentally a derivative of central bank balance sheet expansion and currency devaluation rates."
@@ -160,8 +206,23 @@
         <p>Macro indicators should dictate portfolio leverage and spot exposure parameters:</p>
         <ol>
             <li><strong>Expansionary Regimes:</strong> Maximize spot accumulation allocation and extend position holding time horizons.</li>
-            <li><strong>Contractionary Regimes:</strong> Increase capital preservation ratios, hedge spot holdings via short perpetuals, or hold yielding cash equivalents.</li>
+            <li><strong>Contractionary Regimes:</strong> Increase capital preservation ratios, hedge spot holdings via short perpetuals, or hold yielding cash equivalents. <em>(Before placing hedges, monitor carrying costs using our <a href="funding-rates.html" style="color: var(--accent-color); text-decoration: underline;">Funding Rates & Volatility Guide</a>)</em>.</li>
         </ol>
+
+        <!-- Related Frameworks / Internal Links -->
+        <div class="related-articles">
+            <h3 class="related-title">Related Frameworks</h3>
+            <div class="related-grid">
+                <a href="portfolio-rebalancing.html" class="related-card">
+                    <span>SPOT STRATEGY</span>
+                    <h4>Systematic Portfolio Rebalancing Protocols &rarr;</h4>
+                </a>
+                <a href="liquidity-pools.html" class="related-card">
+                    <span>MICROSTRUCTURE</span>
+                    <h4>Order Flow & Liquidity Pools Guide &rarr;</h4>
+                </a>
+            </div>
+        </div>
 
     </main>
 
