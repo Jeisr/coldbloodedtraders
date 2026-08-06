@@ -13,6 +13,31 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta name="description" content="Learn how institutional order flow operates, how to identify stop-loss liquidity pools, and how to trade high-probability market sweeps.">
+    
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What are liquidity pools in crypto and financial markets?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Liquidity pools are clusters of resting buy or sell orders, typically formed by retail stop-losses around key technical price levels like equal highs and lows or session ranges, which institutions target to fill large orders."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a liquidity sweep or Swing Failure Pattern (SFP)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A liquidity sweep (SFP) is a market event where price aggressively pierces a key support or resistance level to trigger resting stop orders, followed by a rapid rejection and close back inside the previous range."
+        }
+      }]
+    }
+    </script>
+
     <style>
         :root {
             --bg-color: #0b0e14;
@@ -85,6 +110,35 @@
             margin: 2rem 0;
         }
         .concept-box h3 { color: var(--accent-color); margin-bottom: 0.5rem; }
+
+        /* FAQ Section Styling */
+        .faq-section {
+            margin-top: 3.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .faq-title {
+            color: var(--accent-color);
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item h4 {
+            margin: 0 0 0.4rem 0;
+            color: var(--text-main);
+            font-size: 1.05rem;
+        }
+
+        .faq-item p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
 
         /* Related Articles Box */
         .related-articles {
@@ -186,7 +240,7 @@
         <ol>
             <li><strong>The Setup:</strong> Price approaches a well-defined support or resistance level, encouraging retail traders to stack stop-losses just beyond the key pivot.</li>
             <li><strong>The Sweep:</strong> An aggressive price expansion pierces the level, triggering resting stop orders and filling institutional limit orders.</li>
-            <li><strong>The Rejection:</strong> Price rapidly closes back inside the previous range, leaving a long wick on the candle structure and signaling a high-probability reversal setup.</li>
+            <li><strong>The Rejection:</strong> Price rapidly closes back inside the previous range, signaling a high-probability reversal setup.</li>
         </ol>
 
         <h2>4. Practical Execution Framework</h2>
@@ -196,6 +250,21 @@
             <li>Wait for the liquidity sweep to occur on lower timeframe charts (e.g., 5m / 15m) before seeking entry signals.</li>
             <li>Ensure the candle body closes back within the value area to confirm a false breakout/sweep.</li>
         </ul>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h3 class="faq-title">Frequently Asked Questions</h3>
+            
+            <div class="faq-item">
+                <h4>What are liquidity pools in crypto and financial markets?</h4>
+                <p>Liquidity pools are clusters of resting buy or sell orders, typically formed by retail stop-losses around key technical price levels like equal highs and lows or session ranges, which institutions target to fill large orders.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>What is a liquidity sweep or Swing Failure Pattern (SFP)?</h4>
+                <p>A liquidity sweep (SFP) is a market event where price aggressively pierces a key support or resistance level to trigger resting stop orders, followed by a rapid rejection and close back inside the previous range.</p>
+            </div>
+        </section>
 
         <!-- Related Frameworks / Internal Links -->
         <div class="related-articles">
