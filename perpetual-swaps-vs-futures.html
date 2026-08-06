@@ -227,10 +227,14 @@
         }
 
         .related-card span {
-            color: var(--accent-color);
             font-size: 0.8rem;
             font-weight: 600;
         }
+
+        /* Related Card Category Specific Colors */
+        .related-card span.tag-foundational { color: #00e676; }
+        .related-card span.tag-risk { color: #ff9800; }
+        .related-card span.tag-derivatives { color: #00f2fe; }
 
         footer {
             border-top: 1px solid var(--border-color);
@@ -344,11 +348,11 @@
             <h3 class="related-title">Related Frameworks</h3>
             <div class="related-grid">
                 <a href="funding-rates.html" class="related-card">
-                    <span>DERIVATIVES RISK</span>
+                    <span class="tag-derivatives">DERIVATIVES RISK</span>
                     <h4>Funding Rates & Implied Volatility Framework &rarr;</h4>
                 </a>
                 <a href="leverage-101.html" class="related-card">
-                    <span>FOUNDATIONAL</span>
+                    <span class="tag-foundational">FOUNDATIONAL</span>
                     <h4>Leverage 101: How Crypto Leverage Actually Works &rarr;</h4>
                 </a>
             </div>
