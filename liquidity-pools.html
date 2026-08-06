@@ -80,6 +80,52 @@
         }
         .concept-box h3 { color: var(--accent-color); margin-bottom: 0.5rem; }
 
+        /* Related Articles Box */
+        .related-articles {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .related-title {
+            font-size: 1.2rem;
+            margin-bottom: 1.2rem;
+            color: var(--text-main);
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .related-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            text-decoration: none;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+            display: block;
+        }
+
+        .related-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-color);
+        }
+
+        .related-card h4 {
+            color: var(--text-main);
+            font-size: 0.95rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .related-card span {
+            color: var(--accent-color);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
         footer {
             border-top: 1px solid var(--border-color);
             padding: 2rem 1.5rem;
@@ -104,6 +150,8 @@
         <p>In electronic financial markets, price does not move randomly; it moves toward liquidity. To execute large position sizes without causing extreme market impact, institutional participants require counterparties—meaning large clusters of resting buy or sell orders.</p>
 
         <p>Understanding where these liquidity pools reside allows systematic traders to anticipate "stop runs" and position themselves alongside institutional order flow rather than becoming liquidity for someone else.</p>
+
+        <p><em>Before executing trades at identified liquidity levels, make sure to structure your drawdown correctly using our <a href="position-sizing.html" style="color: var(--accent-color); text-decoration: underline;">Position Sizing Framework</a>.</em></p>
 
         <blockquote>
             "If you cannot identify where retail stop-losses are resting, your position is likely part of the liquidity pool being targeted."
@@ -142,6 +190,21 @@
             <li>Wait for the liquidity sweep to occur on lower timeframe charts (e.g., 5m / 15m) before seeking entry signals.</li>
             <li>Ensure the candle body closes back within the value area to confirm a false breakout/sweep.</li>
         </ul>
+
+        <!-- Related Frameworks / Internal Links -->
+        <div class="related-articles">
+            <h3 class="related-title">Related Frameworks</h3>
+            <div class="related-grid">
+                <a href="position-sizing.html" class="related-card">
+                    <span>RISK MANAGEMENT</span>
+                    <h4>Position Sizing Framework in Volatile Markets &rarr;</h4>
+                </a>
+                <a href="funding-rates.html" class="related-card">
+                    <span>DERIVATIVES RISK</span>
+                    <h4>Funding Rates & Implied Volatility Framework &rarr;</h4>
+                </a>
+            </div>
+        </div>
     </main>
 
     <footer>
