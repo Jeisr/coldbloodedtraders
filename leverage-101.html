@@ -53,7 +53,20 @@
         }
         .note strong { color: var(--accent-color); }
 
-        footer { border-top: 1px solid var(--border-color); padding: 2.5rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
+        /* Related Articles & FAQ Section Styles */
+        .related-section { margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 1rem; }
+        .related-card { background: var(--card-bg); border: 1px solid var(--border-color); padding: 1.2rem; border-radius: 8px; text-decoration: none; display: block; transition: border-color 0.2s; }
+        .related-card:hover { border-color: var(--accent-color); }
+        .related-card h4 { color: var(--text-main); margin: 0 0 0.5rem 0; font-size: 1rem; }
+        .related-card span { color: var(--accent-color); font-size: 0.8rem; font-weight: 700; }
+
+        .faq-section { margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+        .faq-item { margin-bottom: 1.5rem; }
+        .faq-item h3 { color: var(--text-main); font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .faq-item p { color: var(--text-muted); font-size: 0.95rem; margin: 0; }
+
+        footer { border-top: 1px solid var(--border-color); padding: 2.5rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); margin-top: 4rem; }
     </style>
 </head>
 <body>
@@ -81,6 +94,36 @@
 
         <h2>Why Leverage is Often Deadly</h2>
         <p>The danger is rarely the leverage itself; it is the <strong>mismanagement of position size</strong>. Many traders mistake leverage for a license to take on massive positions. A high-leverage position with a wide stop-loss is mathematically identical to a low-leverage position with a tight stop-loss. The difference lies in the psychology of risk.</p>
+
+        <!-- Related Frameworks / Internal Linking -->
+        <div class="related-section">
+            <h3 style="color: var(--text-main); font-size: 1.2rem; margin-bottom: 1rem;">Continue Reading</h3>
+            <div class="related-grid">
+                <a href="position-sizing.html" class="related-card">
+                    <span>RISK MANAGEMENT</span>
+                    <h4>Position Sizing Framework</h4>
+                </a>
+                <a href="funding-rates.html" class="related-card">
+                    <span>DERIVATIVES RISK</span>
+                    <h4>Funding Rates & Implied Volatility</h4>
+                </a>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h3 style="color: var(--text-main); font-size: 1.2rem; margin-bottom: 1.5rem;">Frequently Asked Questions</h3>
+            
+            <div class="faq-item">
+                <h3>Does higher leverage increase liquidation risk?</h3>
+                <p>Yes. Higher leverage narrows the distance between your entry price and your liquidation price, making your position much more sensitive to market noise and volatility.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Is crypto leverage different from traditional stock margin?</h3>
+                <p>The underlying concept of borrowing capital is similar, but crypto exchanges typically offer much higher leverage multipliers (up to 100x or more) and operate 24/7 with automated liquidations.</p>
+            </div>
+        </div>
     </main>
 
     <footer>
