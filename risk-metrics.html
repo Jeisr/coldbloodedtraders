@@ -1,0 +1,63 @@
+<!-- Bu kod risk-metrics.html dosyasına aittir -->
+<main class="container">
+    <div class="tool-header">
+        <h1>Risk Metrics Calculator</h1>
+        <p>Quantify your trade risk: R/R Ratio, Position Sizing, and Expected Value (EV).</p>
+    </div>
+
+    <div class="calc-card">
+        <div class="input-panel">
+            <div class="form-group">
+                <label>Account Balance ($)</label>
+                <input type="number" id="balance" value="10000">
+            </div>
+            <div class="form-group">
+                <label>Risk Per Trade (%)</label>
+                <input type="number" id="riskPercent" value="1" step="0.1">
+            </div>
+            <div class="form-group">
+                <label>Stop Loss Distance (%)</label>
+                <input type="number" id="slDistance" value="2" step="0.1">
+            </div>
+            <div class="form-group">
+                <label>Target Profit Distance (%)</label>
+                <input type="number" id="tpDistance" value="6" step="0.1">
+            </div>
+        </div>
+
+        <div class="results-panel">
+            <div class="result-item">
+                <div class="result-label">Position Size Allowed</div>
+                <div class="result-value" id="posSize">$5,000.00</div>
+            </div>
+            <div class="result-item">
+                <div class="result-label">Risk/Reward Ratio</div>
+                <div class="result-value" id="rrRatio">3.00</div>
+            </div>
+            <div class="result-item">
+                <div class="result-label">Potential Gain ($)</div>
+                <div class="result-value" id="potGain" style="color: var(--success-color)">+$300.00</div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+    function calcRisk() {
+        const balance = parseFloat(document.getElementById('balance').value);
+        const riskPct = parseFloat(document.getElementById('riskPercent').value) / 100;
+        const slDist = parseFloat(document.getElementById('slDistance').value) / 100;
+        const tpDist = parseFloat(document.getElementById('tpDistance').value) / 100;
+
+        const riskAmount = balance * riskPct;
+        const posSize = riskAmount / slDist;
+        const rr = tpDist / slDist;
+        const gain = posSize * tpDist;
+
+        document.getElementById('posSize').innerText = '$' + posSize.toLocaleString(undefined, {maximumFractionDigits: 2});
+        document.getElementById('rrRatio').innerText = rr.toFixed(2);
+        document.getElementById('potGain').innerText = '+$' + gain.toLocaleString(undefined, {maximumFractionDigits: 2});
+    }
+    document.querySelectorAll('input').forEach(i => i.addEventListener('input', calcRisk));
+    calcRisk();
+</script>
