@@ -109,7 +109,7 @@
             <span class="logo-short">CB<span>T</span></span>
         </a>
         <div class="dropdown" id="toolsDropdown">
-            <button class="dropdown-btn" onclick="toggleDropdown()">🧮 Trading Tools &#9662;</button>
+            <button class="dropdown-btn" onclick="toggleDropdown()">🧮 Tools &#9662;</button>
             <div class="dropdown-content">
                 <a href="calculator.html">Position Size Calculator</a>
                 <a href="liquidation-calculator.html">Liquidation Price Calculator</a>
@@ -130,7 +130,7 @@
         </div>
 
         <div class="controls">
-            <div class="search-box"><input type="text" id="searchInput" placeholder="Search frameworks..."></div>
+            <div class="search-box"><input type="text" id="searchInput" placeholder="Search frameworks or concepts..."></div>
             <div class="filter-buttons">
                 <button class="filter-btn active" data-category="all">All</button>
                 <button class="filter-btn" data-category="RISK">Risk</button>
@@ -140,23 +140,103 @@
         </div>
 
         <div class="articles-grid" id="articlesGrid">
-            <!-- Articles Content same as original -->
             <a href="position-sizing.html" class="article-card" data-category="RISK">
                 <div>
                     <span class="article-tag">RISK MANAGEMENT</span>
-                    <h2>Position Sizing Framework</h2>
-                    <p>Mathematical calculations for optimal position size and drawdown prevention.</p>
+                    <h2>Position Sizing Framework in Volatile Markets</h2>
+                    <p>Mathematical calculations for optimal position size, drawdown prevention, and risk exposure.</p>
                 </div>
+                <div class="article-meta">August 2026 • 8 min read</div>
             </a>
-            <!-- ... (Other articles) -->
+
+            <a href="funding-rates.html" class="article-card" data-category="DERIVATIVES">
+                <div>
+                    <span class="article-tag">DERIVATIVES RISK</span>
+                    <h2>Funding Rates & Implied Volatility Framework</h2>
+                    <p>Understanding perpetual swap mechanics, open interest spikes, and crowded squeeze traps.</p>
+                </div>
+                <div class="article-meta">August 2026 • 7 min read</div>
+            </a>
+
+            <a href="liquidity-pools.html" class="article-card" data-category="LIQUIDITY">
+                <div>
+                    <span class="article-tag">LIQUIDITY</span>
+                    <h2>Identifying Order Flow & Liquidity Pools</h2>
+                    <p>How institutional operators sweep stop-loss clusters before major expansion moves.</p>
+                </div>
+                <div class="article-meta">August 2026 • 6 min read</div>
+            </a>
+
+            <a href="macro-liquidity.html" class="article-card" data-category="LIQUIDITY">
+                <div>
+                    <span class="article-tag">MACRO LIQUIDITY</span>
+                    <h2>Global Liquidity Shifts & Market Cycles</h2>
+                    <p>Analyzing central bank liquidity, stablecoin supply growth, and macro tailwinds in crypto.</p>
+                </div>
+                <div class="article-meta">August 2026 • 7 min read</div>
+            </a>
+
+            <a href="onchain-analysis.html" class="article-card" data-category="LIQUIDITY">
+                <div>
+                    <span class="article-tag">ON-CHAIN</span>
+                    <h2>Institutional On-Chain & Exchange Flow Dynamics</h2>
+                    <p>Tracking miner reserves, exchange netflows, and whale distribution patterns.</p>
+                </div>
+                <div class="article-meta">August 2026 • 6 min read</div>
+            </a>
+
+            <a href="portfolio-rebalancing.html" class="article-card" data-category="RISK">
+                <div>
+                    <span class="article-tag">PORTFOLIO MANAGEMENT</span>
+                    <h2>Dynamic Portfolio Rebalancing & Hedging</h2>
+                    <p>Systematic risk mitigation strategies using spot-futures arbitrage and delta-neutral hedging.</p>
+                </div>
+                <div class="article-meta">August 2026 • 8 min read</div>
+            </a>
         </div>
     </main>
+
+    <footer>
+        <div class="footer-links"><a href="about.html">About Us</a></div>
+        <p>&copy; 2026 ColdBloodedTraders. All rights reserved.</p>
+    </footer>
 
     <script>
         function toggleDropdown() { document.getElementById('toolsDropdown').classList.toggle('active'); }
         window.onclick = function(e) { if (!e.target.closest('.dropdown')) document.getElementById('toolsDropdown').classList.remove('active'); }
-        
-        // Search & Filter Logic ...
+
+        const searchInput = document.getElementById('searchInput');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const articleCards = document.querySelectorAll('.article-card');
+        let activeCategory = 'all';
+
+        function filterArticles() {
+            const query = searchInput.value.toLowerCase();
+            articleCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                const title = card.querySelector('h2').textContent.toLowerCase();
+                const desc = card.querySelector('p').textContent.toLowerCase();
+
+                const matchesCategory = activeCategory === 'all' || category === activeCategory;
+                const matchesSearch = title.includes(query) || desc.includes(query);
+
+                if (matchesCategory && matchesSearch) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        searchInput.addEventListener('input', filterArticles);
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                activeCategory = btn.getAttribute('data-category');
+                filterArticles();
+            });
+        });
     </script>
 </body>
 </html>
