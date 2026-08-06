@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://coldbloodedtraders.com/calculator.html">
+    <meta property="og:title" content="Position Size & Risk Calculator | ColdBloodedTraders">
+    <meta property="og:description" content="Calculate your exact position size, risk amount, and contract size for crypto spot and perpetual trading.">
+    <meta property="og:image" content="https://coldbloodedtraders.com/assets/cbt-logo.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://coldbloodedtraders.com/assets/cbt-logo.png">
+
+    <link rel="icon" type="image/png" href="assets/cbt-logo.png">
+    <link rel="apple-touch-icon" href="assets/cbt-logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Size Calculator | ColdBloodedTraders</title>
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta name="description" content="Calculate precise position sizing, leverage risk, and potential R-returns for crypto derivatives and spot trading.">
+
+    <style>
+        :root {
+            --bg-color: #0b0e14;
+            --card-bg: rgba(22, 27, 34, 0.75);
+            --accent-color: #00f2fe;
+            --accent-hover: #00c6ff;
+            --text-main: #f0f6fc;
+            --text-muted: #8b949e;
+            --border-color: rgba(240, 246, 252, 0.1);
+            --danger-color: #ff4d4d;
+            --success-color: #00e676;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(12px);
+            background: rgba(11, 14, 20, 0.85);
+            padding: 1.2rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .logo { font-weight: 800; color: var(--text-main); text-decoration: none; font-size: 1.2rem; }
+        .logo span { color: var(--accent-color); }
+        .back-btn { color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+
+        .container {
+            max-width: 900px;
+            margin: 3rem auto 5rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        /* Calculator Layout */
+        .calc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .calc-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-wrapper input, .input-wrapper select {
+            width: 100%;
+            background: rgba(11, 14, 20, 0.6);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.8rem 1rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .input-wrapper input:focus {
+            border-color: var(--accent-color);
+        }
+
+        .input-suffix {
+            position: absolute;
+            right: 1rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.9rem;
+            pointer-events: none;
+        }
+
+        /* Results Display Panel */
+        .results-panel {
+            background: rgba(11, 14, 20, 0.4);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .result-item {
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .result-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .result-value {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            margin-top: 0.2rem;
+        }
+
+        .result-value.danger { color: var(--danger-color); }
+        .result-value.highlight { color: #ffffff; }
+
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">COLDBLOODED<span>TRADERS</span></a>
+        <a href="index.html" class="back-btn">&larr; Back to Home</a>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h1>Position Size & Risk Calculator</h1>
+            <p>Manage statistical exposure with precise position sizing across spot and perpetual markets.</p>
+        </div>
+
+        <div class="calc-grid">
+            <!-- Inputs Form -->
+            <div class="inputs-panel">
+                <div class="form-group">
+                    <label>Account Balance</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="accountSize" value="10000" step="any">
+                        <span class="input-suffix">USD</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Risk Per Trade</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="riskPercent" value="1" step="0.1" max="100">
+                        <span class="input-suffix">%</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Entry Price</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="entryPrice" value="65000" step="any">
+                        <span class="input-suffix">USD</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Stop Loss Price</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="stopPrice" value="63500" step="any">
+                        <span class="input-suffix">USD</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Real-time Results Output -->
+            <div class="results-panel">
+                <div class="result-item">
+                    <div class="result-label">Max Risk Amount</div>
+                    <div class="result-value danger" id="riskAmount">$100.00</div>
+                </div>
+
+                <div class="result-item">
+                    <div class="result-label">Position Size (Notional Value)</div>
+                    <div class="result-value" id="positionSize">$4,333.33</div>
+                </div>
+
+                <div class="result-item">
+                    <div class="result-label">Units / Asset Amount</div>
+                    <div class="result-value highlight" id="assetAmount">0.06666 BTC</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 ColdBloodedTraders. All rights reserved.</p>
+    </footer>
+
+    <!-- Dynamic Math Calculation Script -->
+    <script>
+        const accountSizeInput = document.getElementById('accountSize');
+        const riskPercentInput = document.getElementById('riskPercent');
+        const entryPriceInput = document.getElementById('entryPrice');
+        const stopPriceInput = document.getElementById('stopPrice');
+
+        const riskAmountEl = document.getElementById('riskAmount');
+        const positionSizeEl = document.getElementById('positionSize');
+        const assetAmountEl = document.getElementById('assetAmount');
+
+        function calculateRisk() {
+            const accountSize = parseFloat(accountSizeInput.value) || 0;
+            const riskPercent = parseFloat(riskPercentInput.value) || 0;
+            const entryPrice = parseFloat(entryPriceInput.value) || 0;
+            const stopPrice = parseFloat(stopPriceInput.value) || 0;
+
+            if (accountSize <= 0 || entryPrice <= 0 || stopPrice <= 0 || entryPrice === stopPrice) {
+                riskAmountEl.textContent = "$0.00";
+                positionSizeEl.textContent = "$0.00";
+                assetAmountEl.textContent = "0.00 Units";
+                return;
+            }
+
+            // Calculations
+            const maxRiskUSD = (accountSize * (riskPercent / 100));
+            const priceDistance = Math.abs(entryPrice - stopPrice);
+            const priceDistancePercent = priceDistance / entryPrice;
+            
+            const positionSizeUSD = maxRiskUSD / priceDistancePercent;
+            const units = positionSizeUSD / entryPrice;
+
+            // Render Output
+            riskAmountEl.textContent = `$${maxRiskUSD.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+            positionSizeEl.textContent = `$${positionSizeUSD.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+            assetAmountEl.textContent = `${units.toFixed(5)} Units`;
+        }
+
+        // Attach event listeners for real-time update
+        [accountSizeInput, riskPercentInput, entryPriceInput, stopPriceInput].forEach(input => {
+            input.addEventListener('input', calculateRisk);
+        });
+
+        // Run once on initial load
+        calculateRisk();
+    </script>
+</body>
+</html>
