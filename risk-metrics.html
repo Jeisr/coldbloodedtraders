@@ -37,6 +37,7 @@
         .logo-full span { color: var(--accent-color); }
         .logo-short { display: none; color: var(--text-main); }
         .logo-short span { color: var(--accent-color); }
+        .nav-right { display: flex; align-items: center; gap: 1rem; }
 
         /* Tools Dropdown Menu */
         .dropdown { position: relative; display: inline-block; }
@@ -74,7 +75,8 @@
         .result-item .result-label { color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; font-weight: 700; margin-bottom: 0.2rem; }
         .result-item .result-value { font-size: 1.8rem; font-weight: 800; color: var(--accent-color); }
 
-        footer { border-top: 1px solid var(--border-color); padding: 2.5rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); margin-top: auto; }
+        footer { border-top: 1px solid var(--border-color); padding: 2.5rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); margin-top: 4rem; }
+        .disclaimer { font-size: 0.75rem; margin-top: 0.5rem; opacity: 0.7; }
 
         @media (max-width: 768px) { 
             .calc-card { grid-template-columns: 1fr; }
@@ -90,13 +92,16 @@
             <span class="logo-full">COLDBLOODED<span>TRADERS</span></span>
             <span class="logo-short">CB<span>T</span></span>
         </a>
-        <div class="dropdown" id="toolsDropdown">
-            <button class="dropdown-btn" onclick="toggleDropdown()">🧮 Tools &#9662;</button>
-            <div class="dropdown-content">
-                <a href="calculator.html">Position Size Calculator</a>
-                <a href="liquidation-calculator.html">Liquidation Price Calculator</a>
-                <a href="risk-metrics.html">Risk Metrics Calculator</a>
+        <div class="nav-right">
+            <div class="dropdown" id="toolsDropdown">
+                <button class="dropdown-btn" onclick="toggleDropdown()">🧮 Tools &#9662;</button>
+                <div class="dropdown-content">
+                    <a href="calculator.html">Position Size Calculator</a>
+                    <a href="liquidation-calculator.html">Liquidation Price Calculator</a>
+                    <a href="risk-metrics.html">Risk Metrics Calculator</a>
+                </div>
             </div>
+            <a href="index.html" style="color:var(--accent-color); font-size:0.9rem; text-decoration:none;">&larr; Home</a>
         </div>
     </header>
 
@@ -145,6 +150,9 @@
 
     <footer>
         <p>&copy; 2026 ColdBloodedTraders. All rights reserved.</p>
+        <p class="disclaimer">
+            Disclaimer: Content published on ColdBloodedTraders is for educational and informational purposes only. Nothing here constitutes financial or investment advice. Always manage your own risk (DYOR).
+        </p>
     </footer>
 
     <script>
