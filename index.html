@@ -25,18 +25,17 @@
             padding: 0;
         }
 
+        /* Sticky Footer Yapısı İçin Body Kuralları */
         body {
-            body {
-    background-color: var(--bg-color);
-    color: var(--text-main);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-    line-height: 1.8;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         /* Glassmorphism Header */
@@ -80,7 +79,7 @@
         /* Hero Section */
         .hero {
             max-width: 1100px;
-            margin: 4rem auto 3rem auto;
+            margin: 4rem auto 1rem auto;
             padding: 0 1.5rem;
             text-align: center;
         }
@@ -102,11 +101,13 @@
             margin: 0 auto;
         }
 
-        /* Main Content & Grid Layout */
+        /* Main Content & Sticky Flex Alanı */
         .container {
             max-width: 1100px;
+            width: 100%;
             margin: 0 auto;
             padding: 2rem 1.5rem;
+            flex: 1; /* İçerik kısa kalsa bile footer'ı ekranın en altına iter */
         }
 
         .section-title {
@@ -128,6 +129,7 @@
             border-radius: 12px;
             padding: 1.5rem;
             transition: transform 0.3s ease, border-color 0.3s ease;
+            height: 100%;
         }
 
         .card:hover {
@@ -159,14 +161,16 @@
             color: var(--text-muted);
         }
 
-        /* Footer */
+        /* Footer - Tam Genişlik ve Alt Bant */
         footer {
+            width: 100%;
             border-top: 1px solid var(--border-color);
-            margin-top: 4rem;
-            padding: 2rem 1.5rem;
+            padding: 2.5rem 1.5rem;
             text-align: center;
             font-size: 0.85rem;
             color: var(--text-muted);
+            background: #080a0f;
+            margin-top: auto;
         }
 
         .disclaimer {
@@ -176,40 +180,41 @@
             opacity: 0.7;
         }
 
+        /* Mobil Uyumlu Navigasyon */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            nav { display: none; }
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.8rem;
+                padding: 1rem;
+            }
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem !important;
+                font-size: 0.85rem;
+            }
+            nav a {
+                margin-left: 0;
+            }
+            .hero h1 { 
+                font-size: 2.2rem; 
+            }
         }
-
-        @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.8rem;
-        padding: 1rem;
-    }
-    nav {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem !important;
-        font-size: 0.85rem;
-    }
-}
-        
     </style>
 </head>
 <body>
 
     <!-- Header Navigation -->
     <header>
-    <a href="index.html" class="logo">COLDBLOODED<span>TRADERS</span></a>
-    <nav style="display: flex; gap: 1.5rem;">
-        <a href="index.html" style="color: var(--text-main); text-decoration: none; font-size: 0.95rem; font-weight: 500;">Home</a>
-        <a href="position-sizing.html" style="color: var(--text-main); text-decoration: none; font-size: 0.95rem; font-weight: 500;">Strategies</a>
-        <a href="liquidity-pools.html" style="color: var(--text-main); text-decoration: none; font-size: 0.95rem; font-weight: 500;">Liquidity</a>
-        <a href="about.html" style="color: var(--accent-color); text-decoration: none; font-size: 0.95rem; font-weight: 600;">About</a>
-    </nav>
-</header>
+        <a href="index.html" class="logo">COLDBLOODED<span>TRADERS</span></a>
+        <nav>
+            <a href="index.html" style="color: var(--text-main); font-weight: 500;">Home</a>
+            <a href="position-sizing.html" style="color: var(--text-main); font-weight: 500;">Strategies</a>
+            <a href="liquidity-pools.html" style="color: var(--text-main); font-weight: 500;">Liquidity</a>
+            <a href="about.html" style="color: var(--accent-color); font-weight: 600;">About</a>
+        </nav>
+    </header>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -217,7 +222,7 @@
         <p>Unemotional protocols, mathematical risk parameters, and liquidity analytics for modern spot & perpetual markets.</p>
     </section>
 
-    <!-- Blog / Content Grid Section -->
+    <!-- Main Content Grid -->
     <main class="container">
         <h2 class="section-title">Latest Analysis & Frameworks</h2>
         
@@ -293,7 +298,9 @@
                     <p>Analyzing MVRV Z-Score boundaries, exchange net inflows/outflows, and aggregate cost basis dynamics.</p>
                 </article>
             </a>
-            
+        </div>
+    </main>
+
     <!-- Footer -->
     <footer>
         <p>&copy; 2026 ColdBloodedTraders. All rights reserved.</p>
