@@ -13,6 +13,31 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta name="description" content="Analyzing on-chain capital movements, exchange net flows, MVRV Z-Score metrics, and realized price boundaries in crypto markets.">
+    
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What is the MVRV ratio in crypto on-chain analysis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Market Value to Realized Value (MVRV) ratio measures the relationship between current market capitalization and realized capitalization, helping traders identify macro undervaluation or extreme euphoria zones."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do exchange net flows impact cryptocurrency market trends?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Exchange net inflows indicate potential selling pressure or margin collateral deployment as coins move to exchanges, whereas sustained outflows reflect long-term accumulation and supply shock potential."
+        }
+      }]
+    }
+    </script>
+
     <style>
         :root {
             --bg-color: #0b0e14;
@@ -92,6 +117,35 @@
             background-color: var(--table-header-bg);
             color: var(--accent-color);
             font-weight: 700;
+        }
+
+        /* FAQ Section Styling */
+        .faq-section {
+            margin-top: 3.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .faq-title {
+            color: var(--accent-color);
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item h4 {
+            margin: 0 0 0.4rem 0;
+            color: var(--text-main);
+            font-size: 1.05rem;
+        }
+
+        .faq-item p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.95rem;
         }
 
         /* Related Articles Box */
@@ -216,6 +270,21 @@
             <li>Do not open macro short positions when market price trades below the Aggregate Realized Price.</li>
             <li>Confirm structural price breakouts with negative Exchange Reserve trends to avoid fakeouts.</li>
         </ol>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h3 class="faq-title">Frequently Asked Questions</h3>
+            
+            <div class="faq-item">
+                <h4>What is the MVRV ratio in crypto on-chain analysis?</h4>
+                <p>The Market Value to Realized Value (MVRV) ratio measures the relationship between current market capitalization and realized capitalization, helping traders identify macro undervaluation or extreme euphoria zones.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>How do exchange net flows impact cryptocurrency market trends?</h4>
+                <p>Exchange net inflows indicate potential selling pressure or margin collateral deployment as coins move to exchanges, whereas sustained outflows reflect long-term accumulation and supply shock potential.</p>
+            </div>
+        </section>
 
         <!-- Related Frameworks / Internal Links -->
         <div class="related-articles">
