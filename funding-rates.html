@@ -88,6 +88,52 @@
             font-weight: 700;
         }
 
+        /* Related Articles Box */
+        .related-articles {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .related-title {
+            font-size: 1.2rem;
+            margin-bottom: 1.2rem;
+            color: var(--text-main);
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .related-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            text-decoration: none;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+            display: block;
+        }
+
+        .related-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-color);
+        }
+
+        .related-card h4 {
+            color: var(--text-main);
+            font-size: 0.95rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .related-card span {
+            color: var(--accent-color);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
         footer {
             border-top: 1px solid var(--border-color);
             padding: 2rem 1.5rem;
@@ -112,6 +158,8 @@
         <p>In perpetual swap markets, price discovery relies on the continuous balance between long and short contract holders. The <strong>Funding Rate</strong> mechanism ensures that perpetual futures prices peg closely to the underlying spot asset price.</p>
 
         <p>Ignoring funding dynamics and Open Interest (OI) metrics often leads retail participants directly into institutional squeeze traps during over-extended market conditions.</p>
+
+        <p><em>To ensure extreme funding conditions don't compromise your account capital during unexpected liquidations, calculate exact risk using our <a href="position-sizing.html" style="color: var(--accent-color); text-decoration: underline;">Position Sizing Framework</a>.</em></p>
 
         <blockquote>
             "Extremes in funding rates do not indicate trend strength; they measure retail consensus crowding before an imbalance purge."
@@ -156,13 +204,30 @@
             <li><strong>Price Flat + OI Spiking:</strong> Institutional position accumulation or distribution before a violent expansion move.</li>
         </ul>
 
+        <p><em>To cross-reference OI spikes with structural stop-loss clusters, see our <a href="liquidity-pools.html" style="color: var(--accent-color); text-decoration: underline;">Order Flow & Liquidity Pools Guide</a>.</em></p>
+
         <h2>3. Execution Checklist for Derivatives Traders</h2>
-        <p>Before executing leverage positions near key key market structural highs or lows, apply the following risk parameter rules:</p>
+        <p>Before executing leverage positions near key market structural highs or lows, apply the following risk parameter rules:</p>
         <ol>
             <li>Avoid opening new long positions when annualised funding rates exceed 50%.</li>
             <li>Look for Open Interest compression before entering volatility breakout setups.</li>
             <li>Use spot-to-perpetual premium divergence to confirm true market demand.</li>
         </ol>
+
+        <!-- Related Frameworks / Internal Links -->
+        <div class="related-articles">
+            <h3 class="related-title">Related Frameworks</h3>
+            <div class="related-grid">
+                <a href="position-sizing.html" class="related-card">
+                    <span>RISK MANAGEMENT</span>
+                    <h4>Position Sizing Framework in Volatile Markets &rarr;</h4>
+                </a>
+                <a href="liquidity-pools.html" class="related-card">
+                    <span>LIQUIDITY</span>
+                    <h4>Identifying Order Flow & Liquidity Pools &rarr;</h4>
+                </a>
+            </div>
+        </div>
 
     </main>
 
