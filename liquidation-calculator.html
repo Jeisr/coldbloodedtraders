@@ -61,6 +61,20 @@
         .res-item .val.danger { color: var(--danger-color); }
         .res-item .subtext { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem; }
 
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 4rem;
+        }
+        .disclaimer { 
+            font-size: 0.75rem; 
+            margin-top: 0.5rem; 
+            opacity: 0.7; 
+        }
+
         @media (max-width: 600px) {
             .logo-full { display: none; }
             .logo-short { display: inline-block; }
@@ -114,6 +128,13 @@
             </div>
         </div>
     </main>
+
+    <footer>
+        <p>&copy; 2026 ColdBloodedTraders. All rights reserved.</p>
+        <p class="disclaimer">
+            Disclaimer: Content published on ColdBloodedTraders is for educational and informational purposes only. Nothing here constitutes financial or investment advice. Always manage your own risk (DYOR).
+        </p>
+    </footer>
 
     <script>
         let dir = 'LONG';
