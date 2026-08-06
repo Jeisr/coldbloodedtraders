@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop-Loss Mechanics: Protecting Capital in Crypto Markets | ColdBloodedTraders</title>
+    <link rel="icon" type="image/png" href="assets/cbt-logo.png">
+    
+    <style>
+        :root {
+            --bg-color: #0b0e14;
+            --card-bg: rgba(22, 27, 34, 0.75);
+            --accent-color: #00f2fe;
+            --text-main: #f0f6fc;
+            --text-muted: #8b949e;
+            --border-color: rgba(240, 246, 252, 0.1);
+        }
+
+        * { box-sizing: border-box; }
+
+        body { 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; 
+            margin: 0; 
+            line-height: 1.7; 
+        }
+
+        header {
+            position: sticky; top: 0; backdrop-filter: blur(12px); background: rgba(11, 14, 20, 0.85);
+            padding: 1.2rem 2rem; border-bottom: 1px solid var(--border-color);
+            display: flex; justify-content: space-between; align-items: center; z-index: 1000;
+        }
+
+        .logo { font-weight: 800; color: var(--text-main); text-decoration: none; font-size: 1.2rem; }
+        .logo span { color: var(--accent-color); }
+        
+        .container { max-width: 800px; margin: 3rem auto 5rem auto; padding: 0 1.5rem; }
+        
+        h1 { font-size: 2.3rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--text-main); }
+        .meta { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 2.5rem; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; }
+        
+        p { color: #c9d1d9; font-size: 1.05rem; margin-bottom: 1.5rem; }
+        h2 { color: var(--accent-color); font-size: 1.4rem; margin-top: 2.5rem; margin-bottom: 1rem; }
+        
+        .note { 
+            background: rgba(0, 242, 254, 0.05); 
+            border-left: 3px solid var(--accent-color); 
+            border: 1px solid var(--border-color);
+            padding: 1.5rem; 
+            margin: 2rem 0; 
+            border-radius: 8px; 
+        }
+        .note strong { color: var(--accent-color); }
+
+        .related-section { margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 1rem; }
+        .related-card { background: var(--card-bg); border: 1px solid var(--border-color); padding: 1.2rem; border-radius: 8px; text-decoration: none; display: block; transition: border-color 0.2s; }
+        .related-card:hover { border-color: var(--accent-color); }
+        .related-card h4 { color: var(--text-main); margin: 0 0 0.5rem 0; font-size: 1rem; }
+        .related-card span { color: var(--accent-color); font-size: 0.8rem; font-weight: 700; }
+
+        .faq-section { margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+        .faq-item { margin-bottom: 1.5rem; }
+        .faq-item h3 { color: var(--text-main); font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .faq-item p { color: var(--text-muted); font-size: 0.95rem; margin: 0; }
+
+        footer { border-top: 1px solid var(--border-color); padding: 2.5rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); margin-top: 4rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">COLDBLOODED<span>TRADERS</span></a>
+        <a href="index.html" style="color:var(--text-muted); text-decoration:none; font-weight:600; font-size:0.9rem;">&larr; Back to Home</a>
+    </header>
+
+    <main class="container">
+        <h1>Stop-Loss Mechanics: Protecting Capital in Crypto Markets</h1>
+        <div class="meta">August 2026 • 7 min read • Foundational</div>
+        
+        <p>In high-volatility environments like cryptocurrency derivatives, survival takes precedence over profit generation. The stop-loss order is the ultimate defense mechanism against catastrophic drawdowns. Yet, many retail market participants treat stop-losses as optional guidelines rather than absolute mathematical boundaries.</p>
+        
+        <h2>The Psychology of Refusing to Cut Losses</h2>
+        <p>Human psychology is fundamentally misaligned with market mechanics. When a trade goes into negative territory, cognitive biases—such as loss aversion and the endowment effect—tempt traders to hold out in hopes of a market recovery. In systematic trading, hope is not an operational strategy. A stop-loss removes emotional decision-making from the equation.</p>
+        
+        <h2>Structuring Stop-Losses Based on Market Structure, Not Emotions</h2>
+        <p>A common rookie error is placing stop-losses based on an arbitrary dollar amount you are willing to lose, rather than structural invalidation points. Your stop placement should always depend on market geometry—such as local swing highs/lows, macro support levels, or structural market shifts—where your original trading thesis is objectively proven wrong.</p>
+
+        <div class="note">
+            <strong>Key Rule:</strong> Never adjust a stop-loss further away from your entry price once the trade is live. Moving your stop down in a falling market is the fastest path to account liquidation.
+        </div>
+
+        <h2>Connecting Stop Distance to Position Sizing</h2>
+        <p>Your stop-loss distance dictates your position size. If you risk a fixed percentage of your total account equity (e.g., 1%), a wider stop-loss requires a smaller position size, while a tight stop-loss allows a larger position size. Master this balance to ensure consistent risk profiles across different setups.</p>
+
+        <!-- Related Frameworks / Internal Linking -->
+        <div class="related-section">
+            <h3 style="color: var(--text-main); font-size: 1.2rem; margin-bottom: 1rem;">Continue Reading</h3>
+            <div class="related-grid">
+                <a href="leverage-101.html" class="related-card">
+                    <span>FOUNDATIONAL</span>
+                    <h4>Leverage 101: How Crypto Leverage Works</h4>
+                </a>
+                <a href="position-sizing.html" class="related-card">
+                    <span>RISK MANAGEMENT</span>
+                    <h4>Position Sizing Framework</h4>
+                </a>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h3 style="color: var(--text-main); font-size: 1.2rem; margin-bottom: 1.5rem;">Frequently Asked Questions</h3>
+            
+            <div class="faq-item">
+                <h3>Should I use market stops or limit stops?</h3>
+                <p>In high-volatility crypto cascades, market stop orders guarantee execution whereas limit stops risk leaving you unhedged if the price gaps past your limit level during a flash crash.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How tight should a crypto stop-loss be?</h3>
+                <p>It must be wide enough to survive normal market noise and exchange volatility filters, but tight enough that your trade thesis remains valid if hit.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 ColdBloodedTraders. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
