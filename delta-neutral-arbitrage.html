@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta-Neutral Funding Rate Arbitrage | ColdBloodedTraders</title>
+    <style>
+        :root { --bg-color: #0b0e14; --text-main: #f0f6fc; --accent-color: #00f2fe; --text-muted: #8b949e; --border-color: rgba(240, 246, 252, 0.1); }
+        body { background-color: var(--bg-color); color: var(--text-main); font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 2rem; }
+        h1, h2 { color: var(--accent-color); }
+        .tag { color: var(--accent-color); font-size: 0.8rem; text-transform: uppercase; font-weight: 800; }
+        pre { background: #161b22; padding: 1rem; border-radius: 6px; overflow-x: auto; border: 1px solid var(--border-color); }
+    </style>
+</head>
+<body>
+    <a href="index.html">&larr; Back to Home</a>
+    <p class="tag">Advanced • Quantitative Strategy</p>
+    <h1>Delta-Neutral Funding Rate Arbitrage</h1>
+    
+    <p>In high-efficiency crypto derivatives markets, directional trading is only one dimension of profitability. Delta-neutral arbitrage allows sophisticated traders to extract consistent yield from the "basis" between spot and perpetual markets, effectively neutralizing market direction.</p>
+
+    <h2>The Core Mechanism</h2>
+    <p>A delta-neutral position is established by holding equal and opposite positions in two correlated assets. For crypto funding arbitrage, this is:</p>
+    <ul>
+        <li><strong>Long Position:</strong> Spot (or inverse-linear hedge).</li>
+        <li><strong>Short Position:</strong> Perpetual Swap (with the same notional size).</li>
+    </ul>
+
+    <h2>Mathematics of the Trade</h2>
+    <p>The profitability is derived from the funding rate—a periodic payment exchanged between long and short positions to keep the perpetual price anchored to the spot index.</p>
+    <pre>
+Profit = (Spot_Price * Funding_Rate) - Borrowing_Costs
+    </pre>
+
+    <h2>Risk Vectors to Model</h2>
+    <p>While often called "risk-free," this strategy involves specific vector exposures that must be quantified:</p>
+    <ol>
+        <li><strong>Basis Risk:</strong> The divergence between spot and perp prices during extreme volatility.</li>
+        <li><strong>Liquidation Risk:</strong> The short position in perps is subject to liquidation if the asset trends parabolic to the upside.</li>
+        <li><strong>Funding Flip Risk:</strong> If funding rates flip negative, the arbitrageur pays instead of receiving.</li>
+    </ol>
+
+    <h2>Execution Strategy</h2>
+    <p>To scale this professionally, one must automate rebalancing. As the spot position increases in value and the perpetual short gains a negative delta (relative to the collateral), the short leg must be periodically adjusted to maintain neutrality.</p>
+    
+    <p><em>Note: This strategy requires meticulous capital allocation and automated margin management to survive high-volatility regimes.</em></p>
+</body>
+</html>
