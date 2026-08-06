@@ -12,6 +12,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liquidation Price Calculator | ColdBloodedTraders</title>
 
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "How is the liquidation price calculated for crypto perpetual swaps?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For a long position, the estimated liquidation price is calculated as Entry Price multiplied by (1 - Initial Margin Rate + Maintenance Margin Rate). For a short position, it adds the initial margin rate and subtracts the maintenance margin rate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is maintenance margin in perpetual trading?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Maintenance margin is the minimum amount of collateral required to keep a leveraged trading position open. If your margin falls below this threshold due to adverse price movement, your position is liquidated."
+        }
+      }]
+    }
+    </script>
+
     <style>
         :root {
             --bg-color: #0b0e14;
@@ -192,6 +216,35 @@
         .result-value.danger { color: var(--danger-color); }
         .result-subtext { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem; }
 
+        /* FAQ Section Styling */
+        .faq-section {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .faq-title {
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item h4 {
+            margin: 0 0 0.4rem 0;
+            color: var(--text-main);
+            font-size: 1.05rem;
+        }
+
+        .faq-item p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
         footer {
             border-top: 1px solid var(--border-color);
             padding: 2.5rem 1.5rem;
@@ -260,6 +313,21 @@
                 </div>
             </div>
         </div>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h3 class="faq-title">Frequently Asked Questions</h3>
+            
+            <div class="faq-item">
+                <h4>How is the liquidation price calculated for crypto perpetual swaps?</h4>
+                <p>For a long position, the estimated liquidation price is calculated as Entry Price multiplied by (1 - Initial Margin Rate + Maintenance Margin Rate). For a short position, it adds the initial margin rate and subtracts the maintenance margin rate.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>What is maintenance margin in perpetual trading?</h4>
+                <p>Maintenance margin is the minimum amount of collateral required to keep a leveraged trading position open. If your margin falls below this threshold due to adverse price movement, your position is liquidated.</p>
+            </div>
+        </section>
     </main>
 
     <footer>
