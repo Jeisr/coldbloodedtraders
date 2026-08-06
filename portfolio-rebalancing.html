@@ -88,6 +88,52 @@
             font-weight: 700;
         }
 
+        /* Related Articles Box */
+        .related-articles {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .related-title {
+            font-size: 1.2rem;
+            margin-bottom: 1.2rem;
+            color: var(--text-main);
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .related-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            text-decoration: none;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+            display: block;
+        }
+
+        .related-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-color);
+        }
+
+        .related-card h4 {
+            color: var(--text-main);
+            font-size: 0.95rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .related-card span {
+            color: var(--accent-color);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
         footer {
             border-top: 1px solid var(--border-color);
             padding: 2rem 1.5rem;
@@ -111,7 +157,7 @@
 
         <p>While leverage derivatives generate active cash flow, long-term wealth accumulation in cryptocurrency markets relies on systematic spot execution. Without structured rebalancing protocols, spot portfolios frequently suffer from over-exposure during market tops and lack of liquidity during cyclical bottoms.</p>
 
-        <p>Systematic rebalancing replaces emotional greed and fear with predetermined asset allocation triggers.</p>
+        <p>Systematic rebalancing replaces emotional greed and fear with predetermined asset allocation triggers. Learn how to calculate individual trade risk before sizing your portfolio allocations using our <a href="position-sizing.html" style="color: var(--accent-color); text-decoration: underline;">Position Sizing Framework</a>.</p>
 
         <blockquote>
             "Profit taking without a reallocation strategy is just holding cash until emotion forces you to buy back higher."
@@ -154,6 +200,23 @@
 
         <h2>3. Capital Deployment During Liquidity Contraction</h2>
         <p>Conversely, during severe market drawdowns, your stablecoin allocation percentage will naturally rise as risk assets deflate. When cash reserves breach the upper rebalance threshold (e.g., exceeding 30% total portfolio weight), the system triggers systematic accumulation of core assets at discounted valuations.</p>
+
+        <p><em>To identify optimal accumulation levels during market capitulations, cross-reference key support zones with our <a href="liquidity-pools.html" style="color: var(--accent-color); text-decoration: underline;">Order Flow & Liquidity Pools Guide</a>.</em></p>
+
+        <!-- Related Frameworks / Internal Links -->
+        <div class="related-articles">
+            <h3 class="related-title">Related Frameworks</h3>
+            <div class="related-grid">
+                <a href="position-sizing.html" class="related-card">
+                    <span>RISK MANAGEMENT</span>
+                    <h4>Position Sizing Framework in Volatile Markets &rarr;</h4>
+                </a>
+                <a href="funding-rates.html" class="related-card">
+                    <span>DERIVATIVES RISK</span>
+                    <h4>Funding Rates & Implied Volatility Framework &rarr;</h4>
+                </a>
+            </div>
+        </div>
 
     </main>
 
