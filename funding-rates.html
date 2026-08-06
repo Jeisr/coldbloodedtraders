@@ -13,6 +13,31 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta name="description" content="Understanding perpetual funding rate mechanics, open interest anomalies, and implied volatility in crypto derivatives trading.">
+    
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What do extreme funding rates indicate in crypto derivatives?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Extremes in funding rates do not indicate trend strength; they measure retail consensus crowding before an imbalance purge and potential squeeze."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does Open Interest (OI) combined with price movement affect trading?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Price up with OI up signals aggressive long building, price up with OI down indicates a short-covering rally, and price flat with OI spiking points to institutional position accumulation or distribution before a breakout."
+        }
+      }]
+    }
+    </script>
+
     <style>
         :root {
             --bg-color: #0b0e14;
@@ -92,6 +117,35 @@
             background-color: var(--table-header-bg);
             color: var(--accent-color);
             font-weight: 700;
+        }
+
+        /* FAQ Section Styling */
+        .faq-section {
+            margin-top: 3.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .faq-title {
+            color: var(--accent-color);
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item h4 {
+            margin: 0 0 0.4rem 0;
+            color: var(--text-main);
+            font-size: 1.05rem;
+        }
+
+        .faq-item p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.95rem;
         }
 
         /* Related Articles Box */
@@ -219,6 +273,21 @@
             <li>Look for Open Interest compression before entering volatility breakout setups.</li>
             <li>Use spot-to-perpetual premium divergence to confirm true market demand.</li>
         </ol>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h3 class="faq-title">Frequently Asked Questions</h3>
+            
+            <div class="faq-item">
+                <h4>What do extreme funding rates indicate in crypto derivatives?</h4>
+                <p>Extremes in funding rates do not indicate trend strength; they measure retail consensus crowding before an imbalance purge and potential squeeze.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>How does Open Interest (OI) combined with price movement affect trading?</h4>
+                <p>Price up with OI up signals aggressive long building, price up with OI down indicates a short-covering rally, and price flat with OI spiking points to institutional position accumulation or distribution before a breakout.</p>
+            </div>
+        </section>
 
         <!-- Related Frameworks / Internal Links -->
         <div class="related-articles">
