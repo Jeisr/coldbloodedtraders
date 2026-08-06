@@ -63,8 +63,68 @@
         .logo-short { display: none; color: var(--text-main); }
         .logo-short span { color: var(--accent-color); }
 
-        .nav-tools-btn { color: var(--accent-color); text-decoration: none; font-weight: 700; border: 1px solid var(--accent-color); padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; transition: background 0.2s; }
-        .nav-tools-btn:hover { background: rgba(0, 242, 254, 0.1); }
+        /* Tools Dropdown Menu */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-btn {
+            color: var(--accent-color);
+            background: transparent;
+            font-weight: 700;
+            border: 1px solid var(--accent-color);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .dropdown-btn:hover {
+            background: rgba(0, 242, 254, 0.1);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 120%;
+            background-color: #161b22;
+            min-width: 220px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            z-index: 1001;
+            overflow: hidden;
+        }
+
+        .dropdown-content a {
+            color: var(--text-main);
+            padding: 0.75rem 1rem;
+            text-decoration: none;
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(240, 246, 252, 0.05);
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .dropdown-content a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-content a:hover {
+            background-color: rgba(0, 242, 254, 0.1);
+            color: var(--accent-color);
+        }
+
+        .dropdown.active .dropdown-content {
+            display: block;
+        }
 
         .container {
             max-width: 1000px;
@@ -91,7 +151,7 @@
             margin: 0 auto;
         }
 
-        /* Tools Banner */
+        /* Dynamic Tools Banner */
         .tools-banner {
             background: linear-gradient(135deg, rgba(0, 242, 254, 0.1) 0%, rgba(11, 14, 20, 0.8) 100%);
             border: 1px solid var(--accent-color);
@@ -273,7 +333,17 @@
             <span class="logo-full">COLDBLOODED<span>TRADERS</span></span>
             <span class="logo-short">CB<span>T</span></span>
         </a>
-        <a href="calculator.html" class="nav-tools-btn">🧮 Calculator Tool</a>
+
+        <!-- Tools Dropdown -->
+        <div class="dropdown" id="toolsDropdown">
+            <button class="dropdown-btn" onclick="toggleDropdown()">
+                🧮 Trading Tools &#9662;
+            </button>
+            <div class="dropdown-content">
+                <a href="calculator.html">Position Size Calculator</a>
+                <a href="liquidation-calculator.html">Liquidation Price Calculator</a>
+            </div>
+        </div>
     </header>
 
     <main class="container">
@@ -285,8 +355,8 @@
         <!-- Dynamic Tool Banner -->
         <div class="tools-banner">
             <div class="tools-banner-text">
-                <h3>Position Size & Risk Calculator</h3>
-                <p>Calculate precise contract size and risk metrics before executing trades.</p>
+                <h3>Quantitative Trading Tools</h3>
+                <p>Calculate precise position sizing, risk metrics, and liquidation levels.</p>
             </div>
             <a href="calculator.html" class="btn-calc">Open Calculator &rarr;</a>
         </div>
@@ -367,13 +437,31 @@
     <footer>
         <div class="footer-links">
             <a href="about.html">About Us</a>
-            <a href="calculator.html">Position Calculator</a>
         </div>
         <p>&copy; 2026 ColdBloodedTraders. All rights reserved.</p>
     </footer>
 
-    <!-- Interactive Search and Filter Script -->
+    <!-- Interactive Scripts -->
     <script>
+        // Dropdown Toggle Logic
+        function toggleDropdown() {
+            document.getElementById('toolsDropdown').classList.toggle('active');
+        }
+
+        // Close Dropdown if clicked outside
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropdown-btn')) {
+                const dropdowns = document.getElementsByClassName("dropdown");
+                for (let i = 0; i < dropdowns.length; i++) {
+                    const openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('active')) {
+                        openDropdown.classList.remove('active');
+                    }
+                }
+            }
+        }
+
+        // Search & Filter Logic
         const searchInput = document.getElementById('searchInput');
         const filterBtns = document.querySelectorAll('.filter-btn');
         const articleCards = document.querySelectorAll('.article-card');
