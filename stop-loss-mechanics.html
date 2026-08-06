@@ -33,7 +33,19 @@
         }
 
         .logo { font-weight: 800; color: var(--text-main); text-decoration: none; font-size: 1.2rem; }
-        .logo span { color: var(--accent-color); }
+        .logo-full span { color: var(--accent-color); }
+        .logo-short { display: none; color: var(--text-main); }
+        .logo-short span { color: var(--accent-color); }
+
+        /* Tools Dropdown Menu */
+        .dropdown { position: relative; display: inline-block; }
+        .dropdown-btn { color: var(--accent-color); background: transparent; font-weight: 700; border: 1px solid var(--accent-color); padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; cursor: pointer; transition: background 0.2s, color 0.2s; display: flex; align-items: center; gap: 0.4rem; }
+        .dropdown-btn:hover { background: rgba(0, 242, 254, 0.1); }
+        
+        .dropdown-content { display: none; position: absolute; right: 0; top: 120%; background-color: #161b22; min-width: 220px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5); border: 1px solid var(--border-color); border-radius: 8px; z-index: 1001; overflow: hidden; }
+        .dropdown-content a { color: var(--text-main); padding: 0.75rem 1rem; text-decoration: none; display: block; font-size: 0.85rem; font-weight: 600; border-bottom: 1px solid rgba(240, 246, 252, 0.05); transition: background 0.2s, color 0.2s; }
+        .dropdown-content a:hover { background-color: rgba(0, 242, 254, 0.1); color: var(--accent-color); }
+        .dropdown.active .dropdown-content { display: block; }
         
         .container { max-width: 800px; margin: 3rem auto 5rem auto; padding: 0 1.5rem; }
         
@@ -66,13 +78,25 @@
         .faq-item p { color: var(--text-muted); font-size: 0.95rem; margin: 0; }
 
         footer { border-top: 1px solid var(--border-color); padding: 2.5rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); margin-top: 4rem; }
+
+        @media (max-width: 600px) { .logo-full { display: none; } .logo-short { display: inline-block; } }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="index.html" class="logo">COLDBLOODED<span>TRADERS</span></a>
-        <a href="index.html" style="color:var(--text-muted); text-decoration:none; font-weight:600; font-size:0.9rem;">&larr; Back to Home</a>
+        <a href="index.html" class="logo">
+            <span class="logo-full">COLDBLOODED<span>TRADERS</span></span>
+            <span class="logo-short">CB<span>T</span></span>
+        </a>
+        <div class="dropdown" id="toolsDropdown">
+            <button class="dropdown-btn" onclick="toggleDropdown()">🧮 Tools &#9662;</button>
+            <div class="dropdown-content">
+                <a href="calculator.html">Position Size Calculator</a>
+                <a href="liquidation-calculator.html">Liquidation Price Calculator</a>
+                <a href="risk-metrics.html">Risk Metrics Calculator</a>
+            </div>
+        </div>
     </header>
 
     <main class="container">
@@ -94,7 +118,6 @@
         <h2>Connecting Stop Distance to Position Sizing</h2>
         <p>Your stop-loss distance dictates your position size. If you risk a fixed percentage of your total account equity (e.g., 1%), a wider stop-loss requires a smaller position size, while a tight stop-loss allows a larger position size. Master this balance to ensure consistent risk profiles across different setups.</p>
 
-        <!-- Related Frameworks / Internal Linking -->
         <div class="related-section">
             <h3 style="color: var(--text-main); font-size: 1.2rem; margin-bottom: 1rem;">Continue Reading</h3>
             <div class="related-grid">
@@ -109,15 +132,12 @@
             </div>
         </div>
 
-        <!-- FAQ Section -->
         <div class="faq-section">
             <h3 style="color: var(--text-main); font-size: 1.2rem; margin-bottom: 1.5rem;">Frequently Asked Questions</h3>
-            
             <div class="faq-item">
                 <h3>Should I use market stops or limit stops?</h3>
                 <p>In high-volatility crypto cascades, market stop orders guarantee execution whereas limit stops risk leaving you unhedged if the price gaps past your limit level during a flash crash.</p>
             </div>
-
             <div class="faq-item">
                 <h3>How tight should a crypto stop-loss be?</h3>
                 <p>It must be wide enough to survive normal market noise and exchange volatility filters, but tight enough that your trade thesis remains valid if hit.</p>
@@ -129,5 +149,9 @@
         <p>&copy; 2026 ColdBloodedTraders. All rights reserved.</p>
     </footer>
 
+    <script>
+        function toggleDropdown() { document.getElementById('toolsDropdown').classList.toggle('active'); }
+        window.onclick = function(e) { if (!e.target.closest('.dropdown')) document.getElementById('toolsDropdown').classList.remove('active'); }
+    </script>
 </body>
 </html>
