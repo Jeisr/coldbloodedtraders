@@ -19,6 +19,30 @@
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta name="description" content="Calculate precise position sizing, leverage risk, and potential R-returns for crypto derivatives and spot trading.">
 
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "How does the Position Size & Risk Calculator work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The calculator takes your total account balance, desired risk percentage per trade, entry price, and stop loss price to automatically determine your maximum dollar risk, notional position size, and exact asset units required."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is position sizing important in crypto perpetual markets?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Proper position sizing ensures that a single bad trade or market volatility spike only risks a predetermined percentage of your equity (e.g., 1% or 2%), protecting you against catastrophic drawdowns."
+        }
+      }]
+    }
+    </script>
+
     <style>
         :root {
             --bg-color: #0b0e14;
@@ -156,7 +180,7 @@
 
         .result-item {
             padding-bottom: 1rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.0rem;
             border-bottom: 1px solid var(--border-color);
         }
 
@@ -182,6 +206,35 @@
 
         .result-value.danger { color: var(--danger-color); }
         .result-value.highlight { color: #ffffff; }
+
+        /* FAQ Section Styling */
+        .faq-section {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .faq-title {
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item h4 {
+            margin: 0 0 0.4rem 0;
+            color: var(--text-main);
+            font-size: 1.05rem;
+        }
+
+        .faq-item p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
 
         footer {
             border-top: 1px solid var(--border-color);
@@ -259,6 +312,21 @@
                 </div>
             </div>
         </div>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h3 class="faq-title">Frequently Asked Questions</h3>
+            
+            <div class="faq-item">
+                <h4>How does the Position Size & Risk Calculator work?</h4>
+                <p>The calculator takes your total account balance, desired risk percentage per trade, entry price, and stop loss price to automatically determine your maximum dollar risk, notional position size, and exact asset units required.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Why is position sizing important in crypto perpetual markets?</h4>
+                <p>Proper position sizing ensures that a single bad trade or market volatility spike only risks a predetermined percentage of your equity (e.g., 1% or 2%), protecting you against catastrophic drawdowns.</p>
+            </div>
+        </section>
     </main>
 
     <footer>
