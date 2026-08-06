@@ -151,36 +151,35 @@
             margin: 0 auto;
         }
 
-        /* Dynamic Tools Banner */
-        .tools-banner {
-            background: linear-gradient(135deg, rgba(0, 242, 254, 0.1) 0%, rgba(11, 14, 20, 0.8) 100%);
-            border: 1px solid var(--accent-color);
-            border-radius: 12px;
+        /* Quantitative Quote Banner */
+        .quote-banner {
+            background: rgba(22, 27, 34, 0.5);
+            border-left: 3px solid var(--accent-color);
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            border-radius: 8px;
             padding: 1.5rem 2rem;
             margin-bottom: 3rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1.5rem;
         }
 
-        .tools-banner-text h3 { margin: 0 0 0.4rem 0; font-size: 1.2rem; color: #fff; }
-        .tools-banner-text p { margin: 0; color: var(--text-muted); font-size: 0.95rem; }
-
-        .btn-calc {
-            background: var(--accent-color);
-            color: #0b0e14;
-            text-decoration: none;
-            font-weight: 800;
-            padding: 0.75rem 1.25rem;
-            border-radius: 6px;
-            white-space: nowrap;
-            transition: background 0.2s, transform 0.2s;
+        .quote-banner p {
+            margin: 0;
+            color: var(--text-main);
+            font-size: 1.05rem;
+            font-style: italic;
+            line-height: 1.5;
         }
 
-        .btn-calc:hover {
-            background: var(--accent-hover);
-            transform: translateY(-2px);
+        .quote-banner span {
+            display: block;
+            margin-top: 0.6rem;
+            color: var(--accent-color);
+            font-size: 0.85rem;
+            font-weight: 700;
+            font-style: normal;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
 
         /* Controls: Search & Category Filter */
@@ -321,7 +320,6 @@
         @media (max-width: 600px) {
             .logo-full { display: none; }
             .logo-short { display: inline-block; font-weight: 900; letter-spacing: 1px; }
-            .tools-banner { flex-direction: column; text-align: center; }
             .hero h1 { font-size: 2.1rem; }
         }
     </style>
@@ -352,13 +350,10 @@
             <p>Systematic frameworks for crypto derivatives, perpetual liquidity, and position management.</p>
         </section>
 
-        <!-- Dynamic Tool Banner -->
-        <div class="tools-banner">
-            <div class="tools-banner-text">
-                <h3>Quantitative Trading Tools</h3>
-                <p>Calculate precise position sizing, risk metrics, and liquidation levels.</p>
-            </div>
-            <a href="calculator.html" class="btn-calc">Open Calculator &rarr;</a>
+        <!-- Institutional Quote Banner -->
+        <div class="quote-banner">
+            <p>"It's not whether you're right or wrong that's important, but how much money you make when you're right and how much you lose when you're wrong."</p>
+            <span>— Quantitative Risk Principle</span>
         </div>
 
         <!-- Controls: Search & Category Filter -->
