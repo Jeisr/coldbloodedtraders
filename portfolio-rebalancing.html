@@ -24,18 +24,8 @@
       "headline": "The Psychology of Loss & Cognitive Biases in Trading",
       "description": "Explore cognitive biases, loss aversion, revenge trading, and emotional discipline frameworks required for consistent risk management in crypto markets.",
       "image": "https://coldbloodedtraders.com/assets/cbt-logo.png",
-      "author": {
-        "@type": "Organization",
-        "name": "ColdBloodedTraders"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "ColdBloodedTraders",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://coldbloodedtraders.com/assets/cbt-logo.png"
-        }
-      },
+      "author": { "@type": "Organization", "name": "ColdBloodedTraders" },
+      "publisher": { "@type": "Organization", "name": "ColdBloodedTraders", "logo": { "@type": "ImageObject", "url": "https://coldbloodedtraders.com/assets/cbt-logo.png" } },
       "datePublished": "2026-08-01"
     }
     </script>
@@ -45,22 +35,10 @@
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      "mainEntity": [{
-        "@type": "Question",
-        "name": "What is loss aversion in trading?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Loss aversion is a psychological phenomenon where the pain of experiencing a loss is psychologically twice as powerful as the pleasure of an equivalent gain, frequently causing traders to hold losing positions too long."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How can traders combat revenge trading after a major drawdown?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Traders can combat revenge trading by implementing a strict daily max-loss circuit breaker, enforcing mandatory cool-down periods after consecutive losses, and automating position sizing rules to remove emotion."
-        }
-      }]
+      "mainEntity": [
+        { "@type": "Question", "name": "What is loss aversion in trading?", "acceptedAnswer": { "@type": "Answer", "text": "Loss aversion is a psychological phenomenon where the pain of experiencing a loss is psychologically twice as powerful as the pleasure of an equivalent gain, frequently causing traders to hold losing positions too long." } },
+        { "@type": "Question", "name": "How can traders combat revenge trading after a major drawdown?", "acceptedAnswer": { "@type": "Answer", "text": "Traders can combat revenge trading by implementing a strict daily max-loss circuit breaker, enforcing mandatory cool-down periods after consecutive losses, and automating position sizing rules to remove emotion." } }
+      ]
     }
     </script>
 
@@ -77,26 +55,8 @@
             --color-core: #ff9800;
             --color-advanced: #ff5252;
         }
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            line-height: 1.8;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            position: sticky;
-            top: 0;
-            backdrop-filter: blur(12px);
-            background: rgba(11, 14, 20, 0.85);
-            padding: 1.2rem 2rem;
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-        }
+        body { background-color: var(--bg-color); color: var(--text-main); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; line-height: 1.8; margin: 0; padding: 0; }
+        header { position: sticky; top: 0; backdrop-filter: blur(12px); background: rgba(11, 14, 20, 0.85); padding: 1.2rem 2rem; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
         .logo { font-weight: 800; color: var(--text-main); text-decoration: none; font-size: 1.2rem; }
         .logo-full span { color: var(--accent-color); }
         .logo-short { display: none; font-weight: 900; letter-spacing: 1px; color: var(--text-main); }
@@ -105,7 +65,6 @@
         .nav-right { display: flex; align-items: center; gap: 1rem; }
         .back-btn { color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
 
-        /* Dropdown Menu Styling */
         .dropdown { position: relative; display: inline-block; }
         .dropdown-btn { color: var(--accent-color); background: transparent; font-weight: 700; border: 1px solid var(--accent-color); padding: 0.4rem 0.8rem; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; }
         .dropdown-content { display: none; position: absolute; right: 0; top: 120%; background-color: #161b22; min-width: 220px; border: 1px solid var(--border-color); border-radius: 8px; z-index: 1001; box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
@@ -113,34 +72,14 @@
         .dropdown-content a:hover { background: rgba(0, 242, 254, 0.08); color: var(--accent-color); }
         .dropdown.active .dropdown-content { display: block; }
         
-        .article-container {
-            max-width: 820px;
-            margin: 3rem auto 5rem auto;
-            padding: 0 1.5rem;
-        }
-        .article-header-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.5rem;
-        }
-        .tag { 
-            font-weight: 700; 
-            font-size: 0.85rem; 
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
-        .tag-psychology { color: #00f2fe; }
+        .article-container { max-width: 820px; margin: 3rem auto 5rem auto; padding: 0 1.5rem; }
+        .article-header-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
+        .tag { font-weight: 700; font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase; }
+        .tag-psychology { color: var(--accent-color); }
 
-        .difficulty-badge {
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
+        .difficulty-badge { font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 4px; letter-spacing: 1px; text-transform: uppercase; }
         .badge-core { background: rgba(255, 152, 0, 0.15); color: var(--color-core); border: 1px solid rgba(255, 152, 0, 0.4); }
+        .badge-foundation { background: rgba(0, 230, 118, 0.15); color: var(--color-foundation); border: 1px solid rgba(0, 230, 118, 0.4); }
 
         h1 { font-size: 2.6rem; margin: 0.5rem 0 1rem 0; line-height: 1.25; font-weight: 800; }
         .meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; }
@@ -150,32 +89,11 @@
         ul, ol { margin-bottom: 1.5rem; padding-left: 1.5rem; color: #c9d1d9; }
         li { margin-bottom: 0.5rem; }
 
-        blockquote {
-            border-left: 4px solid var(--accent-color);
-            margin: 2rem 0;
-            color: var(--text-main);
-            font-style: italic;
-            background: rgba(0, 242, 254, 0.04);
-            padding: 1.25rem 1.5rem;
-            border-radius: 0 8px 8px 0;
-        }
+        blockquote { border-left: 4px solid var(--accent-color); margin: 2rem 0; color: var(--text-main); font-style: italic; background: rgba(0, 242, 254, 0.04); padding: 1.25rem 1.5rem; border-radius: 0 8px 8px 0; }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0;
-            font-size: 0.95rem;
-        }
-        th, td {
-            padding: 0.85rem 1rem;
-            text-align: left;
-            border: 1px solid var(--border-color);
-        }
-        th {
-            background-color: var(--table-header-bg);
-            color: var(--accent-color);
-            font-weight: 700;
-        }
+        table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 0.95rem; }
+        th, td { padding: 0.85rem 1rem; text-align: left; border: 1px solid var(--border-color); }
+        th { background-color: var(--table-header-bg); color: var(--accent-color); font-weight: 700; }
 
         .faq-section { margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
         .faq-title { color: var(--accent-color); font-size: 1.4rem; margin-bottom: 1.5rem; }
@@ -186,21 +104,10 @@
         .related-articles { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
         .related-title { font-size: 1.2rem; margin-bottom: 1.2rem; color: var(--text-main); }
         .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
-        .related-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1rem 1.25rem;
-            text-decoration: none;
-            transition: transform 0.2s ease, border-color 0.2s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+        .related-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem 1.25rem; text-decoration: none; transition: transform 0.2s ease, border-color 0.2s ease; display: flex; flex-direction: column; justify-content: space-between; }
         .related-card:hover { transform: translateY(-2px); border-color: var(--accent-color); }
         .related-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
         .related-tag { font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
-        .tag-foundation { color: var(--color-foundation); }
         .related-card h4 { color: var(--text-main); font-size: 0.95rem; margin: 0; }
 
         footer { border-top: 1px solid var(--border-color); padding: 2rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
@@ -250,8 +157,6 @@
         <h2>1. Loss Aversion and the Endowment Effect</h2>
         <p>Behavioral finance demonstrates that the emotional pain of a $1,000 loss is roughly twice as intense as the psychological pleasure of a $1,000 gain. This asymmetry drives <strong>loss aversion</strong>—the tendency of traders to hold losing positions indefinitely in the hope that prices will return to break-even.</p>
 
-        <p>Coupled with the endowment effect, where traders overvalue assets simply because they own them, this cognitive flaw turns planned scalp trades into multi-month holding bags.</p>
-
         <table>
             <thead>
                 <tr>
@@ -268,34 +173,17 @@
                 </tr>
                 <tr>
                     <td>Revenge Trading</td>
-                    <td>Increasing leverage immediately after a loss to "make it back."</td>
+                    <td>Increasing leverage immediately after a loss.</td>
                     <td>Mandatory cool-down periods and daily loss caps.</td>
-                </tr>
-                <tr>
-                    <td>Confirmation Bias</td>
-                    <td>Seeking out bullish opinions while ignoring bearish order flow.</td>
-                    <td>Inverting your thesis and actively seeking invalidation triggers.</td>
                 </tr>
             </tbody>
         </table>
-
-        <h2>2. Revenge Trading and the Tilt Cycle</h2>
-        <p>When a trader experiences a painful stop-out, adrenaline spikes and executive function in the prefrontal cortex declines. This initiates "tilt"—a psychological state characterized by emotional recklessness and an urgent desire to recover losses immediately.</p>
-
-        <p>Revenge trading typically involves expanding position size, discarding risk-reward parameters, and trading low-conviction setups. Implementing strict mechanical boundaries is the only reliable defense against tilt.</p>
-
-        <h2>3. Building an Emotional Firewall</h2>
-        <p>To survive market cycles, traders must transition from discretionary reaction to rule-bound execution. Check your portfolio allocation boundaries with our guide to <a href="portfolio-rebalancing.html" style="color: var(--accent-color); text-decoration: underline;">Systematic Portfolio Rebalancing Protocols</a>.</p>
 
         <section class="faq-section">
             <h3 class="faq-title">Frequently Asked Questions</h3>
             <div class="faq-item">
                 <h4>What is loss aversion in trading?</h4>
                 <p>Loss aversion is a psychological phenomenon where the pain of experiencing a loss is psychologically twice as powerful as the pleasure of an equivalent gain, frequently causing traders to hold losing positions too long.</p>
-            </div>
-            <div class="faq-item">
-                <h4>How can traders combat revenge trading after a major drawdown?</h4>
-                <p>Traders can combat revenge trading by implementing a strict daily max-loss circuit breaker, enforcing mandatory cool-down periods after consecutive losses, and automating position sizing rules to remove emotion.</p>
             </div>
         </section>
 
@@ -304,14 +192,14 @@
             <div class="related-grid">
                 <a href="portfolio-rebalancing.html" class="related-card">
                     <div class="related-card-header">
-                        <span class="related-tag tag-foundation">FOUNDATION</span>
+                        <span class="related-tag" style="color: var(--accent-color);">TRADING PSYCHOLOGY</span>
                         <span class="difficulty-badge badge-core">CORE</span>
                     </div>
                     <h4>Systematic Portfolio Rebalancing Protocols &rarr;</h4>
                 </a>
                 <a href="leverage-101.html" class="related-card">
                     <div class="related-card-header">
-                        <span class="related-tag tag-foundation">FOUNDATION</span>
+                        <span class="related-tag" style="color: var(--color-core);">RISK MANAGEMENT</span>
                         <span class="difficulty-badge badge-foundation">FOUNDATION</span>
                     </div>
                     <h4>Leverage 101: How Crypto Leverage Actually Works &rarr;</h4>
