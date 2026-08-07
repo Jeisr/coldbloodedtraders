@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk/Reward Ratio Calculator | ColdBloodedTraders</title>
+    <style>
+        /* Buraya ana sayfanın style'larını aynen kopyala, bütünlük bozulmasın */
+        body { background-color: #0b0e14; color: #f0f6fc; font-family: sans-serif; padding: 2rem; }
+        .calc-container { max-width: 400px; margin: 0 auto; background: rgba(22, 27, 34, 0.7); padding: 2rem; border-radius: 12px; border: 1px solid rgba(240, 246, 252, 0.1); }
+        h2 { color: #00f2fe; text-align: center; }
+        label { display: block; margin: 1rem 0 0.5rem; font-size: 0.9rem; color: #8b949e; }
+        input { width: 100%; padding: 0.8rem; background: #0b0e14; border: 1px solid #30363d; border-radius: 6px; color: white; box-sizing: border-box; }
+        button { width: 100%; padding: 1rem; margin-top: 1.5rem; background: #00f2fe; border: none; border-radius: 6px; font-weight: 800; cursor: pointer; color: #0b0e14; }
+        #result { margin-top: 1.5rem; text-align: center; font-size: 1.2rem; color: #00f2fe; }
+    </style>
+</head>
+<body>
+
+    <div class="calc-container">
+        <h2>R/R Calculator</h2>
+        <label>Entry Price</label>
+        <input type="number" id="entry" placeholder="e.g. 50000">
+        <label>Stop Loss</label>
+        <input type="number" id="stop" placeholder="e.g. 48000">
+        <label>Take Profit</label>
+        <input type="number" id="tp" placeholder="e.g. 55000">
+        
+        <button onclick="calculateRR()">Calculate Ratio</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateRR() {
+            let entry = parseFloat(document.getElementById('entry').value);
+            let stop = parseFloat(document.getElementById('stop').value);
+            let tp = parseFloat(document.getElementById('tp').value);
+            
+            if (entry && stop && tp) {
+                let risk = Math.abs(entry - stop);
+                let reward = Math.abs(tp - entry);
+                let ratio = (reward / risk).toFixed(2);
+                document.getElementById('result').innerHTML = `<strong>R/R Ratio: 1:${ratio}</strong>`;
+            } else {
+                document.getElementById('result').innerHTML = "Lütfen tüm alanları doldur.";
+            }
+        }
+    </script>
+</body>
+</html>
