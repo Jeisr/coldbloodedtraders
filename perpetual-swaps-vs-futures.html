@@ -40,6 +40,30 @@
     }
     </script>
 
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What is the main difference between perpetual swaps and traditional futures?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Traditional futures contracts have a fixed expiration date and settle at a specific time, whereas perpetual swaps have no expiration date and use a funding rate mechanism to anchor the contract price to the spot index."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do perpetual swaps rely on funding rates?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Without an expiration date, perpetual contracts require funding payments between long and short traders to incentivize market participants to arbitrage price gaps and keep contract prices aligned with the underlying spot market."
+        }
+      }]
+    }
+    </script>
+
     <style>
         :root {
             --bg-color: #0b0e14;
@@ -50,16 +74,35 @@
             --border-color: rgba(240, 246, 252, 0.1);
             --table-header-bg: #161b22;
         }
-        body { background-color: var(--bg-color); color: var(--text-main); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; line-height: 1.8; margin: 0; padding: 0; }
-        header { position: sticky; top: 0; backdrop-filter: blur(12px); background: rgba(11, 14, 20, 0.85); padding: 1.2rem 2rem; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(12px);
+            background: rgba(11, 14, 20, 0.85);
+            padding: 1.2rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
         .logo { font-weight: 800; color: var(--text-main); text-decoration: none; font-size: 1.2rem; }
         .logo-full span { color: var(--accent-color); }
         .logo-short { display: none; font-weight: 900; letter-spacing: 1px; color: var(--text-main); }
         .logo-short span { color: var(--accent-color); }
+        
         .nav-right { display: flex; align-items: center; gap: 1rem; }
         .back-btn { color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
 
-        /* Dropdown */
+        /* Dropdown Menu Styling */
         .dropdown { position: relative; display: inline-block; }
         .dropdown-btn { color: var(--accent-color); background: transparent; font-weight: 700; border: 1px solid var(--accent-color); padding: 0.4rem 0.8rem; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; }
         .dropdown-content { display: none; position: absolute; right: 0; top: 120%; background-color: #161b22; min-width: 220px; border: 1px solid var(--border-color); border-radius: 8px; z-index: 1001; box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
@@ -67,26 +110,171 @@
         .dropdown-content a:hover { background: rgba(0, 242, 254, 0.08); color: var(--accent-color); }
         .dropdown.active .dropdown-content { display: block; }
         
-        .article-container { max-width: 820px; margin: 3rem auto 5rem auto; padding: 0 1.5rem; }
-        
-        /* Updated Header Meta */
-        .article-header-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
-        .tag { color: var(--accent-color); font-weight: 700; font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase; }
-        .difficulty-badge { font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 4px; letter-spacing: 1px; text-transform: uppercase; }
+        .article-container {
+            max-width: 820px;
+            margin: 3rem auto 5rem auto;
+            padding: 0 1.5rem;
+        }
+        .article-header-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        .tag { 
+            color: #3fb950; 
+            font-weight: 700; 
+            font-size: 0.85rem; 
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+        .difficulty-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
         .badge-foundational { background: rgba(46, 160, 67, 0.15); color: #3fb950; border: 1px solid rgba(46, 160, 67, 0.4); }
+        .badge-core { background: rgba(210, 153, 34, 0.15); color: #d29922; border: 1px solid rgba(210, 153, 34, 0.4); }
+        .badge-advanced { background: rgba(248, 81, 73, 0.15); color: #f85149; border: 1px solid rgba(248, 81, 73, 0.4); }
 
         h1 { font-size: 2.6rem; margin: 0.5rem 0 1rem 0; line-height: 1.25; font-weight: 800; }
         .meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; }
+        
         h2 { color: var(--accent-color); margin-top: 2.5rem; font-size: 1.6rem; border-left: 3px solid var(--accent-color); padding-left: 0.75rem; }
         p { margin-bottom: 1.5rem; color: #c9d1d9; font-size: 1.05rem; }
-        blockquote { border-left: 4px solid var(--accent-color); margin: 2rem 0; color: var(--text-main); font-style: italic; background: rgba(0, 242, 254, 0.04); padding: 1.25rem 1.5rem; border-radius: 0 8px 8px 0; }
-        table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 0.95rem; }
-        th, td { padding: 0.85rem 1rem; text-align: left; border: 1px solid var(--border-color); }
-        th { background-color: var(--table-header-bg); color: var(--accent-color); font-weight: 700; }
-        
-        footer { border-top: 1px solid var(--border-color); padding: 2rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
+        ul, ol { margin-bottom: 1.5rem; padding-left: 1.5rem; color: #c9d1d9; }
+        li { margin-bottom: 0.5rem; }
 
-        @media (max-width: 600px) { .logo-full { display: none; } .logo-short { display: inline-block; } }
+        blockquote {
+            border-left: 4px solid var(--accent-color);
+            margin: 2rem 0;
+            color: var(--text-main);
+            font-style: italic;
+            background: rgba(0, 242, 254, 0.04);
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            font-size: 0.95rem;
+        }
+        th, td {
+            padding: 0.85rem 1rem;
+            text-align: left;
+            border: 1px solid var(--border-color);
+        }
+        th {
+            background-color: var(--table-header-bg);
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        /* FAQ Section Styling */
+        .faq-section {
+            margin-top: 3.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .faq-title {
+            color: var(--accent-color);
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item h4 {
+            margin: 0 0 0.4rem 0;
+            color: var(--text-main);
+            font-size: 1.05rem;
+        }
+
+        .faq-item p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Related Articles Box */
+        .related-articles {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .related-title {
+            font-size: 1.2rem;
+            margin-bottom: 1.2rem;
+            color: var(--text-main);
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .related-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            text-decoration: none;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .related-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-color);
+        }
+
+        .related-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .related-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .tag-foundational { color: #3fb950; }
+        .tag-derivatives { color: #00f2fe; }
+
+        .related-card h4 {
+            color: var(--text-main);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 600px) {
+            .logo-full { display: none; }
+            .logo-short { display: inline-block; }
+        }
     </style>
 </head>
 <body>
@@ -102,6 +290,7 @@
                 <div class="dropdown-content">
                     <a href="calculator.html">Position Size Calculator</a>
                     <a href="liquidation-calculator.html">Liquidation Price Calculator</a>
+                    <a href="risk-metrics.html">Risk Metrics Calculator</a>
                 </div>
             </div>
             <a href="index.html" class="back-btn">&larr; Back to Home</a>
@@ -109,19 +298,100 @@
     </header>
 
     <main class="article-container">
-        <!-- Düzeltilmiş Üst Kısım -->
         <div class="article-header-meta">
-            <span class="tag">DERIVATIVES</span>
-            <span class="difficulty-badge badge-foundational">FOUNDATIONAL</span>
+            <span class="tag">FOUNDATIONAL</span>
+            <span class="difficulty-badge badge-foundational">Foundational</span>
         </div>
         <h1>Understanding Perpetual Swaps vs. Traditional Futures</h1>
         <div class="meta">Published: August 2026 • 7 min read • By ColdBloodedTraders</div>
 
         <p>In traditional finance, derivative markets rely heavily on calendar-dated futures contracts with explicit settlement dates. In crypto, however, perpetual swaps (perps) dominate trading volume. Understanding the structural differences between these two financial instruments is essential for proper risk management and capital efficiency.</p>
 
-        <!-- İçerik aynı... -->
+        <p>Whether you hold position leverage over long periods or execute short-term intraday strategies, contract mechanics dictate holding costs, basis drift, and roll-yield dynamics. You can analyze your leverage profile with our <a href="liquidation-calculator.html" style="color: var(--accent-color); text-decoration: underline;">Liquidation Price Calculator</a>.</p>
+
+        <blockquote>
+            "Perpetual swaps trade position expiration for holding cost variance. Understanding funding rate risk is as critical as monitoring price action."
+        </blockquote>
+
         <h2>1. Structural Comparison: Expiry vs. Perpetual Mechanics</h2>
-        <!-- ... -->
+        <p>Traditional futures contracts obligate traders to buy or sell an asset at a predetermined price on a specific settlement date. As expiration approaches, contract prices naturally converge with the spot market index price.</p>
+
+        <p>Perpetual swaps have no expiration date. To prevent the contract price from drifting permanently away from the spot price, crypto exchanges implement an automated funding rate mechanism that transfers cash directly between long and short position holders.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Perpetual Swaps</th>
+                    <th>Traditional Dated Futures</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Expiration Date</td>
+                    <td>None (Indefinite holding)</td>
+                    <td>Fixed (Quarterly/Monthly settlement)</td>
+                </tr>
+                <tr>
+                    <td>Anchor Mechanism</td>
+                    <td>Periodic Funding Rates (e.g., 8-hour intervals)</td>
+                    <td>Natural convergence at expiry date</td>
+                </tr>
+                <tr>
+                    <td>Holding Costs</td>
+                    <td>Variable (Dynamic positive/negative funding)</td>
+                    <td>Fixed cost of carry built into premium/discount</td>
+                </tr>
+                <tr>
+                    <td>Roll Risk</td>
+                    <td>Zero roll required</td>
+                    <td>Roll-yield loss/gain when extending contracts</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>2. Funding Rate Dynamics & Carry Cost Risk</h2>
+        <p>When the perpetual market is overwhelmingly bullish, perpetual contract prices trade at a premium to spot. Long traders pay funding payments to short traders. Conversely, during bearish regime shifts, short traders pay long traders.</p>
+
+        <p>Traders holding perpetual positions for weeks or months must account for funding costs. High funding payments can erode profits rapidly during low-volatility consolidation phases, making dated futures a potentially superior alternative for long-term structural positions.</p>
+
+        <h2>3. Choosing the Right Instrument for Your Strategy</h2>
+        <p>Selecting between perpetual swaps and dated futures depends on trading horizon, volatility expectations, and systemic carry risks. Deep dive into perpetual market leverage dynamics in our guide to <a href="funding-rates.html" style="color: var(--accent-color); text-decoration: underline;">Funding Rates & Implied Volatility Framework</a>.</p>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h3 class="faq-title">Frequently Asked Questions</h3>
+            
+            <div class="faq-item">
+                <h4>What is the main difference between perpetual swaps and traditional futures?</h4>
+                <p>Traditional futures contracts have a fixed expiration date and settle at a specific time, whereas perpetual swaps have no expiration date and use a funding rate mechanism to anchor the contract price to the spot index.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Why do perpetual swaps rely on funding rates?</h4>
+                <p>Without an expiration date, perpetual contracts require funding payments between long and short traders to incentivize market participants to arbitrage price gaps and keep contract prices aligned with the underlying spot market.</p>
+            </div>
+        </section>
+
+        <!-- Related Frameworks / Internal Links -->
+        <div class="related-articles">
+            <h3 class="related-title">Related Frameworks</h3>
+            <div class="related-grid">
+                <a href="funding-rates.html" class="related-card">
+                    <div class="related-card-header">
+                        <span class="related-tag tag-derivatives">DERIVATIVES RISK</span>
+                    </div>
+                    <h4>Funding Rates & Implied Volatility Framework &rarr;</h4>
+                </a>
+                <a href="leverage-101.html" class="related-card">
+                    <div class="related-card-header">
+                        <span class="related-tag tag-foundational">FOUNDATIONAL</span>
+                    </div>
+                    <h4>Leverage 101: How Crypto Leverage Actually Works &rarr;</h4>
+                </a>
+            </div>
+        </div>
+
     </main>
 
     <footer>
@@ -132,8 +402,14 @@
     </footer>
 
     <script>
-        function toggleDropdown() { document.getElementById('toolsDropdown').classList.toggle('active'); }
-        window.onclick = (e) => { if (!e.target.matches('.dropdown-btn') && !e.target.closest('.dropdown')) { document.getElementById('toolsDropdown').classList.remove('active'); } }
+        function toggleDropdown() { 
+            document.getElementById('toolsDropdown').classList.toggle('active'); 
+        }
+        window.onclick = (e) => { 
+            if (!e.target.matches('.dropdown-btn') && !e.target.closest('.dropdown')) { 
+                document.getElementById('toolsDropdown').classList.remove('active'); 
+            } 
+        }
     </script>
 </body>
 </html>
