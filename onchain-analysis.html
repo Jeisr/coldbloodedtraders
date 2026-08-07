@@ -73,6 +73,9 @@
             --text-muted: #8b949e;
             --border-color: rgba(240, 246, 252, 0.1);
             --table-header-bg: #161b22;
+            --color-foundation: #00e676;
+            --color-core: #ff9800;
+            --color-advanced: #ff5252;
         }
         body {
             background-color: var(--bg-color);
@@ -136,9 +139,7 @@
             letter-spacing: 1px;
             text-transform: uppercase;
         }
-        .badge-foundational { background: rgba(46, 160, 67, 0.15); color: #3fb950; border: 1px solid rgba(46, 160, 67, 0.4); }
-        .badge-core { background: rgba(210, 153, 34, 0.15); color: #d29922; border: 1px solid rgba(210, 153, 34, 0.4); }
-        .badge-advanced { background: rgba(248, 81, 73, 0.15); color: #f85149; border: 1px solid rgba(248, 81, 73, 0.4); }
+        .badge-advanced { background: rgba(255, 82, 82, 0.15); color: var(--color-advanced); border: 1px solid rgba(255, 82, 82, 0.4); }
 
         h1 { font-size: 2.6rem; margin: 0.5rem 0 1rem 0; line-height: 1.25; font-weight: 800; }
         .meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; }
@@ -298,7 +299,7 @@
     <main class="article-container">
         <div class="article-header-meta">
             <span class="tag">ON-CHAIN METRICS</span>
-            <span class="difficulty-badge badge-advanced">Advanced</span>
+            <span class="difficulty-badge badge-advanced">ADVANCED</span>
         </div>
         <h1>On-Chain Capital Flows & Realized Price Metrics</h1>
         <div class="meta">Published: August 2026 • 7 min read • By ColdBloodedTraders</div>
@@ -381,12 +382,14 @@
                 <a href="macro-liquidity.html" class="related-card">
                     <div class="related-card-header">
                         <span class="related-tag">MACRO DYNAMICS</span>
+                        <span class="difficulty-badge badge-advanced">ADVANCED</span>
                     </div>
                     <h4>Global Liquidity & Central Bank Balance Sheets &rarr;</h4>
                 </a>
                 <a href="position-sizing.html" class="related-card">
                     <div class="related-card-header">
                         <span class="related-tag">RISK MANAGEMENT</span>
+                        <span class="difficulty-badge badge-advanced">ADVANCED</span>
                     </div>
                     <h4>Position Sizing Framework in Volatile Markets &rarr;</h4>
                 </a>
