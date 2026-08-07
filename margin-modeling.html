@@ -51,6 +51,9 @@
             --text-muted: #8b949e;
             --border-color: rgba(240, 246, 252, 0.1);
             --table-header-bg: #161b22;
+            --color-foundation: #00e676;
+            --color-core: #ff9800;
+            --color-advanced: #ff5252;
         }
         body { background-color: var(--bg-color); color: var(--text-main); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; line-height: 1.8; margin: 0; padding: 0; }
         header { position: sticky; top: 0; backdrop-filter: blur(12px); background: rgba(11, 14, 20, 0.85); padding: 1.2rem 2rem; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
@@ -62,7 +65,6 @@
         .nav-right { display: flex; align-items: center; gap: 1rem; }
         .back-btn { color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
 
-        /* Dropdown Menu Styling */
         .dropdown { position: relative; display: inline-block; }
         .dropdown-btn { color: var(--accent-color); background: transparent; font-weight: 700; border: 1px solid var(--accent-color); padding: 0.4rem 0.8rem; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; }
         .dropdown-content { display: none; position: absolute; right: 0; top: 120%; background-color: #161b22; min-width: 220px; border: 1px solid var(--border-color); border-radius: 8px; z-index: 1001; box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
@@ -74,7 +76,7 @@
         .article-header-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
         .tag { color: var(--accent-color); font-weight: 700; font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase; }
         .difficulty-badge { font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 4px; letter-spacing: 1px; text-transform: uppercase; }
-        .badge-core { background: rgba(210, 153, 34, 0.15); color: #d29922; border: 1px solid rgba(210, 153, 34, 0.4); }
+        .badge-advanced { background: rgba(255, 82, 82, 0.15); color: var(--color-advanced); border: 1px solid rgba(255, 82, 82, 0.4); }
 
         h1 { font-size: 2.6rem; margin: 0.5rem 0 1rem 0; line-height: 1.25; font-weight: 800; }
         .meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; }
@@ -90,20 +92,17 @@
         th, td { padding: 0.85rem 1rem; text-align: left; border: 1px solid var(--border-color); }
         th { background-color: var(--table-header-bg); color: var(--accent-color); font-weight: 700; }
 
-        /* FAQ Section Styling */
         .faq-section { margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
         .faq-title { color: var(--accent-color); font-size: 1.4rem; margin-bottom: 1.5rem; }
         .faq-item { margin-bottom: 1.5rem; }
         .faq-item h4 { margin: 0 0 0.4rem 0; color: var(--text-main); font-size: 1.05rem; }
         .faq-item p { margin: 0; color: var(--text-muted); font-size: 0.95rem; }
 
-        /* Related Articles Box */
         .related-articles { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
         .related-title { font-size: 1.2rem; margin-bottom: 1.2rem; color: var(--text-main); }
         .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
         .related-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem 1.25rem; text-decoration: none; transition: transform 0.2s ease, border-color 0.2s ease; display: flex; flex-direction: column; justify-content: space-between; }
         .related-card:hover { transform: translateY(-2px); border-color: var(--accent-color); }
-        .related-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
         .related-tag { color: var(--accent-color); font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
         .related-card h4 { color: var(--text-main); font-size: 0.95rem; margin: 0; }
 
@@ -138,7 +137,7 @@
     <main class="article-container">
         <div class="article-header-meta">
             <span class="tag">RISK MANAGEMENT</span>
-            <span class="difficulty-badge badge-core">Core</span>
+            <span class="difficulty-badge badge-advanced">ADVANCED</span>
         </div>
         <h1>Cross vs. Isolated Margin Modeling</h1>
         <div class="meta">Published: August 2026 • 9 min read • By ColdBloodedTraders</div>
@@ -189,22 +188,18 @@
         <h2>3. Integration with Risk Metrics</h2>
         <p>Accurate margin modeling feeds directly into your broader portfolio health formulas. Monitoring systemic exposure ensures you never cross dangerous leverage thresholds, maintaining long-term survivability in volatile crypto cycles.</p>
 
-        <!-- FAQ Section -->
         <section class="faq-section">
             <h3 class="faq-title">Frequently Asked Questions</h3>
-            
             <div class="faq-item">
                 <h4>What is the primary difference between isolated and cross margin?</h4>
                 <p>Isolated margin confines risk to the specific capital allocated to a single trade, whereas cross margin allows the entire account equity to be used as collateral for all open positions.</p>
             </div>
-
             <div class="faq-item">
                 <h4>When should you use cross margin over isolated margin?</h4>
                 <p>Cross margin is preferred for complex, multi-position portfolios and hedging strategies where you want to optimize capital efficiency and prevent premature liquidation due to localized volatility.</p>
             </div>
         </section>
 
-        <!-- Related Frameworks / Internal Links -->
         <div class="related-articles">
             <h3 class="related-title">Related Frameworks</h3>
             <div class="related-grid">
@@ -222,7 +217,6 @@
                 </a>
             </div>
         </div>
-
     </main>
 
     <footer>
