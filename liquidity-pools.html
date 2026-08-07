@@ -114,6 +114,12 @@
             margin: 3rem auto 5rem auto;
             padding: 0 1.5rem;
         }
+        .article-header-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
         .tag { 
             color: var(--accent-color); 
             font-weight: 700; 
@@ -121,6 +127,18 @@
             letter-spacing: 1.5px;
             text-transform: uppercase;
         }
+        .difficulty-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .badge-foundational { background: rgba(46, 160, 67, 0.15); color: #3fb950; border: 1px solid rgba(46, 160, 67, 0.4); }
+        .badge-core { background: rgba(210, 153, 34, 0.15); color: #d29922; border: 1px solid rgba(210, 153, 34, 0.4); }
+        .badge-advanced { background: rgba(248, 81, 73, 0.15); color: #f85149; border: 1px solid rgba(248, 81, 73, 0.4); }
+
         h1 { font-size: 2.6rem; margin: 0.5rem 0 1rem 0; line-height: 1.25; font-weight: 800; }
         .meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; }
         
@@ -266,7 +284,10 @@
     </header>
 
     <main class="article-container">
-        <span class="tag">ORDER FLOW</span>
+        <div class="article-header-meta">
+            <span class="tag">ORDER FLOW</span>
+            <span class="difficulty-badge badge-advanced">Advanced</span>
+        </div>
         <h1>Order Flow & Liquidity Pools</h1>
         <div class="meta">Published: August 2026 • 8 min read • By ColdBloodedTraders</div>
 
