@@ -39,6 +39,10 @@
             --card-bg: rgba(22, 27, 34, 0.75);
             --accent-color: #00f2fe;
             --accent-hover: #00c6ff;
+            /* Seviye Renkleri */
+            --color-foundation: #00e676; /* Yeşil */
+            --color-core: #ff9800;       /* Turuncu */
+            --color-advanced: #ff5252;   /* Kırmızı */
             --text-main: #f0f6fc;
             --text-muted: #8b949e;
             --border-color: rgba(240, 246, 252, 0.1);
@@ -59,7 +63,6 @@
         .logo-short { display: none; color: var(--text-main); }
         .logo-short span { color: var(--accent-color); }
 
-        /* Tools Dropdown Menu */
         .dropdown { position: relative; display: inline-block; }
         .dropdown-btn { color: var(--accent-color); background: transparent; font-weight: 700; border: 1px solid var(--accent-color); padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; cursor: pointer; transition: background 0.2s, color 0.2s; display: flex; align-items: center; gap: 0.4rem; }
         .dropdown-btn:hover { background: rgba(0, 242, 254, 0.1); }
@@ -89,7 +92,7 @@
         .articles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
         .article-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 10px; padding: 1.5rem; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s; }
         .article-card:hover { transform: translateY(-3px); border-color: var(--accent-color); }
-        .article-tag { color: var(--accent-color); font-size: 0.75rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.5rem; }
+        .article-tag { font-size: 0.75rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.5rem; display: block; }
         .article-card h2 { color: var(--text-main); font-size: 1.25rem; margin: 0 0 0.8rem 0; }
         .article-card p { color: var(--text-muted); font-size: 0.95rem; margin: 0 0 1.2rem 0; }
         .article-meta { color: var(--text-muted); font-size: 0.8rem; }
@@ -126,7 +129,6 @@
             <p>Systematic frameworks for crypto derivatives, perpetual liquidity, and position management.</p>
         </section>
 
-        <!-- Quote Banner -->
         <div class="quote-banner">
             <p>"It's not whether you're right or wrong that's important, but how much money you make when you're right and how much you lose when you're wrong."</p>
             <span>— Quantitative Risk Principle</span>
@@ -143,53 +145,58 @@
         </div>
 
         <div class="articles-grid" id="articlesGrid">
+            <!-- FOUNDATION (Yeşil) -->
             <a href="perpetual-swaps-vs-futures.html" class="article-card" data-category="DERIVATIVES">
-                <div><span class="article-tag" style="color: #00e676;">FOUNDATIONAL</span><h2>Understanding Perpetual Swaps vs. Traditional Futures</h2><p>Comparing contract structures, funding rate mechanisms, basis drift, and roll-yield risks.</p></div>
+                <div><span class="article-tag" style="color: var(--color-foundation);">FOUNDATION</span><h2>Understanding Perpetual Swaps</h2><p>Comparing contract structures, funding rate mechanisms, basis drift, and roll-yield risks.</p></div>
                 <div class="article-meta">August 2026 • 7 min read</div>
             </a>
             <a href="stop-loss-mechanics.html" class="article-card" data-category="RISK">
-                <div><span class="article-tag" style="color: #00e676;">FOUNDATIONAL</span><h2>Stop-Loss Mechanics: Protecting Capital</h2><p>Eliminating emotional bias, structuring invalidation points, and managing risk exposure correctly.</p></div>
+                <div><span class="article-tag" style="color: var(--color-foundation);">FOUNDATION</span><h2>Stop-Loss Mechanics</h2><p>Eliminating emotional bias, structuring invalidation points, and managing risk exposure.</p></div>
                 <div class="article-meta">August 2026 • 7 min read</div>
             </a>
             <a href="leverage-101.html" class="article-card" data-category="RISK">
-                <div><span class="article-tag" style="color: #00e676;">FOUNDATIONAL</span><h2>Leverage 101: How Crypto Leverage Works</h2><p>Understanding the underlying mechanics of borrowed capital, collateral, and liquidation thresholds.</p></div>
+                <div><span class="article-tag" style="color: var(--color-foundation);">FOUNDATION</span><h2>Leverage 101</h2><p>Understanding the underlying mechanics of borrowed capital, collateral, and liquidation.</p></div>
                 <div class="article-meta">August 2026 • 8 min read</div>
             </a>
             <a href="position-sizing.html" class="article-card" data-category="RISK">
-                <div><span class="article-tag">RISK MANAGEMENT</span><h2>Position Sizing Framework</h2><p>Mathematical calculations for optimal position size, drawdown prevention, and risk exposure.</p></div>
+                <div><span class="article-tag" style="color: var(--color-foundation);">FOUNDATION</span><h2>Position Sizing Framework</h2><p>Mathematical calculations for optimal position size and drawdown prevention.</p></div>
                 <div class="article-meta">August 2026 • 8 min read</div>
             </a>
+
+            <!-- CORE (Turuncu) -->
             <a href="funding-rates.html" class="article-card" data-category="DERIVATIVES">
-                <div><span class="article-tag">DERIVATIVES RISK</span><h2>Funding Rates & Implied Volatility</h2><p>Understanding perpetual swap mechanics, open interest spikes, and crowded squeeze traps.</p></div>
+                <div><span class="article-tag" style="color: var(--color-core);">CORE</span><h2>Funding Rates & Volatility</h2><p>Understanding perpetual swap mechanics, open interest spikes, and squeeze traps.</p></div>
                 <div class="article-meta">August 2026 • 7 min read</div>
             </a>
             <a href="liquidity-pools.html" class="article-card" data-category="LIQUIDITY">
-                <div><span class="article-tag">LIQUIDITY</span><h2>Identifying Liquidity Pools</h2><p>How institutional operators sweep stop-loss clusters before major expansion moves.</p></div>
+                <div><span class="article-tag" style="color: var(--color-core);">CORE</span><h2>Identifying Liquidity Pools</h2><p>How institutional operators sweep stop-loss clusters before major expansion moves.</p></div>
                 <div class="article-meta">August 2026 • 6 min read</div>
             </a>
             <a href="macro-liquidity.html" class="article-card" data-category="LIQUIDITY">
-                <div><span class="article-tag">MACRO LIQUIDITY</span><h2>Global Liquidity Shifts & Market Cycles</h2><p>Analyzing central bank liquidity, stablecoin supply growth, and macro tailwinds.</p></div>
+                <div><span class="article-tag" style="color: var(--color-core);">CORE</span><h2>Global Liquidity Shifts</h2><p>Analyzing central bank liquidity, stablecoin supply growth, and macro tailwinds.</p></div>
                 <div class="article-meta">August 2026 • 7 min read</div>
             </a>
-            <a href="onchain-analysis.html" class="article-card" data-category="LIQUIDITY">
-                <div><span class="article-tag">ON-CHAIN</span><h2>Institutional Flow Dynamics</h2><p>Tracking miner reserves, exchange netflows, and whale distribution patterns.</p></div>
-                <div class="article-meta">August 2026 • 6 min read</div>
-            </a>
             <a href="portfolio-rebalancing.html" class="article-card" data-category="RISK">
-                <div><span class="article-tag">PORTFOLIO MANAGEMENT</span><h2>Dynamic Portfolio Rebalancing</h2><p>Systematic risk mitigation strategies using spot-futures arbitrage and hedging.</p></div>
+                <div><span class="article-tag" style="color: var(--color-core);">CORE</span><h2>Dynamic Portfolio Rebalancing</h2><p>Systematic risk mitigation strategies using spot-futures arbitrage and hedging.</p></div>
                 <div class="article-meta">August 2026 • 8 min read</div>
             </a>
+
+            <!-- ADVANCED (Kırmızı) -->
             <a href="delta-neutral-arbitrage.html" class="article-card" data-category="DERIVATIVES">
-                <div><span class="article-tag" style="color: #00f2fe;">ADVANCED</span><h2>Delta-Neutral Funding Rate Arbitrage</h2><p>Mathematics of generating consistent funding income independent of directional market moves.</p></div>
+                <div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>Delta-Neutral Arbitrage</h2><p>Generating consistent funding income independent of directional market moves.</p></div>
                 <div class="article-meta">August 2026 • 10 min read</div>
             </a>
             <a href="margin-modeling.html" class="article-card" data-category="RISK">
-                <div><span class="article-tag" style="color: #00f2fe;">ADVANCED</span><h2>Cross vs. Isolated Margin Modeling</h2><p>Portfolio-based margin management and risk metrics for high-volatility regimes.</p></div>
+                <div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>Margin Modeling</h2><p>Portfolio-based margin management and risk metrics for high-volatility regimes.</p></div>
                 <div class="article-meta">August 2026 • 9 min read</div>
             </a>
             <a href="liquidation-signals.html" class="article-card" data-category="LIQUIDITY">
-                <div><span class="article-tag" style="color: #00f2fe;">ADVANCED</span><h2>Liquidation Cascades as Reversal Signals</h2><p>Reading OI spikes and cluster liquidations to identify potential long/short squeeze reversals.</p></div>
+                <div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>Liquidation Cascades</h2><p>Reading OI spikes and cluster liquidations to identify potential reversals.</p></div>
                 <div class="article-meta">August 2026 • 10 min read</div>
+            </a>
+            <a href="onchain-analysis.html" class="article-card" data-category="LIQUIDITY">
+                <div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>Institutional Flow Dynamics</h2><p>Tracking miner reserves, exchange netflows, and whale distribution patterns.</p></div>
+                <div class="article-meta">August 2026 • 6 min read</div>
             </a>
         </div>
     </main>
