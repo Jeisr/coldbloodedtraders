@@ -141,6 +141,7 @@
             text-transform: uppercase;
         }
         .badge-foundation { background: rgba(0, 230, 118, 0.15); color: var(--color-foundation); border: 1px solid rgba(0, 230, 118, 0.4); }
+        .badge-core { background: rgba(255, 152, 0, 0.15); color: var(--color-core); border: 1px solid rgba(255, 152, 0, 0.4); }
 
         h1 { font-size: 2.6rem; margin: 0.5rem 0 1rem 0; line-height: 1.25; font-weight: 800; }
         .meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; }
@@ -200,7 +201,6 @@
         .related-card:hover { transform: translateY(-2px); border-color: var(--accent-color); }
         .related-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
         .related-tag { font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
-        .tag-foundation { color: var(--color-foundation); }
         .related-card h4 { color: var(--text-main); font-size: 0.95rem; margin: 0; }
 
         footer { border-top: 1px solid var(--border-color); padding: 2rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
@@ -310,13 +310,13 @@
                 <a href="funding-rates.html" class="related-card">
                     <div class="related-card-header">
                         <span class="related-tag tag-derivatives">DERIVATIVES</span>
-                        <span class="difficulty-badge badge-foundation">FOUNDATION</span>
+                        <span class="difficulty-badge badge-core">CORE</span>
                     </div>
                     <h4>Funding Rates & Implied Volatility Framework &rarr;</h4>
                 </a>
                 <a href="leverage-101.html" class="related-card">
                     <div class="related-card-header">
-                        <span class="related-tag tag-foundation">FOUNDATION</span>
+                        <span class="related-tag" style="color: var(--color-core);">RISK MANAGEMENT</span>
                         <span class="difficulty-badge badge-foundation">FOUNDATION</span>
                     </div>
                     <h4>Leverage 101: How Crypto Leverage Actually Works &rarr;</h4>
