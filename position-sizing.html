@@ -125,12 +125,26 @@
 
         .tag { 
             font-weight: 700; 
-            font-size: 0.85rem; 
-            letter-spacing: 1.5px;
+            font-size: 0.75rem; 
+            letter-spacing: 1px;
             text-transform: uppercase;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
         }
         
-        /* Badge styling for Foundation */
+        /* Category Badge Colors */
+        .tag-risk { 
+            background: rgba(255, 152, 0, 0.15);
+            color: #ff9800;
+            border: 1px solid rgba(255, 152, 0, 0.4);
+        }
+        .tag-liquidity { 
+            background: rgba(0, 242, 254, 0.15);
+            color: #00f2fe;
+            border: 1px solid rgba(0, 242, 254, 0.4);
+        }
+
+        /* Difficulty Badge System */
         .difficulty-badge {
             font-size: 0.75rem;
             font-weight: 700;
@@ -143,6 +157,16 @@
             background: rgba(0, 230, 118, 0.15);
             color: #00e676;
             border: 1px solid rgba(0, 230, 118, 0.4);
+        }
+        .badge-core {
+            background: rgba(255, 152, 0, 0.15);
+            color: #ff9800;
+            border: 1px solid rgba(255, 152, 0, 0.4);
+        }
+        .badge-advanced {
+            background: rgba(255, 23, 68, 0.15);
+            color: #ff1744;
+            border: 1px solid rgba(255, 23, 68, 0.4);
         }
 
         h1 { font-size: 2.6rem; margin: 0.5rem 0 1rem 0; line-height: 1.25; font-weight: 800; }
@@ -211,18 +235,8 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 0.5rem;
+            gap: 0.5rem;
         }
-        .related-tag {
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        /* Tag Colors */
-        .tag-foundation { color: #00e676; }
-        .tag-risk { color: #ff9800; }
-        .tag-liquidity { color: #00f2fe; }
 
         footer { border-top: 1px solid var(--border-color); padding: 2rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
 
@@ -323,13 +337,15 @@
             <div class="related-grid">
                 <a href="portfolio-rebalancing.html" class="related-card">
                     <div class="related-card-header">
-                        <span class="related-tag tag-foundation">FOUNDATION</span>
+                        <span class="tag tag-risk">RISK MANAGEMENT</span>
+                        <span class="difficulty-badge badge-foundation">Foundation</span>
                     </div>
                     <h4>Systematic Portfolio Rebalancing Protocols &rarr;</h4>
                 </a>
                 <a href="liquidity-pools.html" class="related-card">
                     <div class="related-card-header">
-                        <span class="related-tag tag-liquidity">LIQUIDITY</span>
+                        <span class="tag tag-liquidity">LIQUIDITY</span>
+                        <span class="difficulty-badge badge-core">Core</span>
                     </div>
                     <h4>Identifying Order Flow & Liquidity Pools &rarr;</h4>
                 </a>
@@ -339,6 +355,9 @@
 
     <footer>
         <p>&copy; 2026 ColdBloodedTraders. All rights reserved.</p>
+        <p style="font-size: 0.75rem; margin-top: 0.5rem; opacity: 0.7;">
+            Disclaimer: Content published on ColdBloodedTraders is for educational and informational purposes only. Nothing here constitutes financial or investment advice. Always manage your own risk (DYOR).
+        </p>
     </footer>
 
     <script>
