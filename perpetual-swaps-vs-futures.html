@@ -40,6 +40,30 @@
     }
     </script>
 
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What is the main difference between perpetual swaps and traditional futures?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Traditional futures contracts have a fixed expiration date and settle at a specific time, whereas perpetual swaps have no expiration date and use a funding rate mechanism to anchor the contract price to the spot index."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do perpetual swaps rely on funding rates?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Without an expiration date, perpetual contracts require funding payments between long and short traders to incentivize market participants to arbitrage price gaps and keep contract prices aligned with the underlying spot market."
+        }
+      }]
+    }
+    </script>
+
     <style>
         :root {
             --bg-color: #0b0e14;
@@ -49,6 +73,9 @@
             --text-muted: #8b949e;
             --border-color: rgba(240, 246, 252, 0.1);
             --table-header-bg: #161b22;
+            --color-foundation: #00e676;
+            --color-core: #ff9800;
+            --color-advanced: #ff5252;
         }
         body {
             background-color: var(--bg-color);
@@ -113,7 +140,7 @@
             letter-spacing: 1px;
             text-transform: uppercase;
         }
-        .badge-foundation { background: rgba(46, 160, 67, 0.15); color: #3fb950; border: 1px solid rgba(46, 160, 67, 0.4); }
+        .badge-foundation { background: rgba(0, 230, 118, 0.15); color: var(--color-foundation); border: 1px solid rgba(0, 230, 118, 0.4); }
 
         h1 { font-size: 2.6rem; margin: 0.5rem 0 1rem 0; line-height: 1.25; font-weight: 800; }
         .meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; }
@@ -173,7 +200,7 @@
         .related-card:hover { transform: translateY(-2px); border-color: var(--accent-color); }
         .related-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
         .related-tag { font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
-        .tag-foundation { color: #3fb950; }
+        .tag-foundation { color: var(--color-foundation); }
         .related-card h4 { color: var(--text-main); font-size: 0.95rem; margin: 0; }
 
         footer { border-top: 1px solid var(--border-color); padding: 2rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
@@ -207,7 +234,7 @@
     <main class="article-container">
         <div class="article-header-meta">
             <span class="tag tag-derivatives">DERIVATIVES</span>
-            <span class="difficulty-badge badge-foundation">Foundation</span>
+            <span class="difficulty-badge badge-foundation">FOUNDATION</span>
         </div>
         <h1>Understanding Perpetual Swaps vs. Traditional Futures</h1>
         <div class="meta">Published: August 2026 • 7 min read • By ColdBloodedTraders</div>
@@ -283,12 +310,14 @@
                 <a href="funding-rates.html" class="related-card">
                     <div class="related-card-header">
                         <span class="related-tag tag-derivatives">DERIVATIVES</span>
+                        <span class="difficulty-badge badge-foundation">FOUNDATION</span>
                     </div>
                     <h4>Funding Rates & Implied Volatility Framework &rarr;</h4>
                 </a>
                 <a href="leverage-101.html" class="related-card">
                     <div class="related-card-header">
                         <span class="related-tag tag-foundation">FOUNDATION</span>
+                        <span class="difficulty-badge badge-foundation">FOUNDATION</span>
                     </div>
                     <h4>Leverage 101: How Crypto Leverage Actually Works &rarr;</h4>
                 </a>
