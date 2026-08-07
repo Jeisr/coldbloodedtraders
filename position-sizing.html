@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Position Sizing Framework in Volatile Markets | ColdBloodedTraders</title>
     <!-- Security Headers -->
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta name="description" content="Master mathematical position sizing, risk-per-trade limits, and capital preservation protocols in volatile crypto markets.">
     
@@ -208,12 +208,14 @@
             gap: 0.5rem;
         }
         .related-tag {
-            color: var(--color-core);
             font-size: 0.75rem;
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
+        /* Color variations for related tags */
+        .tag-risk { color: var(--color-core); }
+        .tag-orderflow { color: var(--accent-color); }
 
         footer { border-top: 1px solid var(--border-color); padding: 2rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
 
@@ -314,14 +316,14 @@
             <div class="related-grid">
                 <a href="portfolio-rebalancing.html" class="related-card">
                     <div class="related-card-header">
-                        <span class="related-tag">RISK MANAGEMENT</span>
+                        <span class="related-tag tag-risk">RISK MANAGEMENT</span>
                         <span class="difficulty-badge badge-core">Core</span>
                     </div>
                     <h4>Systematic Portfolio Trading Psychology &rarr;</h4>
                 </a>
                 <a href="liquidity-pools.html" class="related-card">
                     <div class="related-card-header">
-                        <span class="related-tag">ORDER FLOW</span>
+                        <span class="related-tag tag-orderflow">ORDER FLOW</span>
                         <span class="difficulty-badge badge-core">Core</span>
                     </div>
                     <h4>Identifying Order Flow & Liquidity Pools &rarr;</h4>
