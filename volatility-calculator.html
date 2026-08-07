@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="canonical" href="https://coldbloodedtraders.com/volatility-calculator.html">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volatility Position Sizer | ColdBloodedTraders</title>
+    <meta name="description" content="Size your trading positions dynamically based on current market volatility (ATR) metrics.">
+    <link rel="icon" type="image/png" href="assets/cbt-logo.png">
+    
+    <style>
+        :root {
+            --bg-color: #0b0e14;
+            --card-bg: rgba(22, 27, 34, 0.7);
+            --accent-color: #00f2fe;
+            --text-main: #f0f6fc;
+            --text-muted: #8b949e;
+            --border-color: rgba(240, 246, 252, 0.1);
+            --danger-color: #ff4d4d;
+        }
+        body { background-color: var(--bg-color); color: var(--text-main); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; line-height: 1.6; }
+        
+        header {
+            position: sticky; top: 0; backdrop-filter: blur(12px); background: rgba(11, 14, 20, 0.85);
+            padding: 1.2rem 2rem; border-bottom: 1px solid var(--border-color);
+            display: flex; justify-content: space-between; align-items: center; z-index: 1000;
+        }
+        .logo { font-weight: 800; color: var(--text-main); text-decoration: none; font-size: 1.2rem; }
+        .logo-full span { color: var(--accent-color); }
+        .logo-short { display: none; font-weight: 900; color: var(--text-main); }
+        .logo-short span { color: var(--accent-color); }
+        
+        .nav-right { display: flex; align-items: center; gap: 1rem; }
+        
+        .dropdown { position: relative; display: inline-block; }
+        .dropdown-btn { color: var(--accent-color); background: transparent; font-weight: 700; border: 1px solid var(--accent-color); padding: 0.4rem 0.8rem; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; }
+        .dropdown-content { display: none; position: absolute; right: 0; top: 120%; background-color: #161b22; min-width: 250px; border: 1px solid var(--border-color); border-radius: 8px; z-index: 1001; box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+        .dropdown-content a { color: var(--text-main); padding: 0.75rem 1rem; text-decoration: none; display: block; font-size: 0.85rem; border-bottom: 1px solid rgba(240, 246, 252, 0.05); }
+        .dropdown-content a:hover { background: rgba(0, 242, 254, 0.08); color: var(--accent-color); }
+        .dropdown.active .dropdown-content { display: block; }
+
+        .container { max-width: 820px; margin: 3rem auto 5rem auto; padding: 0 1.5rem; }
+        h1 { margin-bottom: 1.5rem; font-size: 1.8rem; }
+        
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; }
+        .form-group { margin-bottom: 1.25rem; }
+        .form-group label { display: block; font-size: 0.8rem; font-weight: 700; color: var(--text-muted); margin-bottom: 0.5rem; text-transform: uppercase; }
+        .input-wrapper { position: relative; display: flex; align-items: center; }
+        .input-wrapper input { width: 100%; background: #0b0e14; border: 1px solid var(--border-color); color: white; padding: 0.8rem; border-radius: 6px; box-sizing: border-box; }
+        .input-wrapper input:focus { border-color: var(--accent-color); outline: none; }
+        .input-suffix { position: absolute; right: 1rem; color: var(--text-muted); font-size: 0.9rem; pointer-events: none; }
+
+        .results-panel { display: flex; flex-direction: column; justify-content: center; gap: 1.5rem; }
+        .result-item .label { color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase; }
+        .result-item .value { font-size: 1.6rem; font-weight: 800; color: var(--accent-color); }
+        .result-item .value.danger { color: var(--danger-color); }
+
+        footer { border-top: 1px solid var(--border-color); padding: 2rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); margin-top: 4rem; }
+        .disclaimer { font-size: 0.75rem; margin-top: 0.5rem; opacity: 0.7; }
+
+        @media (max-width: 600px) {
+            .logo-full { display: none; }
+            .logo-short { display: inline-block; }
+            .calc-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <span class="logo-full">COLDBLOODED<span>TRADERS</span></span>
+            <span class="logo-short">CB<span>T</span></span>
+        </a>
+        <div class="nav-right">
+            <div class="dropdown" id="toolsDropdown">
+                <button class="dropdown-btn" onclick="toggleDropdown()">🧮 Tools &#9662;</button>
+                <div class="dropdown-content">
+                    <a href="calculator.html">Position Size Calculator</a>
+                    <a href="liquidation-calculator.html">Liquidation Price Calculator</a>
+                    <a href="risk-metrics.html">Risk Metrics Calculator</a>
+                    <a href="risk-reward-calculator.html">R/R Ratio Calculator</a>
+                    <a href="compound-calculator.html">Compound Interest Calculator</a>
+                    <a href="volatility-calculator.html">Volatility Position Sizer</a>
+                </div>
+            </div>
+            <a href="index.html" style="color:var(--accent-color); font-size:0.9rem; text-decoration:none;">&larr; Home</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Volatility Position Sizer (ATR)</h1>
+        <div class="calc-grid">
+            <div class="inputs">
+                <div class="form-group"><label>Account Balance</label><div class="input-wrapper"><input type="number" id="balance" value="10000"><span class="input-suffix">USD</span></div></div>
+                <div class="form-group"><label>Risk % per Trade</label><div class="input-wrapper"><input type="number" id="risk" value="1"><span class="input-suffix">%</span></div></div>
+                <div class="form-group"><label>ATR Value</label><div class="input-wrapper"><input type="number" id="atr" value="250"><span class="input-suffix">USD</span></div></div>
+            </div>
+            <div class="results-panel">
+                <div class="result-item"><div class="label">Max Risk Amount</div><div class="value danger" id="resRisk">$100.00</div></div>
+                <div class="result-item"><div class="label">Position Size Units</div><div class="value" id="resUnits">0.4000 Units</div></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 ColdBloodedTraders. All rights reserved.</p>
+        <p class="disclaimer">
+            Disclaimer: Content published on ColdBloodedTraders is for educational and informational purposes only. Nothing here constitutes financial or investment advice. Always manage your own risk (DYOR).
+        </p>
+    </footer>
+
+    <script>
+        function toggleDropdown() { document.getElementById('toolsDropdown').classList.toggle('active'); }
+        window.onclick = (e) => { if (!e.target.closest('.dropdown')) document.getElementById('toolsDropdown').classList.remove('active'); }
+        
+        function calc() {
+            let balance = parseFloat(document.getElementById('balance').value);
+            let riskPct = parseFloat(document.getElementById('risk').value);
+            let atr = parseFloat(document.getElementById('atr').value);
+            if (!balance || !riskPct || !atr || atr === 0) return;
+            let riskUSD = balance * (riskPct / 100);
+            let units = riskUSD / atr;
+            document.getElementById('resRisk').textContent = `$${riskUSD.toFixed(2)}`;
+            document.getElementById('resUnits').textContent = `${units.toFixed(4)} Units`;
+        }
+        document.querySelectorAll('input').forEach(i => i.addEventListener('input', calc));
+        calc();
+    </script>
+</body>
+</html>
