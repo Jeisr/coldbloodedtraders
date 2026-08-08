@@ -36,8 +36,19 @@
             align-items: center;
             z-index: 1000;
         }
-        .logo { font-weight: 800; color: var(--text-main); text-decoration: none; font-size: 1.2rem; }
+        .logo { font-weight: 800; color: var(--text-main); text-decoration: none; font-size: 1.2rem; letter-spacing: 0.5px; }
         .logo span { color: var(--accent-color); }
+        
+        /* Mobil logo uyumluluğu için sınıf yapılandırması */
+        .logo-full { display: inline; }
+        .logo-mobile { display: none; }
+
+        @media (max-width: 480px) {
+            .logo-full { display: none; }
+            .logo-mobile { display: inline; }
+            header { padding: 1.2rem 1rem; }
+        }
+
         .back-btn { color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
         
         .container {
@@ -76,7 +87,10 @@
 <body>
 
     <header>
-        <a href="index.html" class="logo">COLDBLOODED<span>TRADERS</span></a>
+        <a href="index.html" class="logo">
+            <span class="logo-full">COLDBLOODED<span>TRADERS</span></span>
+            <span class="logo-mobile">CB<span>T</span></span>
+        </a>
         <a href="index.html" class="back-btn">&larr; Back to Home</a>
     </header>
 
