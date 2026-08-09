@@ -21,32 +21,26 @@
         .logo { font-weight: 800; color: var(--text-main); text-decoration: none; font-size: 1.2rem; }
         .logo span { color: var(--accent-color); }
         .container { max-width: 800px; margin: 3rem auto 5rem auto; padding: 0 1.5rem; }
-        .page-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; }
-        h1 { font-size: 2.2rem; margin: 0; color: var(--text-main); }
+        h1 { font-size: 2.2rem; margin-bottom: 0.5rem; color: var(--text-main); }
         h2 { font-size: 1.3rem; margin-top: 2rem; color: var(--accent-color); }
         p, li { color: var(--text-muted); font-size: 0.95rem; }
         ul { padding-left: 1.5rem; }
-        .disclaimer-box { background: var(--card-bg); border-left: 4px solid var(--accent-color); padding: 1.2rem; margin: 2rem 0; border-radius: 4px; }
-        .disclaimer-box p { margin: 0; color: var(--text-main); font-size: 0.9rem; }
-        .back-link { color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 0.95rem; white-space: nowrap; }
+        .back-link { color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
         .back-link:hover { text-decoration: underline; }
         footer { border-top: 1px solid var(--border-color); padding: 2rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
+        .footer-disclaimer { margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-muted); opacity: 0.8; }
     </style>
 </head>
 <body>
 
     <header>
         <a href="index.html" class="logo">COLDBLOODED<span>TRADERS</span></a>
+        <a href="index.html" class="back-link">&larr; Back to Home</a>
     </header>
 
     <main class="container">
-        <div class="page-header">
-            <div>
-                <h1>Privacy Policy</h1>
-                <p style="margin: 0.5rem 0 0 0;">Last updated: August 2026</p>
-            </div>
-            <a href="index.html" class="back-link">&larr; Back to Home</a>
-        </div>
+        <h1>Privacy Policy</h1>
+        <p>Last updated: August 2026</p>
 
         <p>At <strong>ColdBloodedTraders</strong>, accessible from coldbloodedtraders.com, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by ColdBloodedTraders and how we use it.</p>
 
@@ -60,16 +54,13 @@
         <p>Google is one of a third-party vendor on our site. It uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to coldbloodedtraders.com and other sites on the internet. However, visitors may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy at the following URL: <a href="https://policies.google.com/technologies/ads" target="_blank" style="color: var(--accent-color);">https://policies.google.com/technologies/ads</a></p>
         <p>Third-party ad servers or ad networks use technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on ColdBloodedTraders. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.</p>
 
-        <div class="disclaimer-box">
-            <p><strong>Disclaimer:</strong> Content published on ColdBloodedTraders is for educational and informational purposes only. Nothing here constitutes financial or investment advice. Always manage your own risk (DYOR).</p>
-        </div>
-
         <h2>4. Consent</h2>
         <p>By using our website, you hereby consent to our Privacy Policy and agree to its terms.</p>
     </main>
 
     <footer>
         <p>&copy; 2026 ColdBloodedTraders. All rights reserved.</p>
+        <p class="footer-disclaimer">Disclaimer: Content published on ColdBloodedTraders is for educational and informational purposes only. Nothing here constitutes financial or investment advice. Always manage your own risk (DYOR).</p>
     </footer>
 
 </body>
