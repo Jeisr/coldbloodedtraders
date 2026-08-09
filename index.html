@@ -76,11 +76,12 @@
         .hero h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 0.8rem; background: linear-gradient(135deg, #ffffff 0%, var(--accent-color) 60%, #4facfe 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
         .hero p { color: var(--text-muted); font-size: 1.15rem; max-width: 650px; margin: 0 auto; }
 
-        /* Leopar İnteraksiyon Stili */
-        .leopard-container { margin: 2rem auto; cursor: pointer; min-height: 100px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        #leopard-svg { transition: opacity 0.5s ease; cursor: pointer; }
-        #quote-text { display: none; opacity: 0; transition: opacity 0.5s ease; color: var(--text-main); font-style: italic; font-size: 1.1rem; text-align: center; max-width: 500px; }
-        .quote-author { display: block; margin-top: 0.5rem; color: var(--accent-color); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; }
+        /* Geliştirilmiş Leopar Alanı */
+        .leopard-container { margin: 2rem auto; cursor: pointer; min-height: 90px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        #leopard-svg { transition: opacity 0.4s ease; cursor: pointer; }
+        #leopard-svg:hover { transform: scale(1.05); transition: transform 0.3s ease; }
+        #quote-text { display: none; opacity: 0; transition: opacity 0.4s ease; color: var(--text-main); font-style: italic; font-size: 1.05rem; text-align: center; max-width: 480px; }
+        .quote-author { display: block; margin-top: 0.4rem; color: var(--accent-color); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
 
         .category-section { margin-bottom: 3rem; }
         .category-title { color: var(--text-main); font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); display: flex; align-items: center; gap: 10px; }
@@ -135,13 +136,23 @@
             <h1>Quantitative Risk & Market Dynamics</h1>
             <p>Systematic frameworks for crypto derivatives, perpetual liquidity, and position management.</p>
             
-            <div class="leopard-container" onclick="triggerLeopard()">
-                <svg id="leopard-svg" viewBox="0 0 100 100" style="width: 80px; height: 80px; stroke: var(--accent-color); fill: none; stroke-width: 2; filter: drop-shadow(0 0 5px var(--accent-color));">
-                    <path d="M20 40 Q 20 10 40 10 Q 50 10 55 20 M80 40 Q 80 10 60 10 Q 50 10 45 20" />
-                    <path d="M20 40 Q 20 80 50 90 Q 80 80 80 40" />
-                    <circle cx="35" cy="45" r="3" stroke-width="1"/>
-                    <circle cx="65" cy="45" r="3" stroke-width="1"/>
-                    <path d="M45 60 Q 50 65 55 60 M50 60 L50 70" />
+            <div class="leopard-container" onclick="triggerLeopard()" title="Click for CBT Creed">
+                <svg id="leopard-svg" viewBox="0 0 120 100" style="width: 95px; height: 80px; stroke: var(--accent-color); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 8px rgba(0, 242, 254, 0.4));">
+                    <!-- Kulaklar ve Baş Hatları -->
+                    <path d="M25 35 L15 15 L38 25" />
+                    <path d="M95 35 L105 15 L82 25" />
+                    <path d="M35 22 Q 60 5 85 22 Q 100 45 92 75 Q 85 92 60 95 Q 35 92 28 75 Q 20 45 35 22 Z" />
+                    <!-- Gözler (Sert Bakış) -->
+                    <path d="M38 45 Q 46 40 52 46 Q 46 50 38 45 Z" fill="rgba(0, 242, 254, 0.15)" />
+                    <path d="M82 45 Q 74 40 68 46 Q 74 50 82 45 Z" fill="rgba(0, 242, 254, 0.15)" />
+                    <!-- Burun ve Çene -->
+                    <polygon points="55,62 65,62 60,70" fill="var(--accent-color)" opacity="0.8" />
+                    <path d="M60 70 L60 78 M52 78 Q 60 83 68 78" />
+                    <!-- Minimal Leopar Desenleri (Benekler) -->
+                    <path d="M36 33 Q 40 30 43 35" />
+                    <path d="M84 33 Q 80 30 77 35" />
+                    <path d="M28 58 Q 32 56 30 63" />
+                    <path d="M92 58 Q 88 56 90 63" />
                 </svg>
                 <div id="quote-text">
                     "Cold blood, calculated risk, absolute precision."
@@ -221,7 +232,7 @@
                 svg.style.display = 'none';
                 quote.style.display = 'block';
                 setTimeout(() => { quote.style.opacity = '1'; }, 50);
-            }, 500);
+            }, 400);
 
             setTimeout(() => {
                 quote.style.opacity = '0';
@@ -229,7 +240,7 @@
                     quote.style.display = 'none';
                     svg.style.display = 'block';
                     setTimeout(() => { svg.style.opacity = '1'; }, 50);
-                }, 500);
+                }, 400);
             }, 5000);
         }
 
