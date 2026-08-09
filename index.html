@@ -76,7 +76,7 @@
         .hero h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 0.8rem; background: linear-gradient(135deg, #ffffff 0%, var(--accent-color) 60%, #4facfe 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
         .hero p { color: var(--text-muted); font-size: 1.15rem; max-width: 650px; margin: 0 auto; }
 
-        /* Asil, Soğukkanlı Leopar Tasarımı */
+        /* Asil, Nötr ve Keskin Leopar Tasarımı */
         .leopard-container { margin: 2rem auto; cursor: pointer; min-height: 90px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         #leopard-svg { transition: opacity 0.4s ease; cursor: pointer; }
         #leopard-svg:hover { transform: scale(1.05); transition: transform 0.3s ease; }
@@ -144,30 +144,23 @@
                     <!-- Kafatası ve Keskin Çene Hattı -->
                     <path d="M35 20 L60 10 L85 20 L92 48 L74 88 L60 92 L46 88 L28 48 Z" />
                     
-                    <!-- Asil, Süzülen ve Keskin Gözler (Mimiksiz / Nötr) -->
-                    <path d="M36 43 L50 45 L42 49" />
-                    <path d="M84 43 L70 45 L78 49" />
+                    <!-- Asil, Yatay ve Ağır Bakan Düz Gözler (Nötr / Mimiksiz) -->
+                    <path d="M38 45 L50 45" />
+                    <path d="M82 45 L70 45" />
 
-                    <!-- Burun ve Dudak / Çene Yapısı (Gülmeyen, Düz Çizgi) -->
+                    <!-- Burun ve Dudak Yapısı (İdeal Uzunlukta Ağız Hattı) -->
                     <polygon points="56,58 64,58 60,65" fill="var(--accent-color)" opacity="0.8" />
-                    <!-- Dudağı ve ağız hattını belirginleştiren düz/ciddi çizgi -->
-                    <path d="M60 65 L60 76 M46 76 L74 76" />
+                    <path d="M60 65 L60 75 M52 75 L68 75" />
 
                     <!-- Sol 3 Bıyık -->
-                    <line x1="44" y1="65" x2="22" y2="60" opacity="0.7" />
-                    <line x1="43" y1="70" x2="19" y2="69" opacity="0.7" />
-                    <line x1="44" y1="75" x2="22" y2="78" opacity="0.7" />
+                    <line x1="44" y1="65" x2="26" y2="61" opacity="0.7" />
+                    <line x1="43" y1="70" x2="23" y2="69" opacity="0.7" />
+                    <line x1="44" y1="75" x2="26" y2="77" opacity="0.7" />
 
                     <!-- Sağ 3 Bıyık -->
-                    <line x1="76" y1="65" x2="98" y2="60" opacity="0.7" />
-                    <line x1="77" y1="70" x2="101" y2="69" opacity="0.7" />
-                    <line x1="76" y1="75" x2="98" y2="78" opacity="0.7" />
-
-                    <!-- Leopar Benekleri -->
-                    <circle cx="38" cy="30" r="1.5" fill="var(--accent-color)" />
-                    <circle cx="82" cy="30" r="1.5" fill="var(--accent-color)" />
-                    <circle cx="33" cy="60" r="1.5" fill="var(--accent-color)" />
-                    <circle cx="87" cy="60" r="1.5" fill="var(--accent-color)" />
+                    <line x1="76" y1="65" x2="94" y2="61" opacity="0.7" />
+                    <line x1="77" y1="70" x2="97" y2="69" opacity="0.7" />
+                    <line x1="76" y1="75" x2="94" y2="77" opacity="0.7" />
                 </svg>
                 <div id="quote-text">
                     "Cold blood, calculated risk, absolute precision."
