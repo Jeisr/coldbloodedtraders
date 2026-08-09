@@ -39,10 +39,9 @@
             --card-bg: rgba(22, 27, 34, 0.75);
             --accent-color: #00f2fe;
             --accent-hover: #00c6ff;
-            /* Seviye Renkleri */
-            --color-foundation: #00e676; /* Yeşil */
-            --color-core: #ff9800;       /* Turuncu */
-            --color-advanced: #ff5252;   /* Kırmızı */
+            --color-foundation: #00e676;
+            --color-core: #ff9800;
+            --color-advanced: #ff5252;
             --text-main: #f0f6fc;
             --text-muted: #8b949e;
             --border-color: rgba(240, 246, 252, 0.1);
@@ -77,6 +76,12 @@
         .hero h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 0.8rem; background: linear-gradient(135deg, #ffffff 0%, var(--accent-color) 60%, #4facfe 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
         .hero p { color: var(--text-muted); font-size: 1.15rem; max-width: 650px; margin: 0 auto; }
 
+        /* Yeni Leopar Stili */
+        .leopard-container { margin: 2rem auto; cursor: pointer; min-height: 100px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        #leopard-svg { width: 60px; height: 60px; transition: opacity 0.5s ease; fill: var(--accent-color); filter: drop-shadow(0 0 8px var(--accent-color)); }
+        #quote-text { display: none; opacity: 0; transition: opacity 0.5s ease; color: var(--text-main); font-style: italic; font-size: 1.1rem; text-align: center; max-width: 500px; }
+        .quote-author { display: block; margin-top: 0.5rem; color: var(--accent-color); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; }
+
         .category-section { margin-bottom: 3rem; }
         .category-title { color: var(--text-main); font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); display: flex; align-items: center; gap: 10px; }
         
@@ -96,18 +101,9 @@
         .article-card p { color: var(--text-muted); font-size: 0.95rem; margin: 0 0 1.2rem 0; }
         .article-meta { color: var(--text-muted); font-size: 0.8rem; }
 
-        /* Footer Stilleri */
         footer { border-top: 1px solid var(--border-color); padding: 3rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
         .footer-links { margin-bottom: 1.5rem; }
-        .about-btn { 
-            color: var(--accent-color); 
-            text-decoration: none; 
-            border: 1px solid var(--accent-color); 
-            padding: 0.5rem 1.2rem; 
-            border-radius: 20px; 
-            font-weight: 600; 
-            transition: all 0.3s;
-        }
+        .about-btn { color: var(--accent-color); text-decoration: none; border: 1px solid var(--accent-color); padding: 0.5rem 1.2rem; border-radius: 20px; font-weight: 600; transition: all 0.3s; }
         .about-btn:hover { background: var(--accent-color); color: var(--bg-color); }
         .disclaimer { font-size: 0.75rem; max-width: 800px; margin: 1.5rem auto 0 auto; opacity: 0.6; line-height: 1.5; }
 
@@ -138,6 +134,15 @@
         <section class="hero">
             <h1>Quantitative Risk & Market Dynamics</h1>
             <p>Systematic frameworks for crypto derivatives, perpetual liquidity, and position management.</p>
+            
+            <!-- Leopar Silüeti Eklendi -->
+            <div class="leopard-container" onclick="triggerLeopard()">
+                <svg id="leopard-svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+                <div id="quote-text">
+                    "Cold blood, calculated risk, absolute precision."
+                    <span class="quote-author">— The Trader's Creed</span>
+                </div>
+            </div>
         </section>
 
         <div class="controls">
@@ -150,6 +155,7 @@
             </div>
         </div>
 
+        <!-- ... (Kategori bölümlerin aynı) ... -->
         <section class="category-section" data-level="FOUNDATION">
             <h3 class="category-title" style="border-color: var(--color-foundation);"><span style="color: var(--color-foundation);">●</span> FOUNDATION</h3>
             <div class="articles-grid">
@@ -187,7 +193,6 @@
                 <a href="delta-neutral-yield.html" class="article-card" data-category="DERIVATIVES"><div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>Funding Arbitrage</h2><p>Mastering delta-neutral yield strategies.</p></div><div class="article-meta">August 2026 • 9 min read</div></a>
             </div>
         </section>
-
     </main>
 
     <footer>
@@ -202,6 +207,28 @@
         function toggleDropdown() { document.getElementById('toolsDropdown').classList.toggle('active'); }
         window.onclick = function(e) { if (!e.target.closest('.dropdown')) document.getElementById('toolsDropdown').classList.remove('active'); }
 
+        // Leopar İnteraksiyonu
+        function triggerLeopard() {
+            const svg = document.getElementById('leopard-svg');
+            const quote = document.getElementById('quote-text');
+            
+            svg.style.opacity = '0';
+            setTimeout(() => {
+                svg.style.display = 'none';
+                quote.style.display = 'block';
+                setTimeout(() => { quote.style.opacity = '1'; }, 50);
+            }, 500);
+
+            setTimeout(() => {
+                quote.style.opacity = '0';
+                setTimeout(() => {
+                    quote.style.display = 'none';
+                    svg.style.display = 'block';
+                    setTimeout(() => { svg.style.opacity = '1'; }, 50);
+                }, 500);
+            }, 5000);
+        }
+
         const searchInput = document.getElementById('searchInput');
         const filterBtns = document.querySelectorAll('.filter-btn');
         const articleCards = document.querySelectorAll('.article-card');
@@ -210,19 +237,15 @@
 
         function filterArticles() {
             const query = searchInput.value.toLowerCase();
-            
             sections.forEach(section => {
                 let hasVisibleCard = false;
                 const cards = section.querySelectorAll('.article-card');
-
                 cards.forEach(card => {
                     const category = card.getAttribute('data-category');
                     const title = card.querySelector('h2').textContent.toLowerCase();
                     const desc = card.querySelector('p').textContent.toLowerCase();
-
                     const matchesCategory = activeCategory === 'all' || category === activeCategory;
                     const matchesSearch = title.includes(query) || desc.includes(query);
-
                     if (matchesCategory && matchesSearch) {
                         card.style.display = 'flex';
                         hasVisibleCard = true;
@@ -230,7 +253,6 @@
                         card.style.display = 'none';
                     }
                 });
-
                 section.style.display = hasVisibleCard ? 'block' : 'none';
             });
         }
