@@ -76,9 +76,9 @@
         .hero h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 0.8rem; background: linear-gradient(135deg, #ffffff 0%, var(--accent-color) 60%, #4facfe 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
         .hero p { color: var(--text-muted); font-size: 1.15rem; max-width: 650px; margin: 0 auto; }
 
-        /* Yeni Leopar Stili */
+        /* Leopar İnteraksiyon Stili */
         .leopard-container { margin: 2rem auto; cursor: pointer; min-height: 100px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        #leopard-svg { width: 60px; height: 60px; transition: opacity 0.5s ease; fill: var(--accent-color); filter: drop-shadow(0 0 8px var(--accent-color)); }
+        #leopard-svg { transition: opacity 0.5s ease; cursor: pointer; }
         #quote-text { display: none; opacity: 0; transition: opacity 0.5s ease; color: var(--text-main); font-style: italic; font-size: 1.1rem; text-align: center; max-width: 500px; }
         .quote-author { display: block; margin-top: 0.5rem; color: var(--accent-color); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; }
 
@@ -135,16 +135,17 @@
             <h1>Quantitative Risk & Market Dynamics</h1>
             <p>Systematic frameworks for crypto derivatives, perpetual liquidity, and position management.</p>
             
-<div class="leopard-container" onclick="triggerLeopard()">
-    <svg id="leopard-svg" viewBox="0 0 24 24">
-        <path d="M12 2L4 20l8-4 8 4L12 2z" fill="none" stroke="var(--accent-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M12 8l-2 4 2-1 2 1-2-4z" fill="var(--accent-color)"/>
-    </svg>
-    <div id="quote-text">
-        "Cold blood, calculated risk, absolute precision."
-        <span class="quote-author">— The Trader's Creed</span>
-    </div>
-</div>
+            <div class="leopard-container" onclick="triggerLeopard()">
+                <svg id="leopard-svg" viewBox="0 0 100 100" style="width: 80px; height: 80px; stroke: var(--accent-color); fill: none; stroke-width: 2; filter: drop-shadow(0 0 5px var(--accent-color));">
+                    <path d="M20 40 Q 20 10 40 10 Q 50 10 55 20 M80 40 Q 80 10 60 10 Q 50 10 45 20" />
+                    <path d="M20 40 Q 20 80 50 90 Q 80 80 80 40" />
+                    <circle cx="35" cy="45" r="3" stroke-width="1"/>
+                    <circle cx="65" cy="45" r="3" stroke-width="1"/>
+                    <path d="M45 60 Q 50 65 55 60 M50 60 L50 70" />
+                </svg>
+                <div id="quote-text">
+                    "Cold blood, calculated risk, absolute precision."
+                    <span class="quote-author">— The Trader's Creed</span>
                 </div>
             </div>
         </section>
@@ -159,7 +160,6 @@
             </div>
         </div>
 
-        <!-- ... (Kategori bölümlerin aynı) ... -->
         <section class="category-section" data-level="FOUNDATION">
             <h3 class="category-title" style="border-color: var(--color-foundation);"><span style="color: var(--color-foundation);">●</span> FOUNDATION</h3>
             <div class="articles-grid">
