@@ -143,26 +143,55 @@
             <div class="search-box"><input type="text" id="searchInput" placeholder="Search frameworks or concepts..."></div>
             <div class="filter-buttons">
                 <button class="filter-btn active" data-category="all">All</button>
-                <button class="filter-btn" data-category="RISK">Risk</button>
+                <button class="filter-btn" data-category="RISK">Risk Management</button>
                 <button class="filter-btn" data-category="DERIVATIVES">Derivatives</button>
-                <button class="filter-btn" data-category="LIQUIDITY">Liquidity</button>
+                <button class="filter-btn" data-category="STRUCTURE">Market Structure</button>
+                <button class="filter-btn" data-category="LIQUIDITY">Liquidity & Order Flow</button>
             </div>
         </div>
 
         <div class="articles-grid" id="articlesGrid">
-            <!-- FOUNDATION -->
-            <a href="crypto-market-cycles.html" class="article-card" data-category="DERIVATIVES">
+            <!-- MARKET STRUCTURE -->
+            <a href="crypto-market-cycles.html" class="article-card" data-category="STRUCTURE">
                 <div><span class="article-tag" style="color: var(--color-foundation);">FOUNDATION</span><h2>Crypto Market Cycles 101</h2><p>Spotting institutional accumulation vs. distribution phases and navigating market structure.</p></div>
                 <div class="article-meta">August 2026 • 7 min read</div>
             </a>
-            <a href="spot-vs-derivatives.html" class="article-card" data-category="DERIVATIVES">
+            <a href="spot-vs-derivatives.html" class="article-card" data-category="STRUCTURE">
                 <div><span class="article-tag" style="color: var(--color-foundation);">FOUNDATION</span><h2>Spot vs. Derivatives</h2><p>Understanding fundamental market structures, settlement types, and choosing the right environment.</p></div>
                 <div class="article-meta">August 2026 • 7 min read</div>
             </a>
+
+            <!-- DERIVATIVES -->
             <a href="perpetual-swaps-vs-futures.html" class="article-card" data-category="DERIVATIVES">
                 <div><span class="article-tag" style="color: var(--color-foundation);">FOUNDATION</span><h2>Understanding Perpetual Swaps</h2><p>Comparing contract structures, funding rate mechanisms, basis drift, and roll-yield risks.</p></div>
                 <div class="article-meta">August 2026 • 7 min read</div>
             </a>
+            <a href="open-interest-analytics.html" class="article-card" data-category="DERIVATIVES">
+                <div><span class="article-tag" style="color: var(--color-core);">CORE</span><h2>Open Interest & Open Position Analytics</h2><p>Tracking institutional leverage buildups, market squeeze triggers, and cascading liquidations.</p></div>
+                <div class="article-meta">August 2026 • 8 min read</div>
+            </a>
+            <a href="funding-rates.html" class="article-card" data-category="DERIVATIVES">
+                <div><span class="article-tag" style="color: var(--color-core);">CORE</span><h2>Funding Rates & Volatility</h2><p>Understanding perpetual swap mechanics, open interest spikes, and squeeze traps.</p></div>
+                <div class="article-meta">August 2026 • 7 min read</div>
+            </a>
+            <a href="volatility-skew.html" class="article-card" data-category="DERIVATIVES">
+                <div><span class="article-tag" style="color: var(--color-core);">CORE</span><h2>Volatility Skew & Smile Mechanics</h2><p>Deconstructing options implied volatility smiles, smirk structures, and tail-risk hedging signals.</p></div>
+                <div class="article-meta">August 2026 • 10 min read</div>
+            </a>
+            <a href="gamma-squeeze-dynamics.html" class="article-card" data-category="DERIVATIVES">
+                <div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>Gamma Squeeze & Market Maker Hedging Dynamics</h2><p>Understand how options market gamma, dealer delta hedging, and reflexive call-buying loops trigger violent structural squeezes.</p></div>
+                <div class="article-meta">August 2026 • 10 min read</div>
+            </a>
+            <a href="delta-neutral-arbitrage.html" class="article-card" data-category="DERIVATIVES">
+                <div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>Delta-Neutral Arbitrage</h2><p>Generating consistent funding income independent of directional market moves.</p></div>
+                <div class="article-meta">August 2026 • 10 min read</div>
+            </a>
+            <a href="delta-neutral-yield.html" class="article-card" data-category="DERIVATIVES">
+                <div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>Delta-Neutral Yield & Funding Arbitrage</h2><p>Master delta-neutral yield strategies and funding rate arbitrage to generate sustainable returns.</p></div>
+                <div class="article-meta">August 2026 • 9 min read</div>
+            </a>
+
+            <!-- RISK MANAGEMENT -->
             <a href="stop-loss-mechanics.html" class="article-card" data-category="RISK">
                 <div><span class="article-tag" style="color: var(--color-foundation);">FOUNDATION</span><h2>Stop-Loss Mechanics</h2><p>Eliminating emotional bias, structuring invalidation points, and managing risk exposure.</p></div>
                 <div class="article-meta">August 2026 • 7 min read</div>
@@ -179,16 +208,16 @@
                 <div><span class="article-tag" style="color: var(--color-foundation);">FOUNDATION</span><h2>Cross vs. Isolated Margin Architectures</h2><p>Deep dive into exchange liquidation engines, position isolation, and portfolio solvency mechanics.</p></div>
                 <div class="article-meta">August 2026 • 9 min read</div>
             </a>
-
-            <!-- CORE -->
-            <a href="open-interest-analytics.html" class="article-card" data-category="DERIVATIVES">
-                <div><span class="article-tag" style="color: var(--color-core);">CORE</span><h2>Open Interest & Open Position Analytics</h2><p>Tracking institutional leverage buildups, market squeeze triggers, and cascading liquidations.</p></div>
+            <a href="psychology-of-loss.html" class="article-card" data-category="RISK">
+                <div><span class="article-tag" style="color: var(--color-core);">CORE</span><h2>The Psychology of Loss & Cognitive Biases</h2><p>Deconstructing loss aversion, cognitive traps, and building rule-based emotional resilience.</p></div>
                 <div class="article-meta">August 2026 • 8 min read</div>
             </a>
-            <a href="funding-rates.html" class="article-card" data-category="DERIVATIVES">
-                <div><span class="article-tag" style="color: var(--color-core);">CORE</span><h2>Funding Rates & Volatility</h2><p>Understanding perpetual swap mechanics, open interest spikes, and squeeze traps.</p></div>
-                <div class="article-meta">August 2026 • 7 min read</div>
+            <a href="margin-modeling.html" class="article-card" data-category="RISK">
+                <div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>Margin Modeling</h2><p>Portfolio-based margin management and risk metrics for high-volatility regimes.</p></div>
+                <div class="article-meta">August 2026 • 9 min read</div>
             </a>
+
+            <!-- LIQUIDITY & ORDER FLOW -->
             <a href="order-book-analysis.html" class="article-card" data-category="LIQUIDITY">
                 <div><span class="article-tag" style="color: var(--color-core);">CORE</span><h2>Order Book Imbalance & Depth</h2><p>Learn how to analyze order book depth, spot bid-ask imbalances, and detect spoofing.</p></div>
                 <div class="article-meta">August 2026 • 7 min read</div>
@@ -201,28 +230,6 @@
                 <div><span class="article-tag" style="color: var(--color-core);">CORE</span><h2>Global Liquidity Shifts</h2><p>Analyzing central bank liquidity, stablecoin supply growth, and macro tailwinds.</p></div>
                 <div class="article-meta">August 2026 • 7 min read</div>
             </a>
-            <a href="psychology-of-loss.html" class="article-card" data-category="RISK">
-                <div><span class="article-tag" style="color: var(--color-core);">CORE</span><h2>The Psychology of Loss & Cognitive Biases</h2><p>Deconstructing loss aversion, cognitive traps, and building rule-based emotional resilience.</p></div>
-                <div class="article-meta">August 2026 • 8 min read</div>
-            </a>
-            <a href="volatility-skew.html" class="article-card" data-category="DERIVATIVES">
-                <div><span class="article-tag" style="color: var(--color-core);">CORE</span><h2>Volatility Skew & Smile Mechanics</h2><p>Deconstructing options implied volatility smiles, smirk structures, and tail-risk hedging signals.</p></div>
-                <div class="article-meta">August 2026 • 10 min read</div>
-            </a>
-
-            <!-- ADVANCED -->
-            <a href="gamma-squeeze-dynamics.html" class="article-card" data-category="DERIVATIVES">
-                <div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>Gamma Squeeze & Market Maker Hedging Dynamics</h2><p>Understand how options market gamma, dealer delta hedging, and reflexive call-buying loops trigger violent structural squeezes.</p></div>
-                <div class="article-meta">August 2026 • 10 min read</div>
-            </a>
-            <a href="delta-neutral-arbitrage.html" class="article-card" data-category="DERIVATIVES">
-                <div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>Delta-Neutral Arbitrage</h2><p>Generating consistent funding income independent of directional market moves.</p></div>
-                <div class="article-meta">August 2026 • 10 min read</div>
-            </a>
-            <a href="margin-modeling.html" class="article-card" data-category="RISK">
-                <div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>Margin Modeling</h2><p>Portfolio-based margin management and risk metrics for high-volatility regimes.</p></div>
-                <div class="article-meta">August 2026 • 9 min read</div>
-            </a>
             <a href="liquidation-signals.html" class="article-card" data-category="LIQUIDITY">
                 <div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>Liquidation Cascades</h2><p>Reading OI spikes and cluster liquidations to identify potential reversals.</p></div>
                 <div class="article-meta">August 2026 • 10 min read</div>
@@ -230,10 +237,6 @@
             <a href="onchain-analysis.html" class="article-card" data-category="LIQUIDITY">
                 <div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>Institutional Flow Dynamics</h2><p>Tracking miner reserves, exchange netflows, and whale distribution patterns.</p></div>
                 <div class="article-meta">August 2026 • 6 min read</div>
-            </a>
-            <a href="delta-neutral-yield.html" class="article-card" data-category="DERIVATIVES">
-                <div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>Delta-Neutral Yield & Funding Arbitrage</h2><p>Master delta-neutral yield strategies and funding rate arbitrage to generate sustainable returns.</p></div>
-                <div class="article-meta">August 2026 • 9 min read</div>
             </a>
         </div>
     </main>
