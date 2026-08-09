@@ -103,9 +103,9 @@
         .article-meta { color: var(--text-muted); font-size: 0.8rem; }
 
         footer { border-top: 1px solid var(--border-color); padding: 3rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
-        .footer-links { margin-bottom: 1.5rem; }
-        .about-btn { color: var(--accent-color); text-decoration: none; border: 1px solid var(--accent-color); padding: 0.5rem 1.2rem; border-radius: 20px; font-weight: 600; transition: all 0.3s; }
-        .about-btn:hover { background: var(--accent-color); color: var(--bg-color); }
+        .footer-links { margin-bottom: 1.5rem; display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap; }
+        .footer-btn { color: var(--accent-color); text-decoration: none; border: 1px solid var(--accent-color); padding: 0.5rem 1.2rem; border-radius: 20px; font-weight: 600; transition: all 0.3s; }
+        .footer-btn:hover { background: var(--accent-color); color: var(--bg-color); }
         .disclaimer { font-size: 0.75rem; max-width: 800px; margin: 1.5rem auto 0 auto; opacity: 0.6; line-height: 1.5; }
 
         @media (max-width: 600px) { .logo-full { display: none; } .logo-short { display: inline-block; } .hero h1 { font-size: 2.1rem; } }
@@ -220,7 +220,10 @@
     </main>
 
     <footer>
-        <div class="footer-links"><a href="about.html" class="about-btn">About Us</a></div>
+        <div class="footer-links">
+            <a href="about.html" class="footer-btn">About Us</a>
+            <a href="privacy-policy.html" class="footer-btn">Privacy Policy</a>
+        </div>
         <p>&copy; 2026 ColdBloodedTraders. All rights reserved.</p>
         <p class="disclaimer">
             <strong>Disclaimer:</strong> Content published on ColdBloodedTraders is for educational and informational purposes only. Nothing here constitutes financial or investment advice. Always manage your own risk (DYOR).
