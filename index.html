@@ -76,7 +76,7 @@
         .hero h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 0.8rem; background: linear-gradient(135deg, #ffffff 0%, var(--accent-color) 60%, #4facfe 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
         .hero p { color: var(--text-muted); font-size: 1.15rem; max-width: 650px; margin: 0 auto; }
 
-        /* Geliştirilmiş Leopar Alanı */
+        /* Agresif / Keskin Leopar Tasarımı */
         .leopard-container { margin: 2rem auto; cursor: pointer; min-height: 90px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         #leopard-svg { transition: opacity 0.4s ease; cursor: pointer; }
         #leopard-svg:hover { transform: scale(1.05); transition: transform 0.3s ease; }
@@ -138,21 +138,30 @@
             
             <div class="leopard-container" onclick="triggerLeopard()" title="Click for CBT Creed">
                 <svg id="leopard-svg" viewBox="0 0 120 100" style="width: 95px; height: 80px; stroke: var(--accent-color); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 8px rgba(0, 242, 254, 0.4));">
-                    <!-- Kulaklar ve Baş Hatları -->
-                    <path d="M25 35 L15 15 L38 25" />
-                    <path d="M95 35 L105 15 L82 25" />
-                    <path d="M35 22 Q 60 5 85 22 Q 100 45 92 75 Q 85 92 60 95 Q 35 92 28 75 Q 20 45 35 22 Z" />
-                    <!-- Gözler (Sert Bakış) -->
-                    <path d="M38 45 Q 46 40 52 46 Q 46 50 38 45 Z" fill="rgba(0, 242, 254, 0.15)" />
-                    <path d="M82 45 Q 74 40 68 46 Q 74 50 82 45 Z" fill="rgba(0, 242, 254, 0.15)" />
-                    <!-- Burun ve Çene -->
-                    <polygon points="55,62 65,62 60,70" fill="var(--accent-color)" opacity="0.8" />
-                    <path d="M60 70 L60 78 M52 78 Q 60 83 68 78" />
-                    <!-- Minimal Leopar Desenleri (Benekler) -->
-                    <path d="M36 33 Q 40 30 43 35" />
-                    <path d="M84 33 Q 80 30 77 35" />
-                    <path d="M28 58 Q 32 56 30 63" />
-                    <path d="M92 58 Q 88 56 90 63" />
+                    <!-- Keskin Dik Kulaklar -->
+                    <path d="M30 32 L18 10 L42 22" />
+                    <path d="M90 32 L102 10 L78 22" />
+                    <!-- Sert, İnce ve Açılı Kafatası / Çene Yapısı -->
+                    <path d="M35 22 L60 12 L85 22 L92 50 L75 88 L60 92 L45 88 L28 50 Z" />
+                    <!-- Sert ve Soğukkanlı Dar Gözler -->
+                    <path d="M40 44 L50 47 L40 50" />
+                    <path d="M80 44 L70 47 L80 50" />
+                    <!-- Burun ve Sivri Çene Hattı -->
+                    <polygon points="56,60 64,60 60,67" fill="var(--accent-color)" opacity="0.8" />
+                    <path d="M60 67 L60 78 M52 76 Q 60 84 68 76" />
+                    <!-- Sol 3 Bıyık -->
+                    <line x1="45" y1="67" x2="24" y2="62" opacity="0.7" />
+                    <line x1="44" y1="71" x2="21" y2="70" opacity="0.7" />
+                    <line x1="45" y1="75" x2="24" y2="78" opacity="0.7" />
+                    <!-- Sağ 3 Bıyık -->
+                    <line x1="75" y1="67" x2="96" y2="62" opacity="0.7" />
+                    <line x1="76" y1="71" x2="99" y2="70" opacity="0.7" />
+                    <line x1="75" y1="75" x2="96" y2="78" opacity="0.7" />
+                    <!-- Leopar Desenleri (Benekler) -->
+                    <circle cx="38" cy="33" r="1.5" fill="var(--accent-color)" />
+                    <circle cx="82" cy="33" r="1.5" fill="var(--accent-color)" />
+                    <circle cx="33" cy="62" r="1.5" fill="var(--accent-color)" />
+                    <circle cx="87" cy="62" r="1.5" fill="var(--accent-color)" />
                 </svg>
                 <div id="quote-text">
                     "Cold blood, calculated risk, absolute precision."
@@ -231,7 +240,7 @@
             setTimeout(() => {
                 svg.style.display = 'none';
                 quote.style.display = 'block';
-                setTimeout(() => { quote.style.opacity = '1'; }, 50);
+                setTimeout(() => { quote.style.opacity = '1'; }, 400);
             }, 400);
 
             setTimeout(() => {
@@ -239,7 +248,7 @@
                 setTimeout(() => {
                     quote.style.display = 'none';
                     svg.style.display = 'block';
-                    setTimeout(() => { svg.style.opacity = '1'; }, 50);
+                    setTimeout(() => { svg.style.opacity = '1'; }, 400);
                 }, 400);
             }, 5000);
         }
