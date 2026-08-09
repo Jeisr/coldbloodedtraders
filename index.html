@@ -76,7 +76,6 @@
         .hero h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 0.8rem; background: linear-gradient(135deg, #ffffff 0%, var(--accent-color) 60%, #4facfe 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
         .hero p { color: var(--text-muted); font-size: 1.15rem; max-width: 650px; margin: 0 auto; }
 
-        /* Asil, Nötr ve Keskin Leopar Tasarımı */
         .leopard-container { margin: 2rem auto; cursor: pointer; min-height: 90px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         #leopard-svg { transition: opacity 0.4s ease; cursor: pointer; }
         #leopard-svg:hover { transform: scale(1.05); transition: transform 0.3s ease; }
@@ -103,12 +102,9 @@
         .article-meta { color: var(--text-muted); font-size: 0.8rem; }
 
         footer { border-top: 1px solid var(--border-color); padding: 3rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
-        .footer-links { margin-bottom: 1rem; display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap; }
+        .footer-links { margin-bottom: 1.5rem; display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap; }
         .footer-btn { color: var(--accent-color); text-decoration: none; border: 1px solid var(--accent-color); padding: 0.5rem 1.2rem; border-radius: 20px; font-weight: 600; transition: all 0.3s; }
         .footer-btn:hover { background: var(--accent-color); color: var(--bg-color); }
-        .footer-contact { margin-bottom: 1.5rem; font-size: 0.9rem; color: var(--text-muted); }
-        .footer-contact a { color: var(--accent-color); text-decoration: none; }
-        .footer-contact a:hover { text-decoration: underline; }
         .disclaimer { font-size: 0.75rem; max-width: 800px; margin: 1.5rem auto 0 auto; opacity: 0.6; line-height: 1.5; }
 
         @media (max-width: 600px) { .logo-full { display: none; } .logo-short { display: inline-block; } .hero h1 { font-size: 2.1rem; } }
@@ -141,26 +137,16 @@
             
             <div class="leopard-container" onclick="triggerLeopard()" title="Click for CBT Creed">
                 <svg id="leopard-svg" viewBox="0 0 120 100" style="width: 95px; height: 80px; stroke: var(--accent-color); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 8px rgba(0, 242, 254, 0.4));">
-                    <!-- Kulaklar -->
                     <path d="M30 30 L18 10 L42 20" />
                     <path d="M90 30 L102 10 L78 20" />
-                    <!-- Kafatası ve Keskin Çene Hattı -->
                     <path d="M35 20 L60 10 L85 20 L92 48 L74 88 L60 92 L46 88 L28 48 Z" />
-                    
-                    <!-- Asil, Yatay ve Ağır Bakan Düz Gözler (Nötr / Mimiksiz) -->
                     <path d="M38 45 L50 45" />
                     <path d="M82 45 L70 45" />
-
-                    <!-- Burun ve Dudak Yapısı (İdeal Uzunlukta Ağız Hattı) -->
                     <polygon points="56,58 64,58 60,65" fill="var(--accent-color)" opacity="0.8" />
                     <path d="M60 65 L60 75 M52 75 L68 75" />
-
-                    <!-- Sol 3 Bıyık -->
                     <line x1="44" y1="65" x2="26" y2="61" opacity="0.7" />
                     <line x1="43" y1="70" x2="23" y2="69" opacity="0.7" />
                     <line x1="44" y1="75" x2="26" y2="77" opacity="0.7" />
-
-                    <!-- Sağ 3 Bıyık -->
                     <line x1="76" y1="65" x2="94" y2="61" opacity="0.7" />
                     <line x1="77" y1="70" x2="97" y2="69" opacity="0.7" />
                     <line x1="76" y1="75" x2="94" y2="77" opacity="0.7" />
@@ -226,9 +212,7 @@
         <div class="footer-links">
             <a href="about.html" class="footer-btn">About Us</a>
             <a href="privacy-policy.html" class="footer-btn">Privacy Policy</a>
-        </div>
-        <div class="footer-contact">
-            Support: <a href="mailto:support@coldbloodedtraders.com">support@coldbloodedtraders.com</a>
+            <a href="mailto:support@coldbloodedtraders.com" class="footer-btn">support@coldbloodedtraders.com</a>
         </div>
         <p>&copy; 2026 ColdBloodedTraders. All rights reserved.</p>
         <p class="disclaimer">
@@ -240,7 +224,6 @@
         function toggleDropdown() { document.getElementById('toolsDropdown').classList.toggle('active'); }
         window.onclick = function(e) { if (!e.target.closest('.dropdown')) document.getElementById('toolsDropdown').classList.remove('active'); }
 
-        // Leopar İnteraksiyonu
         function triggerLeopard() {
             const svg = document.getElementById('leopard-svg');
             const quote = document.getElementById('quote-text');
