@@ -2,51 +2,48 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://coldbloodedtraders.com/index.html</loc>
-    <lastmod>2026-08-10</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://coldbloodedtraders.com/about.html</loc>
-    <lastmod>2026-08-10</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://coldbloodedtraders.com/privacy-policy.html</loc>
-    <lastmod>2026-08-10</lastmod>
     <priority>0.8</priority>
   </url>
 
   <!-- Tools -->
-  <url><loc>https://coldbloodedtraders.com/calculator.html</loc><lastmod>2026-08-10</lastmod><priority>0.8</priority></url>
-  <url><loc>https://coldbloodedtraders.com/compound-calculator.html</loc><lastmod>2026-08-10</lastmod><priority>0.8</priority></url>
-  <url><loc>https://coldbloodedtraders.com/liquidation-calculator.html</loc><lastmod>2026-08-10</lastmod><priority>0.8</priority></url>
-  <url><loc>https://coldbloodedtraders.com/risk-metrics.html</loc><lastmod>2026-08-10</lastmod><priority>0.8</priority></url>
-  <url><loc>https://coldbloodedtraders.com/risk-reward-calculator.html</loc><lastmod>2026-08-10</lastmod><priority>0.8</priority></url>
-  <url><loc>https://coldbloodedtraders.com/volatility-calculator.html</loc><lastmod>2026-08-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://coldbloodedtraders.com/calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://coldbloodedtraders.com/compound-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://coldbloodedtraders.com/liquidation-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://coldbloodedtraders.com/risk-metrics.html</loc><priority>0.8</priority></url>
+  <url><loc>https://coldbloodedtraders.com/risk-reward-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://coldbloodedtraders.com/volatility-calculator.html</loc><priority>0.8</priority></url>
 
   <!-- Articles -->
-  <url><loc>https://coldbloodedtraders.com/account-margin-modes.html</loc><lastmod>2026-08-10</lastmod><priority>0.9</priority></url>
-  <url><loc>https://coldbloodedtraders.com/crypto-market-cycles.html</loc><lastmod>2026-08-10</lastmod><priority>0.9</priority></url>
-  <url><loc>https://coldbloodedtraders.com/crypto-options-put-call-ratios.html</loc><lastmod>2026-08-10</lastmod><priority>0.9</priority></url>
-  <url><loc>https://coldbloodedtraders.com/delta-neutral-arbitrage.html</loc><lastmod>2026-08-10</lastmod><priority>0.9</priority></url>
-  <url><loc>https://coldbloodedtraders.com/delta-neutral-yield.html</loc><lastmod>2026-08-10</lastmod><priority>0.9</priority></url>
-  <url><loc>https://coldbloodedtraders.com/exchange-liquidity-depth-profiling.html</loc><lastmod>2026-08-10</lastmod><priority>0.9</priority></url>
-  <url><loc>https://coldbloodedtraders.com/funding-rates.html</loc><lastmod>2026-08-10</lastmod><priority>0.9</priority></url>
-  <url><loc>https://coldbloodedtraders.com/gamma-squeeze-dynamics.html</loc><lastmod>2026-08-10</lastmod><priority>0.9</priority></url>
-  <url><loc>https://coldbloodedtraders.com/leverage-101.html</loc><lastmod>2026-08-10</lastmod><priority>0.9</priority></url>
-  <url><loc>https://coldbloodedtraders.com/liquidation-signals.html</loc><lastmod>2026-08-10</lastmod><priority>0.9</priority></url>
-  <url><loc>https://coldbloodedtraders.com/liquidity-pools.html</loc><lastmod>2026-08-10</lastmod><priority>0.9</priority></url>
-  <url><loc>https://coldbloodedtraders.com/macro-liquidity.html</loc><lastmod>2026-08-10</lastmod><priority>0.9</priority></url>
-  <url><loc>https://coldbloodedtraders.com/margin-modeling.html</loc><lastmod>2026-08-10</lastmod><priority>0.9</priority></url>
-  <url><loc>https://coldbloodedtraders.com/margin-types.html</loc><lastmod>2026-08-10</lastmod><priority>0.9</priority></url>
-  <url><loc>https://coldbloodedtraders.com/onchain-analysis.html</loc><lastmod>2026-08-10</lastmod><priority>0.9</priority></url>
-  <url><loc>https://coldbloodedtraders.com/open-interest-analytics.html</loc><lastmod>2026-08-10</lastmod><priority>0.9</priority></url>
-  <url><loc>https://coldbloodedtraders.com/order-book-analysis.html</loc><lastmod>2026-08-10</lastmod><priority>0.9</priority></url>
-  <url><loc>https://coldbloodedtraders.com/perpetual-swaps-vs-futures.html</loc><lastmod>2026-08-10</lastmod><priority>0.9</priority></url>
-  <url><loc>https://coldbloodedtraders.com/position-sizing.html</loc><lastmod>2026-08-10</lastmod><priority>0.9</priority></url>
-  <url><loc>https://coldbloodedtraders.com/psychology-of-loss.html</loc><lastmod>2026-08-10</lastmod><priority>0.9</priority></url>
-  <url><loc>https://coldbloodedtraders.com/spot-vs-derivatives.html</loc><lastmod>2026-08-10</lastmod><priority>0.9</priority></url>
-  <url><loc>https://coldbloodedtraders.com/stat-arb-framework.html</loc><lastmod>2026-08-10</lastmod><priority>0.9</priority></url>
-  <url><loc>https://coldbloodedtraders.com/stop-loss-mechanics.html</loc><lastmod>2026-08-10</lastmod><priority>0.9</priority></url>
-  <url><loc>https://coldbloodedtraders.com/volatility-skew.html</loc><lastmod>2026-08-10</lastmod><priority>0.9</priority></url>
+  <url><loc>https://coldbloodedtraders.com/account-margin-modes.html</loc><priority>0.9</priority></url>
+  <url><loc>https://coldbloodedtraders.com/crypto-market-cycles.html</loc><priority>0.9</priority></url>
+  <url><loc>https://coldbloodedtraders.com/crypto-options-put-call-ratios.html</loc><priority>0.9</priority></url>
+  <url><loc>https://coldbloodedtraders.com/delta-neutral-arbitrage.html</loc><priority>0.9</priority></url>
+  <url><loc>https://coldbloodedtraders.com/delta-neutral-yield.html</loc><priority>0.9</priority></url>
+  <url><loc>https://coldbloodedtraders.com/exchange-liquidity-depth-profiling.html</loc><priority>0.9</priority></url>
+  <url><loc>https://coldbloodedtraders.com/funding-rates.html</loc><priority>0.9</priority></url>
+  <url><loc>https://coldbloodedtraders.com/gamma-squeeze-dynamics.html</loc><priority>0.9</priority></url>
+  <url><loc>https://coldbloodedtraders.com/leverage-101.html</loc><priority>0.9</priority></url>
+  <url><loc>https://coldbloodedtraders.com/liquidation-signals.html</loc><priority>0.9</priority></url>
+  <url><loc>https://coldbloodedtraders.com/liquidity-pools.html</loc><priority>0.9</priority></url>
+  <url><loc>https://coldbloodedtraders.com/macro-liquidity.html</loc><priority>0.9</priority></url>
+  <url><loc>https://coldbloodedtraders.com/margin-modeling.html</loc><priority>0.9</priority></url>
+  <url><loc>https://coldbloodedtraders.com/margin-types.html</loc><priority>0.9</priority></url>
+  <url><loc>https://coldbloodedtraders.com/onchain-analysis.html</loc><priority>0.9</priority></url>
+  <url><loc>https://coldbloodedtraders.com/open-interest-analytics.html</loc><priority>0.9</priority></url>
+  <url><loc>https://coldbloodedtraders.com/order-book-analysis.html</loc><priority>0.9</priority></url>
+  <url><loc>https://coldbloodedtraders.com/perpetual-swaps-vs-futures.html</loc><priority>0.9</priority></url>
+  <url><loc>https://coldbloodedtraders.com/position-sizing.html</loc><priority>0.9</priority></url>
+  <url><loc>https://coldbloodedtraders.com/psychology-of-loss.html</loc><priority>0.9</priority></url>
+  <url><loc>https://coldbloodedtraders.com/spot-vs-derivatives.html</loc><priority>0.9</priority></url>
+  <url><loc>https://coldbloodedtraders.com/stat-arb-framework.html</loc><priority>0.9</priority></url>
+  <url><loc>https://coldbloodedtraders.com/stop-loss-mechanics.html</loc><priority>0.9</priority></url>
+  <url><loc>https://coldbloodedtraders.com/volatility-skew.html</loc><priority>0.9</priority></url>
 </urlset>
