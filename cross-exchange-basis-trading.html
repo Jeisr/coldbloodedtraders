@@ -68,9 +68,9 @@
         :root {
             --bg-color: #0b0e14;
             --card-bg: rgba(22, 27, 34, 0.7);
-            --accent-color: #00f2fe;
-            --color-core: #ff9800;       /* Turuncu - Core / Risk için */
-            --color-advanced: #ff5252;   /* Kırmızı - Advanced için */
+            --accent-color: #00f2fe;     /* Açık Mavi - Derivatives */
+            --color-core: #ff9800;       /* Turuncu - Risk Management */
+            --color-advanced: #ff5252;   /* Kırmızı - Advanced */
             --text-main: #f0f6fc;
             --text-muted: #8b949e;
             --border-color: rgba(240, 246, 252, 0.1);
@@ -124,7 +124,7 @@
         .related-card:hover { transform: translateY(-2px); border-color: var(--accent-color); }
         .related-card h4 { color: var(--text-main); font-size: 0.95rem; margin: 0; }
         .related-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
-        .related-tag { font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--color-core); }
+        .related-tag { font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
 
         footer { border-top: 1px solid var(--border-color); padding: 2rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
 
@@ -225,7 +225,7 @@
                 </a>
                 <a href="funding-rates.html" class="related-card">
                     <div class="related-card-header">
-                        <span class="related-tag">DERIVATIVES</span>
+                        <span class="related-tag" style="color: var(--accent-color);">DERIVATIVES</span>
                         <span class="difficulty-badge badge-core">Core</span>
                     </div>
                     <h4>Funding Rates & Volatility &rarr;</h4>
