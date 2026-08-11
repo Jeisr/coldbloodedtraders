@@ -23,6 +23,7 @@
 
   <!-- Articles -->
   <url><loc>https://coldbloodedtraders.com/account-margin-modes.html</loc><priority>0.9</priority></url>
+  <url><loc>https://coldbloodedtraders.com/cross-exchange-basis-trading.html</loc><priority>0.9</priority></url>
   <url><loc>https://coldbloodedtraders.com/crypto-market-cycles.html</loc><priority>0.9</priority></url>
   <url><loc>https://coldbloodedtraders.com/crypto-options-put-call-ratios.html</loc><priority>0.9</priority></url>
   <url><loc>https://coldbloodedtraders.com/delta-neutral-arbitrage.html</loc><priority>0.9</priority></url>
@@ -31,6 +32,7 @@
   <url><loc>https://coldbloodedtraders.com/funding-rates.html</loc><priority>0.9</priority></url>
   <url><loc>https://coldbloodedtraders.com/gamma-squeeze-dynamics.html</loc><priority>0.9</priority></url>
   <url><loc>https://coldbloodedtraders.com/leverage-101.html</loc><priority>0.9</priority></url>
+  <url><loc>https://coldbloodedtraders.com/leverage-impact-models.html</loc><priority>0.9</priority></url>
   <url><loc>https://coldbloodedtraders.com/liquidation-signals.html</loc><priority>0.9</priority></url>
   <url><loc>https://coldbloodedtraders.com/liquidity-pools.html</loc><priority>0.9</priority></url>
   <url><loc>https://coldbloodedtraders.com/macro-liquidity.html</loc><priority>0.9</priority></url>
@@ -42,6 +44,7 @@
   <url><loc>https://coldbloodedtraders.com/perpetual-swaps-vs-futures.html</loc><priority>0.9</priority></url>
   <url><loc>https://coldbloodedtraders.com/position-sizing.html</loc><priority>0.9</priority></url>
   <url><loc>https://coldbloodedtraders.com/psychology-of-loss.html</loc><priority>0.9</priority></url>
+  <url><loc>https://coldbloodedtraders.com/risk-reward-expectancy.html</loc><priority>0.9</priority></url>
   <url><loc>https://coldbloodedtraders.com/spot-vs-derivatives.html</loc><priority>0.9</priority></url>
   <url><loc>https://coldbloodedtraders.com/stat-arb-framework.html</loc><priority>0.9</priority></url>
   <url><loc>https://coldbloodedtraders.com/stop-loss-mechanics.html</loc><priority>0.9</priority></url>
