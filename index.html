@@ -1,191 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="canonical" href="https://coldbloodedtraders.com/strategy.html">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://coldbloodedtraders.com/index.html">
+    <meta property="og:title" content="ColdBloodedTraders | Quantitative Risk & Crypto Derivatives Frameworks">
+    <meta property="og:description" content="Institutional risk management, derivatives mechanics, order flow analysis, and position sizing tools for crypto traders.">
     <meta property="og:image" content="https://coldbloodedtraders.com/assets/cbt-logo.png">
+
     <meta name="twitter:card" content="summary">
     <meta name="twitter:image" content="https://coldbloodedtraders.com/assets/cbt-logo.png">
+
     <link rel="icon" type="image/png" href="assets/cbt-logo.png">
     <link rel="apple-touch-icon" href="assets/cbt-logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strategy Hub: Choose Your Trading Framework | ColdBloodedTraders</title>
-    <!-- Security Headers -->
+    <title>ColdBloodedTraders | Risk & Crypto Derivatives Frameworks</title>
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta name="description" content="Explore ColdBloodedTraders Strategy Hub. Select your trading framework, master mathematical expectancy, liquidity hunting, or delta-neutral yield systems.">
-    
-    <!-- Collection / WebPage Schema Markup -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Strategy Hub",
-      "description": "Explore ColdBloodedTraders Strategy Hub. Select your trading framework, master mathematical expectancy, liquidity hunting, or delta-neutral yield systems.",
-      "publisher": {
-        "@type": "Organization",
-        "name": "ColdBloodedTraders",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://coldbloodedtraders.com/assets/cbt-logo.png"
-        }
-      }
-    }
-    </script>
+    <meta name="description" content="Institutional risk management, derivatives mechanics, order flow analysis, and position sizing tools for crypto traders.">
 
-    <!-- FAQ Schema Markup -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [{
-        "@type": "Question",
-        "name": "How do I choose the right trading strategy?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Your choice depends on your risk tolerance, capital scale, and time horizon. Choose The Mathematician for statistical risk management, The Liquidity Hunter for order book dynamics, or The Yield Master for delta-neutral funding arbitrage."
-        }
-      }]
+      "@type": "WebSite",
+      "name": "ColdBloodedTraders",
+      "url": "https://coldbloodedtraders.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://coldbloodedtraders.com/index.html?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
     }
     </script>
 
     <style>
         :root {
             --bg-color: #0b0e14;
-            --card-bg: rgba(22, 27, 34, 0.7);
+            --card-bg: rgba(22, 27, 34, 0.75);
             --accent-color: #00f2fe;
+            --accent-hover: #00c6ff;
+            --color-foundation: #00e676;
+            --color-core: #ff9800;
+            --color-advanced: #ff5252;
             --text-main: #f0f6fc;
             --text-muted: #8b949e;
             --border-color: rgba(240, 246, 252, 0.1);
-            --table-header-bg: #161b22;
-            --color-foundation: #00e676;
-            --color-core: #ff9800;
-            --color-advanced: #e91e63;
         }
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            line-height: 1.8;
-            margin: 0;
-            padding: 0;
-        }
+
+        * { box-sizing: border-box; }
+
+        body { background-color: var(--bg-color); color: var(--text-main); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; line-height: 1.6; margin: 0; padding: 0; }
+
         header {
-            position: sticky;
-            top: 0;
-            backdrop-filter: blur(12px);
-            background: rgba(11, 14, 20, 0.85);
-            padding: 1.2rem 2rem;
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
+            position: sticky; top: 0; backdrop-filter: blur(12px); background: rgba(11, 14, 20, 0.85);
+            padding: 1.2rem 2rem; border-bottom: 1px solid var(--border-color);
+            display: flex; justify-content: space-between; align-items: center; z-index: 1000;
         }
+
         .logo { font-weight: 800; color: var(--text-main); text-decoration: none; font-size: 1.2rem; }
         .logo-full span { color: var(--accent-color); }
-        .logo-short { display: none; font-weight: 900; letter-spacing: 1px; color: var(--text-main); }
+        .logo-short { display: none; color: var(--text-main); }
         .logo-short span { color: var(--accent-color); }
-        
-        .nav-right { display: flex; align-items: center; gap: 1rem; }
-        .back-btn { color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
 
-        /* Dropdown Menu Styling */
         .dropdown { position: relative; display: inline-block; }
-        .dropdown-btn { color: var(--accent-color); background: transparent; font-weight: 700; border: 1px solid var(--accent-color); padding: 0.4rem 0.8rem; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; }
-        .dropdown-content { display: none; position: absolute; right: 0; top: 120%; background-color: #161b22; min-width: 220px; border: 1px solid var(--border-color); border-radius: 8px; z-index: 1001; box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
-        .dropdown-content a { color: var(--text-main); padding: 0.75rem 1rem; text-decoration: none; display: block; font-size: 0.85rem; border-bottom: 1px solid rgba(240, 246, 252, 0.05); }
-        .dropdown-content a:hover { background: rgba(0, 242, 254, 0.08); color: var(--accent-color); }
+        .dropdown-btn { color: var(--accent-color); background: transparent; font-weight: 700; border: 1px solid var(--accent-color); padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; cursor: pointer; transition: background 0.2s, color 0.2s; display: flex; align-items: center; gap: 0.4rem; }
+        .dropdown-btn:hover { background: rgba(0, 242, 254, 0.1); }
+        
+        .dropdown-content { display: none; position: absolute; right: 0; top: 120%; background-color: #161b22; min-width: 220px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5); border: 1px solid var(--border-color); border-radius: 8px; z-index: 1001; overflow: hidden; }
+        .dropdown-content a { color: var(--text-main); padding: 0.75rem 1rem; text-decoration: none; display: block; font-size: 0.85rem; font-weight: 600; border-bottom: 1px solid rgba(240, 246, 252, 0.05); transition: background 0.2s, color 0.2s; }
+        .dropdown-content a:hover { background-color: rgba(0, 242, 254, 0.1); color: var(--accent-color); }
         .dropdown.active .dropdown-content { display: block; }
+
+        .container { max-width: 1000px; margin: 3rem auto 5rem auto; padding: 0 1.5rem; }
+        .hero { text-align: center; margin-bottom: 3.5rem; }
+        .hero h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 0.8rem; background: linear-gradient(135deg, #ffffff 0%, var(--accent-color) 60%, #4facfe 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
+        .hero p { color: var(--text-muted); font-size: 1.15rem; max-width: 650px; margin: 0 auto; }
+
+        .leopard-container { margin: 2rem auto; cursor: pointer; min-height: 90px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        #leopard-svg { transition: opacity 0.4s ease; cursor: pointer; }
+        #leopard-svg:hover { transform: scale(1.05); transition: transform 0.3s ease; }
+        #quote-text { display: none; opacity: 0; transition: opacity 0.4s ease; color: var(--text-main); font-style: italic; font-size: 1.05rem; text-align: center; max-width: 480px; }
+        .quote-author { display: block; margin-top: 0.4rem; color: var(--accent-color); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
+
+        .category-section { margin-bottom: 3rem; }
+        .category-title { color: var(--text-main); font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); display: flex; align-items: center; gap: 10px; }
         
-        .hub-container {
-            max-width: 1000px;
-            margin: 3rem auto 5rem auto;
-            padding: 0 1.5rem;
-        }
-        .hub-header-meta {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        .tag { 
-            font-weight: 700; 
-            font-size: 0.85rem; 
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
-        .tag-strategy { color: #00f2fe; }
+        .controls { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
+        @media (min-width: 640px) { .controls { flex-direction: row; justify-content: space-between; align-items: center; } }
+        .search-box input { width: 100%; max-width: 320px; background: var(--card-bg); border: 1px solid var(--border-color); color: var(--text-main); padding: 0.65rem 1rem; border-radius: 6px; outline: none; }
+        .search-box input:focus { border-color: var(--accent-color); }
+        .filter-buttons { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+        .filter-btn { background: var(--card-bg); border: 1px solid var(--border-color); color: var(--text-muted); padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+        .filter-btn.active, .filter-btn:hover { color: var(--accent-color); border-color: var(--accent-color); background: rgba(0, 242, 254, 0.05); }
 
-        .difficulty-badge {
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-        .badge-foundation { background: rgba(0, 230, 118, 0.15); color: var(--color-foundation); border: 1px solid rgba(0, 230, 118, 0.4); }
-        .badge-core { background: rgba(255, 152, 0, 0.15); color: var(--color-core); border: 1px solid rgba(255, 152, 0, 0.4); }
-        .badge-advanced { background: rgba(233, 30, 99, 0.15); color: var(--color-advanced); border: 1px solid rgba(233, 30, 99, 0.4); }
+        .articles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .article-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 10px; padding: 1.5rem; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s; }
+        .article-card:hover { transform: translateY(-3px); border-color: var(--accent-color); }
+        .article-tag { font-size: 0.75rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.5rem; display: block; }
+        .article-card h2 { color: var(--text-main); font-size: 1.25rem; margin: 0 0 0.8rem 0; }
+        .article-card p { color: var(--text-muted); font-size: 0.95rem; margin: 0 0 1.2rem 0; }
+        .article-meta { color: var(--text-muted); font-size: 0.8rem; }
 
-        /* Gradient Header Effect matching Index */
-        h1 { 
-            font-size: 2.8rem; 
-            margin: 0.5rem 0 1rem 0; 
-            line-height: 1.25; 
-            font-weight: 800; 
-            text-align: center; 
-            background: linear-gradient(135deg, #ffffff 0%, var(--accent-color) 60%, #4facfe 100%); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
-            display: inline-block; 
-        }
-        .meta { color: var(--text-muted); font-size: 0.9rem; text-align: center; margin-bottom: 2.5rem; }
-        
-        .strategy-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        .strategy-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.75rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
-        .strategy-card:hover { transform: translateY(-3px); border-color: var(--accent-color); }
-        .strategy-card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
-        .strategy-card h3 { color: var(--text-main); font-size: 1.3rem; margin: 0 0 0.75rem 0; }
-        .strategy-card h3 a { color: var(--text-main); text-decoration: none; transition: color 0.2s; }
-        .strategy-card h3 a:hover { color: var(--accent-color); }
-        .strategy-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
-        
-        .strategy-links { border-top: 1px solid var(--border-color); padding-top: 1rem; margin-top: auto; }
-        .strategy-links ul { list-style: none; padding: 0; margin: 0; }
-        .strategy-links li { margin-bottom: 0.4rem; }
-        .strategy-links a { color: var(--text-main); text-decoration: none; transition: color 0.2s; font-size: 0.9rem; display: block; }
-        .strategy-links a:hover { color: var(--accent-color); }
+        footer { border-top: 1px solid var(--border-color); padding: 3rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
+        .footer-links { margin-bottom: 1.5rem; display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap; }
+        .footer-btn { color: var(--accent-color); text-decoration: none; border: 1px solid var(--accent-color); padding: 0.5rem 1.2rem; border-radius: 20px; font-weight: 600; transition: all 0.3s; }
+        .footer-btn:hover { background: var(--accent-color); color: var(--bg-color); }
+        .disclaimer { font-size: 0.75rem; max-width: 800px; margin: 1.5rem auto 0 auto; opacity: 0.6; line-height: 1.5; }
 
-        .faq-section { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
-        .faq-title { color: var(--accent-color); font-size: 1.4rem; margin-bottom: 1.5rem; }
-        .faq-item { margin-bottom: 1.5rem; }
-        .faq-item h4 { margin: 0 0 0.4rem 0; color: var(--text-main); font-size: 1.05rem; }
-        .faq-item p { margin: 0; color: var(--text-muted); font-size: 0.95rem; }
-
-        footer { border-top: 1px solid var(--border-color); padding: 2rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
-
-        @media (max-width: 600px) {
-            .logo-full { display: none; }
-            .logo-short { display: inline-block; }
-            h1 { font-size: 2.1rem; }
-        }
+        @media (max-width: 600px) { .logo-full { display: none; } .logo-short { display: inline-block; } .hero h1 { font-size: 2.1rem; } }
     </style>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5590309220372784" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -194,114 +117,179 @@
             <span class="logo-full">COLDBLOODED<span>TRADERS</span></span>
             <span class="logo-short">CB<span>T</span></span>
         </a>
-        <div class="nav-right">
-            <div class="dropdown" id="toolsDropdown">
-                <button class="dropdown-btn" onclick="toggleDropdown()">🧮 Tools &#9662;</button>
-                <div class="dropdown-content">
-                    <a href="calculator.html">Position Size Calculator</a>
-                    <a href="liquidation-calculator.html">Liquidation Price Calculator</a>
-                    <a href="risk-metrics.html">Risk Metrics Calculator</a>
-                    <a href="risk-reward-calculator.html">R/R Ratio Calculator</a>
-                    <a href="compound-calculator.html">Compound Interest Calculator</a>
-                    <a href="volatility-calculator.html">Volatility Position Sizer</a>
-                </div>
+        <div class="dropdown" id="toolsDropdown">
+            <button class="dropdown-btn" onclick="toggleDropdown()">🧮 Tools &#9662;</button>
+            <div class="dropdown-content">
+                <a href="calculator.html">Position Size Calculator</a>
+                <a href="liquidation-calculator.html">Liquidation Price Calculator</a>
+                <a href="risk-metrics.html">Risk Metrics Calculator</a>
+                <a href="risk-reward-calculator.html">R/R Ratio Calculator</a>
+                <a href="compound-calculator.html">Compound Interest Calculator</a>
+                <a href="volatility-calculator.html">Volatility Position Sizer</a>
             </div>
-            <a href="index.html" class="back-btn">&larr; Back to Home</a>
         </div>
     </header>
 
-    <main class="hub-container">
-        <div class="hub-header-meta">
-            <span class="tag tag-strategy">STRATEGY MATRIX</span>
-            <h1>ColdBloodedTraders Strategy Hub</h1>
-            <div class="meta">Select your core operational framework • Built for structural edge</div>
-        </div>
-
-        <p style="text-align: center; max-width: 700px; margin: 0 auto 3rem auto; color: var(--text-muted);">
-            Noise elimination is the ultimate trading edge. Select your tactical framework, study the mathematical models, and integrate professional risk protocols into your capital allocation.
-        </p>
-
-        <div class="strategy-grid">
-            <!-- CLASS 1 -->
-            <div class="strategy-card">
-                <div>
-                    <div class="strategy-card-top">
-                        <span class="tag" style="color: var(--color-foundation);">CLASS // 01</span>
-                        <span class="difficulty-badge badge-foundation">FOUNDATION</span>
-                    </div>
-                    <h3><a href="class-mathematician.html">The Mathematician</a></h3>
-                    <p>Focuses strictly on mathematical expectancy, risk-reward parameters, and position survival matrices rather than emotional price forecasting.</p>
-                </div>
-                <div class="strategy-links">
-                    <ul>
-                        <li><a href="risk-reward-expectancy.html">&rarr; Risk-Reward Ratios & Expectancy</a></li>
-                        <li><a href="position-sizing.html">&rarr; Position Sizing Framework</a></li>
-                        <li><a href="psychology-of-loss.html">&rarr; Psychology of Loss</a></li>
-                        <li><a href="stop-loss-mechanics.html">&rarr; Stop Loss Mechanics</a></li>
-                    </ul>
+    <main class="container">
+        <section class="hero">
+            <h1>Quantitative Risk & Market Dynamics</h1>
+            <p>Systematic frameworks for crypto derivatives, perpetual liquidity, and position management.</p>
+            
+            <div class="leopard-container" onclick="triggerLeopard()" title="Click for CBT Creed">
+                <svg id="leopard-svg" viewBox="0 0 120 100" style="width: 95px; height: 80px; stroke: var(--accent-color); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 8px rgba(0, 242, 254, 0.4));">
+                    <path d="M30 30 L18 10 L42 20" />
+                    <path d="M90 30 L102 10 L78 20" />
+                    <path d="M35 20 L60 10 L85 20 L92 48 L74 88 L60 92 L46 88 L28 48 Z" />
+                    <path d="M38 45 L50 45" />
+                    <path d="M82 45 L70 45" />
+                    <polygon points="56,58 64,58 60,65" fill="var(--accent-color)" opacity="0.8" />
+                    <path d="M60 65 L60 75 M52 75 L68 75" />
+                    <line x1="44" y1="65" x2="26" y2="61" opacity="0.7" />
+                    <line x1="43" y1="70" x2="23" y2="69" opacity="0.7" />
+                    <line x1="44" y1="75" x2="26" y2="77" opacity="0.7" />
+                    <line x1="76" y1="65" x2="94" y2="61" opacity="0.7" />
+                    <line x1="77" y1="70" x2="97" y2="69" opacity="0.7" />
+                    <line x1="76" y1="75" x2="94" y2="77" opacity="0.7" />
+                </svg>
+                <div id="quote-text">
+                    "Cold blood, calculated risk, absolute precision."
+                    <span class="quote-author">— The Trader's Creed</span>
                 </div>
             </div>
+        </section>
 
-            <!-- CLASS 2 -->
-            <div class="strategy-card">
-                <div>
-                    <div class="strategy-card-top">
-                        <span class="tag" style="color: var(--color-core);">CLASS // 02</span>
-                        <span class="difficulty-badge badge-core">CORE</span>
-                    </div>
-                    <h3><a href="class-liquidity-hunter.html">The Liquidity Hunter</a></h3>
-                    <p>Specializes in tracking institutional footprints, order book imbalances, liquidity pool sweeps, and open interest structural buildups.</p>
-                </div>
-                <div class="strategy-links">
-                    <ul>
-                        <li><a href="liquidity-pools.html">&rarr; Identifying Liquidity Pools</a></li>
-                        <li><a href="open-interest-analytics.html">&rarr; Open Interest Analytics</a></li>
-                        <li><a href="exchange-liquidity-depth-profiling.html">&rarr; Exchange Liquidity Profiling</a></li>
-                        <li><a href="order-book-analysis.html">&rarr; Order Book Imbalance Tracking</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- CLASS 3 -->
-            <div class="strategy-card">
-                <div>
-                    <div class="strategy-card-top">
-                        <span class="tag" style="color: var(--color-advanced);">CLASS // 03</span>
-                        <span class="difficulty-badge badge-advanced">ADVANCED</span>
-                    </div>
-                    <h3><a href="class-yield-master.html">The Yield Master</a></h3>
-                    <p>Zero directional bias. Extracts consistent returns through funding rate mechanisms, cross-exchange basis trading, and delta-neutral arbitrage systems.</p>
-                </div>
-                <div class="strategy-links">
-                    <ul>
-                        <li><a href="delta-neutral-arbitrage.html">&rarr; Delta-Neutral Arbitrage</a></li>
-                        <li><a href="funding-rates.html">&rarr; Funding Rates & Volatility</a></li>
-                        <li><a href="perpetual-swaps-vs-futures.html">&rarr; Perps vs. Traditional Futures</a></li>
-                        <li><a href="cross-exchange-basis-trading.html">&rarr; Cross-Exchange Basis Spread</a></li>
-                    </ul>
-                </div>
+        <div class="controls">
+            <div class="search-box"><input type="text" id="searchInput" placeholder="Search frameworks or concepts..."></div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="RISK">Risk</button>
+                <button class="filter-btn" data-category="DERIVATIVES">Derivatives</button>
+                <button class="filter-btn" data-category="LIQUIDITY">Liquidity</button>
             </div>
         </div>
 
-        <section class="faq-section">
-            <h3 class="faq-title">Frequently Asked Questions</h3>
-            <div class="faq-item">
-                <h4>How do I choose the right trading strategy?</h4>
-                <p>Your choice depends on your risk tolerance, capital scale, and time horizon. Choose The Mathematician for statistical risk management, The Liquidity Hunter for order book dynamics, or The Yield Master for delta-neutral funding arbitrage.</p>
+        <section class="category-section" data-level="FOUNDATION">
+            <h3 class="category-title" style="border-color: var(--color-foundation);"><span style="color: var(--color-foundation);">●</span> FOUNDATION</h3>
+            <div class="articles-grid">
+                <a href="risk-reward-expectancy.html" class="article-card" data-category="RISK"><div><span class="article-tag" style="color: var(--color-foundation);">FOUNDATION</span><h2>Risk-Reward Ratios & Expectancy</h2><p>Master risk-reward ratios, mathematical expectancy, and win rate formulas to build a robust trading edge.</p></div><div class="article-meta">August 2026 • 7 min read</div></a>
+                <a href="crypto-market-cycles.html" class="article-card" data-category="DERIVATIVES"><div><span class="article-tag" style="color: var(--color-foundation);">FOUNDATION</span><h2>Crypto Market Cycles 101</h2><p>Spotting institutional accumulation vs. distribution phases.</p></div><div class="article-meta">August 2026 • 7 min read</div></a>
+                <a href="spot-vs-derivatives.html" class="article-card" data-category="DERIVATIVES"><div><span class="article-tag" style="color: var(--color-foundation);">FOUNDATION</span><h2>Spot vs. Derivatives</h2><p>Understanding fundamental market structures.</p></div><div class="article-meta">August 2026 • 7 min read</div></a>
+                <a href="perpetual-swaps-vs-futures.html" class="article-card" data-category="DERIVATIVES"><div><span class="article-tag" style="color: var(--color-foundation);">FOUNDATION</span><h2>Understanding Perpetual Swaps</h2><p>Comparing contract structures and funding rates.</p></div><div class="article-meta">August 2026 • 7 min read</div></a>
+                <a href="stop-loss-mechanics.html" class="article-card" data-category="RISK"><div><span class="article-tag" style="color: var(--color-foundation);">FOUNDATION</span><h2>Stop-Loss Mechanics</h2><p>Structuring invalidation points and risk exposure.</p></div><div class="article-meta">August 2026 • 7 min read</div></a>
+                <a href="leverage-101.html" class="article-card" data-category="RISK"><div><span class="article-tag" style="color: var(--color-foundation);">FOUNDATION</span><h2>Leverage 101</h2><p>Understanding borrowed capital and liquidation.</p></div><div class="article-meta">August 2026 • 8 min read</div></a>
+                <a href="position-sizing.html" class="article-card" data-category="RISK"><div><span class="article-tag" style="color: var(--color-foundation);">FOUNDATION</span><h2>Position Sizing Framework</h2><p>Optimal position size and drawdown prevention.</p></div><div class="article-meta">August 2026 • 8 min read</div></a>
+                <a href="margin-types.html" class="article-card" data-category="RISK"><div><span class="article-tag" style="color: var(--color-foundation);">FOUNDATION</span><h2>Cross vs. Isolated Margin</h2><p>Deep dive into exchange liquidation engines.</p></div><div class="article-meta">August 2026 • 9 min read</div></a>
+                <a href="account-margin-modes.html" class="article-card" data-category="RISK"><div><span class="article-tag" style="color: var(--color-foundation);">FOUNDATION</span><h2>Margin Types & Account Modes</h2><p>Master cross and isolated margin mechanics, multi-asset account modes, and advanced risk strategies.</p></div><div class="article-meta">August 2026 • 8 min read</div></a>
+            </div>
+        </section>
+
+        <section class="category-section" data-level="CORE">
+            <h3 class="category-title" style="border-color: var(--color-core);"><span style="color: var(--color-core);">●</span> CORE</h3>
+            <div class="articles-grid">
+                <a href="exchange-liquidity-depth-profiling.html" class="article-card" data-category="LIQUIDITY"><div><span class="article-tag" style="color: var(--color-core);">CORE</span><h2>Exchange Liquidity & Depth Profiling</h2><p>Master order book depth profiling and institutional wall detection.</p></div><div class="article-meta">August 2026 • 8 min read</div></a>
+                <a href="open-interest-analytics.html" class="article-card" data-category="DERIVATIVES"><div><span class="article-tag" style="color: var(--color-core);">CORE</span><h2>Open Interest Analytics</h2><p>Tracking institutional leverage buildups.</p></div><div class="article-meta">August 2026 • 8 min read</div></a>
+                <a href="funding-rates.html" class="article-card" data-category="DERIVATIVES"><div><span class="article-tag" style="color: var(--color-core);">CORE</span><h2>Funding Rates & Volatility</h2><p>Perpetual swap mechanics and squeeze traps.</p></div><div class="article-meta">August 2026 • 7 min read</div></a>
+                <a href="order-book-analysis.html" class="article-card" data-category="LIQUIDITY"><div><span class="article-tag" style="color: var(--color-core);">CORE</span><h2>Order Book Imbalance</h2><p>Analyze depth and detect spoofing.</p></div><div class="article-meta">August 2026 • 7 min read</div></a>
+                <a href="liquidity-pools.html" class="article-card" data-category="LIQUIDITY"><div><span class="article-tag" style="color: var(--color-core);">CORE</span><h2>Identifying Liquidity Pools</h2><p>How operators sweep stop-loss clusters.</p></div><div class="article-meta">August 2026 • 6 min read</div></a>
+                <a href="macro-liquidity.html" class="article-card" data-category="LIQUIDITY"><div><span class="article-tag" style="color: var(--color-core);">CORE</span><h2>Global Liquidity Shifts</h2><p>Analyzing central bank liquidity and macro tailwinds.</p></div><div class="article-meta">August 2026 • 7 min read</div></a>
+                <a href="psychology-of-loss.html" class="article-card" data-category="RISK"><div><span class="article-tag" style="color: var(--color-core);">CORE</span><h2>Psychology of Loss</h2><p>Deconstructing loss aversion and cognitive traps.</p></div><div class="article-meta">August 2026 • 8 min read</div></a>
+                <a href="volatility-skew.html" class="article-card" data-category="DERIVATIVES"><div><span class="article-tag" style="color: var(--color-core);">CORE</span><h2>Volatility Skew</h2><p>Options IV smiles and tail-risk signals.</p></div><div class="article-meta">August 2026 • 10 min read</div></a>
+                <a href="leverage-impact-models.html" class="article-card" data-category="RISK"><div><span class="article-tag" style="color: var(--color-core);">CORE</span><h2>Leverage Impact Models & Margin Stress Testing</h2><p>Quantitative leverage impact models and portfolio margin stress testing frameworks.</p></div><div class="article-meta">August 2026 • 8 min read</div></a>
+            </div>
+        </section>
+
+        <section class="category-section" data-level="ADVANCED">
+            <h3 class="category-title" style="border-color: var(--color-advanced);"><span style="color: var(--color-advanced);">●</span> ADVANCED</h3>
+            <div class="articles-grid">
+                <a href="cross-exchange-basis-trading.html" class="article-card" data-category="DERIVATIVES"><div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>Cross-Exchange Basis Trading</h2><p>Exploiting spot and perpetual price differentials, exchange mismatches, and advanced arbitrage mechanics.</p></div><div class="article-meta">August 2026 • 10 min read</div></a>
+                <a href="crypto-options-put-call-ratios.html" class="article-card" data-category="DERIVATIVES"><div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>Crypto Options & Put/Call Ratios</h2><p>Master options positioning, Put/Call ratios, and Max Pain market mechanics.</p></div><div class="article-meta">August 2026 • 10 min read</div></a>
+                <a href="gamma-squeeze-dynamics.html" class="article-card" data-category="DERIVATIVES"><div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>Gamma Squeeze Dynamics</h2><p>Dealer delta hedging and reflexive loops.</p></div><div class="article-meta">August 2026 • 10 min read</div></a>
+                <a href="delta-neutral-arbitrage.html" class="article-card" data-category="DERIVATIVES"><div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>Delta-Neutral Arbitrage</h2><p>Generating consistent funding income.</p></div><div class="article-meta">August 2026 • 10 min read</div></a>
+                <a href="margin-modeling.html" class="article-card" data-category="RISK"><div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>Margin Modeling</h2><p>Portfolio-based risk metrics for volatility.</p></div><div class="article-meta">August 2026 • 9 min read</div></a>
+                <a href="liquidation-signals.html" class="article-card" data-category="LIQUIDITY"><div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>Liquidation Cascades</h2><p>Reading OI spikes to identify reversals.</p></div><div class="article-meta">August 2026 • 10 min read</div></a>
+                <a href="onchain-analysis.html" class="article-card" data-category="LIQUIDITY"><div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>Institutional Flow Dynamics</h2><p>Tracking miner reserves and whale flows.</p></div><div class="article-meta">August 2026 • 6 min read</div></a>
+                <a href="delta-neutral-yield.html" class="article-card" data-category="DERIVATIVES"><div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>Funding Arbitrage</h2><p>Mastering delta-neutral yield strategies.</p></div><div class="article-meta">August 2026 • 9 min read</div></a>
+                <a href="stat-arb-framework.html" class="article-card" data-category="DERIVATIVES"><div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>Statistical Arbitrage</h2><p>Mean reversion and cointegration models.</p></div><div class="article-meta">August 2026 • 10 min read</div></a>
             </div>
         </section>
     </main>
 
     <footer>
+        <div class="footer-links">
+            <a href="about.html" class="footer-btn">About Us</a>
+            <a href="privacy-policy.html" class="footer-btn">Privacy Policy</a>
+        </div>
+        <div class="footer-contact">
+            <a href="mailto:support@coldbloodedtraders.com" style="color: #8b949e; text-decoration: none;">support@coldbloodedtraders.com</a>
+        </div>
         <p>&copy; 2026 ColdBloodedTraders. All rights reserved.</p>
-        <p style="font-size: 0.75rem; margin-top: 0.5rem; opacity: 0.7;">
-            Disclaimer: Content published on ColdBloodedTraders is for educational and informational purposes only. Nothing here constitutes financial or investment advice. Always manage your own risk (DYOR).
+        <p class="disclaimer">
+            <strong>Disclaimer:</strong> Content published on ColdBloodedTraders is for educational and informational purposes only. Nothing here constitutes financial or investment advice. Always manage your own risk (DYOR).
         </p>
     </footer>
 
     <script>
         function toggleDropdown() { document.getElementById('toolsDropdown').classList.toggle('active'); }
-        window.onclick = (e) => { if (!e.target.matches('.dropdown-btn') && !e.target.closest('.dropdown')) { document.getElementById('toolsDropdown').classList.remove('active'); } }
+        window.onclick = function(e) { if (!e.target.closest('.dropdown')) document.getElementById('toolsDropdown').classList.remove('target'); }
+
+        function triggerLeopard() {
+            const svg = document.getElementById('leopard-svg');
+            const quote = document.getElementById('quote-text');
+            
+            svg.style.opacity = '0';
+            setTimeout(() => {
+                svg.style.display = 'none';
+                quote.style.display = 'block';
+                setTimeout(() => { quote.style.opacity = '1'; }, 400);
+            }, 400);
+
+            setTimeout(() => {
+                quote.style.opacity = '0';
+                setTimeout(() => {
+                    quote.style.display = 'none';
+                    svg.style.display = 'block';
+                    setTimeout(() => { svg.style.opacity = '1'; }, 400);
+                }, 400);
+            }, 5000);
+        }
+
+        const searchInput = document.getElementById('searchInput');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const articleCards = document.querySelectorAll('.article-card');
+        const sections = document.querySelectorAll('.category-section');
+        let activeCategory = 'all';
+
+        function filterArticles() {
+            const query = searchInput.value.toLowerCase();
+            sections.forEach(section => {
+                let hasVisibleCard = false;
+                const cards = section.querySelectorAll('.article-card');
+                cards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    const title = card.querySelector('h2').textContent.toLowerCase();
+                    const desc = card.querySelector('p').textContent.toLowerCase();
+                    const matchesCategory = activeCategory === 'all' || category === activeCategory;
+                    const matchesSearch = title.includes(query) || desc.includes(query);
+                    if (matchesCategory && matchesSearch) {
+                        card.style.display = 'flex';
+                        hasVisibleCard = true;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                section.style.display = hasVisibleCard ? 'block' : 'none';
+            });
+        }
+
+        searchInput.addEventListener('input', filterArticles);
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                activeCategory = btn.getAttribute('data-category');
+                filterArticles();
+            });
+        });
     </script>
 </body>
 </html>
