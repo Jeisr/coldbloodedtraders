@@ -61,8 +61,7 @@
             --table-header-bg: #161b22;
             --color-foundation: #00e676;
             --color-core: #ff9800;
-            --color-advanced: #ff5252;
-            --color-risk-mgmt: #00f2fe;
+            --color-advanced: #e91e63;
         }
         body {
             background-color: var(--bg-color);
@@ -127,7 +126,7 @@
         }
         .badge-foundation { background: rgba(0, 230, 118, 0.15); color: var(--color-foundation); border: 1px solid rgba(0, 230, 118, 0.4); }
         .badge-core { background: rgba(255, 152, 0, 0.15); color: var(--color-core); border: 1px solid rgba(255, 152, 0, 0.4); }
-        .badge-advanced { background: rgba(255, 82, 82, 0.15); color: var(--color-advanced); border: 1px solid rgba(255, 82, 82, 0.4); }
+        .badge-advanced { background: rgba(233, 30, 99, 0.15); color: var(--color-advanced); border: 1px solid rgba(233, 30, 99, 0.4); }
 
         h1 { font-size: 2.6rem; margin: 0.5rem 0 1rem 0; line-height: 1.25; font-weight: 800; text-align: center; }
         .meta { color: var(--text-muted); font-size: 0.9rem; text-align: center; margin-bottom: 2.5rem; }
@@ -151,18 +150,15 @@
         .strategy-card:hover { transform: translateY(-3px); border-color: var(--accent-color); }
         .strategy-card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
         .strategy-card h3 { color: var(--text-main); font-size: 1.3rem; margin: 0 0 0.75rem 0; }
+        .strategy-card h3 a { color: var(--text-main); text-decoration: none; transition: color 0.2s; }
+        .strategy-card h3 a:hover { color: var(--accent-color); }
         .strategy-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
         
         .strategy-links { border-top: 1px solid var(--border-color); padding-top: 1rem; margin-top: auto; }
-        .strategy-links h4 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 0.75rem; }
         .strategy-links ul { list-style: none; padding: 0; margin: 0; }
-        .strategy-links li { margin-bottom: 0.4rem; font-size: 0.9rem; }
-        .strategy-links a { text-decoration: none; transition: color 0.2s; }
+        .strategy-links li { margin-bottom: 0.4rem; font-size: 0.9Link; }
+        .strategy-links a { color: var(--text-main); text-decoration: none; transition: color 0.2s; font-size: 0.9rem; }
         .strategy-links a:hover { color: var(--accent-color); }
-
-        /* Project Consistency: Risk Management links styled with light blue (açık mavi) */
-        .link-risk-mgmt { color: var(--color-risk-mgmt); }
-        .link-core { color: var(--text-main); }
 
         .faq-section { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
         .faq-title { color: var(--accent-color); font-size: 1.4rem; margin-bottom: 1.5rem; }
@@ -221,15 +217,14 @@
                         <span class="tag" style="color: var(--color-foundation);">CLASS // 01</span>
                         <span class="difficulty-badge badge-foundation">FOUNDATION</span>
                     </div>
-                    <h3>The Mathematician</h3>
+                    <h3><a href="class-mathematician.html">The Mathematician</a></h3>
                     <p>Focuses strictly on mathematical expectancy, risk-reward parameters, and position survival matrices rather than emotional price forecasting.</p>
                 </div>
                 <div class="strategy-links">
-                    <h4>Core Blueprints:</h4>
                     <ul>
-                        <li><a href="risk-reward-expectancy.html" class="link-risk-mgmt">&rarr; Risk-Reward Ratios & Expectancy</a></li>
-                        <li><a href="position-sizing.html" class="link-risk-mgmt">&rarr; Position Sizing Framework</a></li>
-                        <li><a href="psychology-of-loss.html" class="link-risk-mgmt">&rarr; Psychology of Loss</a></li>
+                        <li><a href="risk-reward-expectancy.html">&rarr; Risk-Reward Ratios & Expectancy</a></li>
+                        <li><a href="position-sizing.html">&rarr; Position Sizing Framework</a></li>
+                        <li><a href="psychology-of-loss.html">&rarr; Psychology of Loss</a></li>
                     </ul>
                 </div>
             </div>
@@ -241,15 +236,14 @@
                         <span class="tag" style="color: var(--color-core);">CLASS // 02</span>
                         <span class="difficulty-badge badge-core">CORE</span>
                     </div>
-                    <h3>The Liquidity Hunter</h3>
+                    <h3><a href="class-liquidity-hunter.html">The Liquidity Hunter</a></h3>
                     <p>Specializes in tracking institutional footprints, order book imbalances, liquidity pool sweeps, and open interest structural buildups.</p>
                 </div>
                 <div class="strategy-links">
-                    <h4>Core Blueprints:</h4>
                     <ul>
-                        <li><a href="liquidity-pools.html" class="link-core">&rarr; Identifying Liquidity Pools</a></li>
-                        <li><a href="open-interest-analytics.html" class="link-core">&rarr; Open Interest Analytics</a></li>
-                        <li><a href="exchange-liquidity-depth-profiling.html" class="link-core">&rarr; Exchange Liquidity Profiling</a></li>
+                        <li><a href="liquidity-pools.html">&rarr; Identifying Liquidity Pools</a></li>
+                        <li><a href="open-interest-analytics.html">&rarr; Open Interest Analytics</a></li>
+                        <li><a href="exchange-liquidity-depth-profiling.html">&rarr; Exchange Liquidity Profiling</a></li>
                     </ul>
                 </div>
             </div>
@@ -261,15 +255,14 @@
                         <span class="tag" style="color: var(--color-advanced);">CLASS // 03</span>
                         <span class="difficulty-badge badge-advanced">ADVANCED</span>
                     </div>
-                    <h3>The Yield Master</h3>
+                    <h3><a href="class-yield-master.html">The Yield Master</a></h3>
                     <p>Zero directional bias. Extracts consistent returns through funding rate mechanisms, cross-exchange basis trading, and delta-neutral arbitrage systems.</p>
                 </div>
                 <div class="strategy-links">
-                    <h4>Core Blueprints:</h4>
                     <ul>
-                        <li><a href="delta-neutral-arbitrage.html" class="link-core">&rarr; Delta-Neutral Arbitrage</a></li>
-                        <li><a href="funding-rates.html" class="link-core">&rarr; Funding Rates & Volatility</a></li>
-                        <li><a href="perpetual-swaps-vs-futures.html" class="link-core">&rarr; Perps vs. Traditional Futures</a></li>
+                        <li><a href="delta-neutral-arbitrage.html">&rarr; Delta-Neutral Arbitrage</a></li>
+                        <li><a href="funding-rates.html">&rarr; Funding Rates & Volatility</a></li>
+                        <li><a href="perpetual-swaps-vs-futures.html">&rarr; Perps vs. Traditional Futures</a></li>
                     </ul>
                 </div>
             </div>
