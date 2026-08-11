@@ -76,30 +76,33 @@
         .hero h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 0.8rem; background: linear-gradient(135deg, #ffffff 0%, var(--accent-color) 60%, #4facfe 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
         .hero p { color: var(--text-muted); font-size: 1.15rem; max-width: 650px; margin: 0 auto; }
 
-        /* Strategy Hub Promo Card Stili */
-        .strategy-hub-promo {
-            background: linear-gradient(135deg, rgba(0, 242, 254, 0.1) 0%, rgba(11, 14, 20, 0.8) 100%);
-            border: 1px solid var(--accent-color);
-            border-radius: 12px;
-            padding: 2rem;
+        /* Minimalist Strategy Hub Link Stili */
+        .strategy-hub-link {
             text-align: center;
-            margin-bottom: 3.5rem;
-            position: relative;
-            overflow: hidden;
+            margin: 1rem auto 3rem auto;
+            padding: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
         }
-        .strategy-hub-promo h2 { color: var(--accent-color); margin-top: 0; font-size: 1.8rem; }
-        .strategy-hub-promo p { color: var(--text-main); margin-bottom: 1.5rem; }
+        .strategy-hub-link h2 { 
+            color: var(--accent-color); 
+            margin: 0 0 1rem 0; 
+            font-size: 1.4rem; 
+            letter-spacing: 1px;
+        }
         .btn-hub {
             display: inline-block;
-            background: var(--accent-color);
-            color: var(--bg-color);
-            padding: 0.8rem 2rem;
+            background: transparent;
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+            padding: 0.6rem 1.8rem;
             border-radius: 6px;
             text-decoration: none;
-            font-weight: 800;
-            transition: transform 0.2s;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.3s;
         }
-        .btn-hub:hover { transform: translateY(-2px); background: var(--accent-hover); }
+        .btn-hub:hover { background: var(--accent-color); color: var(--bg-color); }
 
         .leopard-container { margin: 2rem auto; cursor: pointer; min-height: 90px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         #leopard-svg { transition: opacity 0.4s ease; cursor: pointer; }
@@ -183,11 +186,10 @@
             </div>
         </section>
 
-        <!-- Strategy Hub Promo Bölümü -->
-        <section class="strategy-hub-promo">
-            <h2>🚀 Strategy Hub</h2>
-            <p>Advanced quantitative models, frameworks, and systematic trading blueprints.</p>
-            <a href="strategy.html" class="btn-hub">Enter Strategy Hub</a>
+        <!-- Minimalist Strategy Hub -->
+        <section class="strategy-hub-link">
+            <h2>STRATEGY HUB</h2>
+            <a href="strategy.html" class="btn-hub">Access Quantitative Frameworks →</a>
         </section>
 
         <div class="controls">
