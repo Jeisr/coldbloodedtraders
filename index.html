@@ -76,7 +76,7 @@
         .hero h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 0.8rem; background: linear-gradient(135deg, #ffffff 0%, var(--accent-color) 60%, #4facfe 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
         .hero p { color: var(--text-muted); font-size: 1.15rem; max-width: 650px; margin: 0 auto; }
 
-        /* Minimalist Strategy Hub Link Stili */
+        /* Afilli Geçişli Strategy Hub Buton Stili */
         .strategy-hub-link {
             text-align: center;
             margin: 1rem auto 3rem auto;
@@ -84,17 +84,25 @@
         }
         .btn-hub {
             display: inline-block;
-            background: transparent;
+            background: linear-gradient(135deg, rgba(0, 242, 254, 0.15) 0%, rgba(79, 172, 254, 0.15) 100%);
             color: var(--accent-color);
-            border: 1px solid var(--accent-color);
-            padding: 0.6rem 1.8rem;
-            border-radius: 6px;
+            border: 1px solid transparent;
+            border-image: linear-gradient(135deg, var(--accent-color), #4facfe) 1;
+            padding: 0.7rem 2rem;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 0.9rem;
-            transition: all 0.3s;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.15);
         }
-        .btn-hub:hover { background: var(--accent-color); color: var(--bg-color); }
+        .btn-hub:hover {
+            background: linear-gradient(135deg, var(--accent-color) 0%, #4facfe 100%);
+            color: var(--bg-color);
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(0, 242, 254, 0.4);
+        }
 
         .leopard-container { margin: 2rem auto; cursor: pointer; min-height: 90px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         #leopard-svg { transition: opacity 0.4s ease; cursor: pointer; }
@@ -178,7 +186,7 @@
             </div>
         </section>
 
-        <!-- Minimalist Strategy Hub -->
+        <!-- Strategy Hub Link -->
         <section class="strategy-hub-link">
             <a href="strategy.html" class="btn-hub">Strategy Hub →</a>
         </section>
