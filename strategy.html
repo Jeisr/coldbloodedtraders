@@ -82,16 +82,15 @@
         .badge-core { background: rgba(255, 152, 0, 0.15); color: var(--color-core); border: 1px solid rgba(255, 152, 0, 0.4); }
         .badge-advanced { background: rgba(233, 30, 99, 0.15); color: var(--color-advanced); border: 1px solid rgba(233, 30, 99, 0.4); }
         
-        h1 { 
-            font-size: 2.6rem; 
-            margin: 0.5rem 0 1rem 0; 
-            line-height: 1.25; 
-            font-weight: 800; 
-            text-align: center;
-            background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+        .hero h1 { 
+    font-size: 2.8rem; 
+    font-weight: 800; 
+    margin-bottom: 0.8rem; 
+    background: linear-gradient(135deg, #ffffff 0%, var(--accent-color) 60%, #4facfe 100%); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    display: inline-block; 
+}
         
         .meta { color: var(--text-muted); font-size: 0.9rem; text-align: center; margin-bottom: 2.5rem; }
         .strategy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
