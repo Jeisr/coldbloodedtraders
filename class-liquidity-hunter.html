@@ -10,7 +10,7 @@
     <link rel="apple-touch-icon" href="assets/cbt-logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class Profile: The Liquidity Hunter | ColdBloodedTraderS</title>
+    <title>Class Profile: The Liquidity Hunter | ColdBloodedTraders</title>
     <!-- Security Headers -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
@@ -66,7 +66,8 @@
             --border-color: rgba(240, 246, 252, 0.1);
             --table-header-bg: #161b22;
             --color-core: #ff9800;
-            --color-risk-mgmt: #ff9800;
+            --color-order-flow: #00f2fe;
+            --color-derivatives: #00f2fe;
         }
         body {
             background-color: var(--bg-color);
@@ -190,7 +191,8 @@
         }
         .related-card:hover { transform: translateY(-2px); border-color: var(--accent-color); }
         .related-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
-        .related-tag { font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--color-risk-mgmt); }
+        .related-tag-order { font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--color-order-flow); }
+        .related-tag-derivatives { font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--color-derivatives); }
         .related-card h4 { color: var(--text-main); font-size: 0.95rem; margin: 0; }
 
         footer { border-top: 1px solid var(--border-color); padding: 2rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
@@ -295,14 +297,14 @@
             <div class="related-grid">
                 <a href="liquidity-pools.html" class="related-card">
                     <div class="related-card-header">
-                        <span class="related-tag">RISK MANAGEMENT</span>
+                        <span class="related-tag-order">ORDER FLOW</span>
                         <span class="difficulty-badge badge-core">CORE</span>
                     </div>
                     <h4>Identifying Liquidity Pools &rarr;</h4>
                 </a>
                 <a href="open-interest-analytics.html" class="related-card">
                     <div class="related-card-header">
-                        <span class="related-tag">RISK MANAGEMENT</span>
+                        <span class="related-tag-derivatives">DERIVATIVES METRICS</span>
                         <span class="difficulty-badge badge-core">CORE</span>
                     </div>
                     <h4>Open Interest Analytics &rarr;</h4>
