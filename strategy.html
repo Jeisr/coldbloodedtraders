@@ -11,12 +11,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Strategy Hub: Choose Your Trading Framework | ColdBloodedTraders</title>
-    <!-- Security Headers -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta name="description" content="Explore ColdBloodedTraders Strategy Hub. Select your trading framework, master mathematical expectancy, liquidity hunting, or delta-neutral yield systems.">
     
-    <!-- Collection / WebPage Schema Markup -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -34,22 +32,6 @@
     }
     </script>
 
-    <!-- FAQ Schema Markup -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [{
-        "@type": "Question",
-        "name": "How do I choose the right trading strategy?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Your choice depends on your risk tolerance, capital scale, and time horizon. Choose The Mathematician for statistical risk management, The Liquidity Hunter for order book dynamics, or The Yield Master for delta-neutral funding arbitrage."
-        }
-      }]
-    }
-    </script>
-
     <style>
         :root {
             --bg-color: #0b0e14;
@@ -58,7 +40,6 @@
             --text-main: #f0f6fc;
             --text-muted: #8b949e;
             --border-color: rgba(240, 246, 252, 0.1);
-            --table-header-bg: #161b22;
             --color-foundation: #00e676;
             --color-core: #ff9800;
             --color-advanced: #e91e63;
@@ -91,7 +72,6 @@
         .nav-right { display: flex; align-items: center; gap: 1rem; }
         .back-btn { color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
 
-        /* Dropdown Menu Styling */
         .dropdown { position: relative; display: inline-block; }
         .dropdown-btn { color: var(--accent-color); background: transparent; font-weight: 700; border: 1px solid var(--accent-color); padding: 0.4rem 0.8rem; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; }
         .dropdown-content { display: none; position: absolute; right: 0; top: 120%; background-color: #161b22; min-width: 220px; border: 1px solid var(--border-color); border-radius: 8px; z-index: 1001; box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
@@ -99,44 +79,25 @@
         .dropdown-content a:hover { background: rgba(0, 242, 254, 0.08); color: var(--accent-color); }
         .dropdown.active .dropdown-content { display: block; }
         
-        .hub-container {
-            max-width: 1000px;
-            margin: 3rem auto 5rem auto;
-            padding: 0 1.5rem;
-        }
-        .hub-header-meta {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        .tag { 
-            font-weight: 700; 
-            font-size: 0.85rem; 
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
-        .tag-strategy { color: #00f2fe; }
+        .hub-container { max-width: 1000px; margin: 3rem auto 5rem auto; padding: 0 1.5rem; }
+        .hub-header-meta { text-align: center; margin-bottom: 3rem; }
 
-        .difficulty-badge {
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+        h1 { 
+            font-size: 2.8rem; 
+            margin: 0.5rem 0 1rem 0; 
+            line-height: 1.25; 
+            font-weight: 800; 
+            text-align: center; 
+            background: linear-gradient(135deg, #ffffff 0%, var(--accent-color) 60%, #4facfe 100%); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            display: inline-block; 
         }
-        .badge-foundation { background: rgba(0, 230, 118, 0.15); color: var(--color-foundation); border: 1px solid rgba(0, 230, 118, 0.4); }
-        .badge-core { background: rgba(255, 152, 0, 0.15); color: var(--color-core); border: 1px solid rgba(255, 152, 0, 0.4); }
-        .badge-advanced { background: rgba(233, 30, 99, 0.15); color: var(--color-advanced); border: 1px solid rgba(233, 30, 99, 0.4); }
-
-        h1 { font-size: 2.6rem; margin: 0.5rem 0 1rem 0; line-height: 1.25; font-weight: 800; text-align: center; }
         .meta { color: var(--text-muted); font-size: 0.9rem; text-align: center; margin-bottom: 2.5rem; }
         
-        .strategy-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
+        .strategy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        
+        /* Easter Egg / Card Interaction */
         .strategy-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -145,10 +106,34 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.2s ease, border-color 0.2s ease;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .strategy-card:hover { transform: translateY(-3px); border-color: var(--accent-color); }
-        .strategy-card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+        .strategy-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            border-color: var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 242, 254, 0.15);
+        }
+        .strategy-card::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 242, 254, 0.08) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s;
+            pointer-events: none;
+        }
+        .strategy-card:hover::before { opacity: 1; }
+
+        .difficulty-badge { font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 4px; letter-spacing: 1px; text-transform: uppercase; }
+        .badge-foundation { background: rgba(0, 230, 118, 0.15); color: var(--color-foundation); border: 1px solid rgba(0, 230, 118, 0.4); }
+        .badge-core { background: rgba(255, 152, 0, 0.15); color: var(--color-core); border: 1px solid rgba(255, 152, 0, 0.4); }
+        .badge-advanced { background: rgba(233, 30, 99, 0.15); color: var(--color-advanced); border: 1px solid rgba(233, 30, 99, 0.4); }
+        
         .strategy-card h3 { color: var(--text-main); font-size: 1.3rem; margin: 0 0 0.75rem 0; }
         .strategy-card h3 a { color: var(--text-main); text-decoration: none; transition: color 0.2s; }
         .strategy-card h3 a:hover { color: var(--accent-color); }
@@ -156,9 +141,8 @@
         
         .strategy-links { border-top: 1px solid var(--border-color); padding-top: 1rem; margin-top: auto; }
         .strategy-links ul { list-style: none; padding: 0; margin: 0; }
-        .strategy-links li { margin-bottom: 0.4rem; }
-        .strategy-links a { color: var(--text-main); text-decoration: none; transition: color 0.2s; font-size: 0.9rem; display: block; }
-        .strategy-links a:hover { color: var(--accent-color); }
+        .strategy-links a { color: var(--text-main); text-decoration: none; font-size: 0.9rem; display: block; margin-bottom: 0.4rem; transition: padding-left 0.2s, color 0.2s; }
+        .strategy-links a:hover { padding-left: 5px; color: var(--accent-color); }
 
         .faq-section { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
         .faq-title { color: var(--accent-color); font-size: 1.4rem; margin-bottom: 1.5rem; }
@@ -171,9 +155,9 @@
         @media (max-width: 600px) {
             .logo-full { display: none; }
             .logo-short { display: inline-block; }
+            h1 { font-size: 2.1rem; }
         }
     </style>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5590309220372784" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -200,72 +184,61 @@
 
     <main class="hub-container">
         <div class="hub-header-meta">
-            <span class="tag tag-strategy">STRATEGY MATRIX</span>
             <h1>ColdBloodedTraders Strategy Hub</h1>
             <div class="meta">Select your core operational framework • Built for structural edge</div>
         </div>
 
-        <p style="text-align: center; max-width: 700px; margin: 0 auto 3rem auto; color: var(--text-muted);">
-            Noise elimination is the ultimate trading edge. Select your tactical framework, study the mathematical models, and integrate professional risk protocols into your capital allocation.
-        </p>
-
         <div class="strategy-grid">
-            <!-- CLASS 1 -->
             <div class="strategy-card">
                 <div>
-                    <div class="strategy-card-top">
-                        <span class="tag" style="color: var(--color-foundation);">CLASS // 01</span>
+                    <div class="strategy-card-top" style="display:flex; justify-content:space-between; margin-bottom:1rem;">
+                        <span style="color:var(--color-foundation); font-weight:700; font-size:0.8rem;">CLASS // 01</span>
                         <span class="difficulty-badge badge-foundation">FOUNDATION</span>
                     </div>
                     <h3><a href="class-mathematician.html">The Mathematician</a></h3>
-                    <p>Focuses strictly on mathematical expectancy, risk-reward parameters, and position survival matrices rather than emotional price forecasting.</p>
+                    <p>Focuses strictly on mathematical expectancy, risk-reward parameters, and position survival matrices.</p>
                 </div>
                 <div class="strategy-links">
                     <ul>
-                        <li><a href="risk-reward-expectancy.html">&rarr; Risk-Reward Ratios & Expectancy</a></li>
-                        <li><a href="position-sizing.html">&rarr; Position Sizing Framework</a></li>
+                        <li><a href="risk-reward-expectancy.html">&rarr; Risk-Reward Ratios</a></li>
+                        <li><a href="position-sizing.html">&rarr; Position Sizing</a></li>
                         <li><a href="psychology-of-loss.html">&rarr; Psychology of Loss</a></li>
-                        <li><a href="stop-loss-mechanics.html">&rarr; Stop Loss Mechanics</a></li>
                     </ul>
                 </div>
             </div>
 
-            <!-- CLASS 2 -->
             <div class="strategy-card">
                 <div>
-                    <div class="strategy-card-top">
-                        <span class="tag" style="color: var(--color-core);">CLASS // 02</span>
+                    <div class="strategy-card-top" style="display:flex; justify-content:space-between; margin-bottom:1rem;">
+                        <span style="color:var(--color-core); font-weight:700; font-size:0.8rem;">CLASS // 02</span>
                         <span class="difficulty-badge badge-core">CORE</span>
                     </div>
                     <h3><a href="class-liquidity-hunter.html">The Liquidity Hunter</a></h3>
-                    <p>Specializes in tracking institutional footprints, order book imbalances, liquidity pool sweeps, and open interest structural buildups.</p>
+                    <p>Specializes in institutional footprints, order book imbalances, and liquidity pool sweeps.</p>
                 </div>
                 <div class="strategy-links">
                     <ul>
-                        <li><a href="liquidity-pools.html">&rarr; Identifying Liquidity Pools</a></li>
-                        <li><a href="open-interest-analytics.html">&rarr; Open Interest Analytics</a></li>
-                        <li><a href="exchange-liquidity-depth-profiling.html">&rarr; Exchange Liquidity Profiling</a></li>
-                        <li><a href="order-book-analysis.html">&rarr; Order Book Imbalance Tracking</a></li>
+                        <li><a href="liquidity-pools.html">&rarr; Liquidity Pools</a></li>
+                        <li><a href="open-interest-analytics.html">&rarr; Open Interest</a></li>
+                        <li><a href="order-book-analysis.html">&rarr; Order Book Analysis</a></li>
                     </ul>
                 </div>
             </div>
 
-            <!-- CLASS 3 -->
             <div class="strategy-card">
                 <div>
-                    <div class="strategy-card-top">
-                        <span class="tag" style="color: var(--color-advanced);">CLASS // 03</span>
+                    <div class="strategy-card-top" style="display:flex; justify-content:space-between; margin-bottom:1rem;">
+                        <span style="color:var(--color-advanced); font-weight:700; font-size:0.8rem;">CLASS // 03</span>
                         <span class="difficulty-badge badge-advanced">ADVANCED</span>
                     </div>
                     <h3><a href="class-yield-master.html">The Yield Master</a></h3>
-                    <p>Zero directional bias. Extracts consistent returns through funding rate mechanisms, cross-exchange basis trading, and delta-neutral arbitrage systems.</p>
+                    <p>Extracts returns via funding rate mechanisms and delta-neutral arbitrage systems.</p>
                 </div>
                 <div class="strategy-links">
                     <ul>
                         <li><a href="delta-neutral-arbitrage.html">&rarr; Delta-Neutral Arbitrage</a></li>
-                        <li><a href="funding-rates.html">&rarr; Funding Rates & Volatility</a></li>
-                        <li><a href="perpetual-swaps-vs-futures.html">&rarr; Perps vs. Traditional Futures</a></li>
-                        <li><a href="cross-exchange-basis-trading.html">&rarr; Cross-Exchange Basis Spread</a></li>
+                        <li><a href="funding-rates.html">&rarr; Funding Rates</a></li>
+                        <li><a href="cross-exchange-basis-trading.html">&rarr; Basis Spread</a></li>
                     </ul>
                 </div>
             </div>
@@ -275,16 +248,13 @@
             <h3 class="faq-title">Frequently Asked Questions</h3>
             <div class="faq-item">
                 <h4>How do I choose the right trading strategy?</h4>
-                <p>Your choice depends on your risk tolerance, capital scale, and time horizon. Choose The Mathematician for statistical risk management, The Liquidity Hunter for order book dynamics, or The Yield Master for delta-neutral funding arbitrage.</p>
+                <p>Choose based on your risk tolerance and scale: The Mathematician for statistical risk, The Liquidity Hunter for order book dynamics, or The Yield Master for delta-neutral strategies.</p>
             </div>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2026 ColdBloodedTraders. All rights reserved.</p>
-        <p style="font-size: 0.75rem; margin-top: 0.5rem; opacity: 0.7;">
-            Disclaimer: Content published on ColdBloodedTraders is for educational and informational purposes only. Nothing here constitutes financial or investment advice. Always manage your own risk (DYOR).
-        </p>
     </footer>
 
     <script>
