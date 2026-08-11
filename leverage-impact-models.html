@@ -95,7 +95,8 @@
         .article-header-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
         
         .tag { font-weight: 700; font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase; }
-        .tag-core { color: #ff9800; } /* Core turuncusu */
+        .tag-risk { color: #ff9800; } /* Risk Management turuncusu */
+        .tag-blue { color: var(--accent-color); } /* Açık mavi sol başlık */
 
         .difficulty-badge { font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 4px; letter-spacing: 1px; text-transform: uppercase; }
         .badge-core { background: rgba(255, 152, 0, 0.15); color: #ff9800; border: 1px solid rgba(255, 152, 0, 0.4); }
@@ -123,7 +124,8 @@
         .related-card h4 { color: var(--text-main); font-size: 0.95rem; margin: 0; }
         .related-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
         .related-tag { font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
-        .related-tag-core { color: #ff9800; }
+        .related-tag-blue { color: var(--accent-color); }
+        .related-tag-risk { color: #ff9800; }
 
         footer { border-top: 1px solid var(--border-color); padding: 2rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
 
@@ -155,7 +157,7 @@
 
     <main class="article-container">
         <div class="article-header-meta">
-            <span class="tag tag-core">DERIVATIVES & RISK</span>
+            <span class="tag tag-blue">LEVERAGE DYNAMICS</span>
             <span class="difficulty-badge badge-core">Core</span>
         </div>
         <h1>Leverage Impact Models & Margin Stress Testing</h1>
@@ -217,14 +219,14 @@
             <div class="related-grid">
                 <a href="open-interest-analytics.html" class="related-card">
                     <div class="related-card-header">
-                        <span class="related-tag related-tag-core">CORE</span>
+                        <span class="related-tag related-tag-blue">DERIVATIVES METRICS</span>
                         <span class="difficulty-badge badge-core">Core</span>
                     </div>
                     <h4>Open Interest Analytics: Tracking Leverage Buildups &rarr;</h4>
                 </a>
                 <a href="margin-modeling.html" class="related-card">
                     <div class="related-card-header">
-                        <span class="related-tag related-tag-core">ADVANCED</span>
+                        <span class="related-tag related-tag-risk">RISK MANAGEMENT</span>
                         <span class="difficulty-badge badge-core" style="background: rgba(255,82,82,0.15); color: #ff5252; border-color: rgba(255,82,82,0.4);">Advanced</span>
                     </div>
                     <h4>Margin Modeling: Portfolio-Based Risk Metrics &rarr;</h4>
