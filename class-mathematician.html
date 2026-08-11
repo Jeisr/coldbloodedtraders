@@ -66,7 +66,8 @@
             --border-color: rgba(240, 246, 252, 0.1);
             --table-header-bg: #161b22;
             --color-foundation: #00e676;
-            --color-risk-mgmt: #00f2fe;
+            --color-core: #ff9800;
+            --color-risk-mgmt: #ff9800;
         }
         body {
             background-color: var(--bg-color);
@@ -121,7 +122,7 @@
             letter-spacing: 1.5px;
             text-transform: uppercase;
         }
-        .tag-class { color: #00f2fe; }
+        .tag-class { color: var(--color-foundation); }
 
         .difficulty-badge {
             font-size: 0.75rem;
@@ -132,6 +133,7 @@
             text-transform: uppercase;
         }
         .badge-foundation { background: rgba(0, 230, 118, 0.15); color: var(--color-foundation); border: 1px solid rgba(0, 230, 118, 0.4); }
+        .badge-core { background: rgba(255, 152, 0, 0.15); color: var(--color-core); border: 1px solid rgba(255, 152, 0, 0.4); }
 
         h1 { font-size: 2.6rem; margin: 0.5rem 0 1rem 0; line-height: 1.25; font-weight: 800; }
         .meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; }
@@ -190,11 +192,8 @@
         }
         .related-card:hover { transform: translateY(-2px); border-color: var(--accent-color); }
         .related-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
-        .related-tag { font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+        .related-tag { font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--color-risk-mgmt); }
         .related-card h4 { color: var(--text-main); font-size: 0.95rem; margin: 0; }
-        
-        /* Risk Management links explicitly set to light blue per system requirements */
-        .link-risk { color: var(--color-risk-mgmt); }
 
         footer { border-top: 1px solid var(--border-color); padding: 2rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
 
@@ -215,14 +214,14 @@
         <div class="nav-right">
             <div class="dropdown" id="toolsDropdown">
                 <button class="dropdown-btn" onclick="toggleDropdown()">🧮 Tools &#9662;</button>
-                <button class="dropdown-content">
+                <div class="dropdown-content">
                     <a href="calculator.html">Position Size Calculator</a>
                     <a href="liquidation-calculator.html">Liquidation Price Calculator</a>
                     <a href="risk-metrics.html">Risk Metrics Calculator</a>
                     <a href="risk-reward-calculator.html">R/R Ratio Calculator</a>
                     <a href="compound-calculator.html">Compound Interest Calculator</a>
                     <a href="volatility-calculator.html">Volatility Position Sizer</a>
-                </button>
+                </div>
             </div>
             <a href="strategy.html" class="back-btn">&larr; Back to Strategy Hub</a>
         </div>
@@ -238,7 +237,7 @@
 
         <p>The Mathematician profile treats trading not as an exercise in predicting future price action, but as a statistical game of expected value (EV). Edge does not come from winning every single trade; it comes from asymmetric risk-to-reward ratios combined with strict mathematical position sizing.</p>
 
-        <p>You can instantly compute your execution parameters using our <a href="risk-reward-calculator.html" class="link-risk">R/R Ratio Calculator</a> before placing any market order.</p>
+        <p>You can instantly compute your execution parameters using our <a href="risk-reward-calculator.html" style="color: var(--accent-color); text-decoration: underline;">R/R Ratio Calculator</a> before placing any market order.</p>
 
         <blockquote>
             "If your expected value is positive and your ruin probability is zero, time is your only variable for account growth."
@@ -283,11 +282,11 @@
         <ul>
             <li><strong>Fixed Capital Risk:</strong> Never risk more than 1% to 2% of total capital on a single trade setup.</li>
             <li><strong>Asymmetry Priority:</strong> Reject any setup offering less than a 1:2 risk-to-reward profile, regardless of chart aesthetics.</li>
-            <li>data-driven <strong>Sample Size Discipline:</strong> Never judge a system based on fewer than 50 consecutive backtested or live executions.</li>
+            <li><strong>Sample Size Discipline:</strong> Never judge a system based on fewer than 50 consecutive backtested or live executions.</li>
         </ul>
 
         <h2>3. Practical Execution Routine</h2>
-        <p>Integrating this framework into daily workflow requires mechanical pre-trade calculation. Use the <a href="calculator.html" class="link-risk">Position Size Calculator</a> to ensure volatility variance never breaches your max drawdown limits.</p>
+        <p>Integrating this framework into daily workflow requires mechanical pre-trade calculation. Use the <a href="calculator.html" style="color: var(--accent-color); text-decoration: underline;">Position Size Calculator</a> to ensure volatility variance never breaches your max drawdown limits.</p>
 
         <section class="faq-section">
             <h3 class="faq-title">Frequently Asked Questions</h3>
@@ -302,14 +301,14 @@
             <div class="related-grid">
                 <a href="risk-reward-expectancy.html" class="related-card">
                     <div class="related-card-header">
-                        <span class="related-tag link-risk">RISK MANAGEMENT</span>
+                        <span class="related-tag">RISK MANAGEMENT</span>
                         <span class="difficulty-badge badge-foundation">FOUNDATION</span>
                     </div>
                     <h4>Risk-Reward Ratios & Expectancy &rarr;</h4>
                 </a>
                 <a href="position-sizing.html" class="related-card">
                     <div class="related-card-header">
-                        <span class="related-tag link-risk">RISK MANAGEMENT</span>
+                        <span class="related-tag">RISK MANAGEMENT</span>
                         <span class="difficulty-badge badge-core">CORE</span>
                     </div>
                     <h4>Position Sizing Framework &rarr;</h4>
