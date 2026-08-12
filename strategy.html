@@ -103,16 +103,20 @@
 
         .meta { color: var(--text-muted); font-size: 0.9rem; text-align: center; margin-bottom: 2.5rem; }
         
-        /* Grid yapıları */
-        .strategy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.5rem; margin-top: 2rem; align-items: stretch; }
+        /* Ana grid: 3 sütunlu yapı */
+        .strategy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.5rem; margin-top: 2rem; align-items: start; }
         
+        /* Sütun grubu: Her bir sütun kendi içinde üst üste yapışık iki kartı tutar */
+        .strategy-column { display: flex; flex-direction: column; gap: 0.75rem; }
+
         /* Ortak Kart Stili */
         .strategy-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column; transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; }
         
-        #card-f:hover, #module-card-f:hover { transform: translateY(-3px); border-color: var(--color-foundation); box-shadow: 0 0 15px rgba(0, 230, 118, 0.15); }
-        #card-c:hover, #module-card-c:hover { transform: translateY(-3px); border-color: var(--color-core); box-shadow: 0 0 15px rgba(255, 152, 0, 0.15); }
-        #card-a:hover, #module-card-a:hover { transform: translateY(-3px); border-color: var(--color-advanced); box-shadow: 0 0 15px rgba(233, 30, 99, 0.15); }
-        
+        .strategy-column:hover .strategy-card { /* İsteğe bağlı bütünsel hover efekti için */ }
+        #col-f:hover .strategy-card { border-color: var(--color-foundation); box-shadow: 0 0 15px rgba(0, 230, 118, 0.15); }
+        #col-c:hover .strategy-card { border-color: var(--color-core); box-shadow: 0 0 15px rgba(255, 152, 0, 0.15); }
+        #col-a:hover .strategy-card { border-color: var(--color-advanced); box-shadow: 0 0 15px rgba(233, 30, 99, 0.15); }
+
         .strategy-card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
         .strategy-card h3 { color: var(--text-main); font-size: 1.3rem; margin: 0 0 0.75rem 0; }
         .strategy-card h3 a { color: var(--text-main); text-decoration: none; transition: color 0.2s; }
@@ -126,15 +130,9 @@
         .strategy-links a { color: var(--text-main); text-decoration: none; transition: color 0.2s; font-size: 0.9rem; display: block; }
         .strategy-links a:hover { color: var(--accent-color); }
         
-        /* Bölüm Ayracı Başlığı */
-        .section-divider-title {
-            font-size: 1.3rem;
-            font-weight: 800;
-            color: var(--text-main);
-            margin: 4rem 0 0.5rem 0;
-            letter-spacing: 0.5px;
-        }
-
+        /* Alt Modül Kartı özel boşlukları */
+        .tactical-card { padding: 1.25rem 1.75rem; }
+        
         /* Tactical Modules listesi */
         .tactical-list { list-style: none; padding: 0; margin: 0; }
         .tactical-list li { margin-bottom: 0.4rem; }
@@ -193,115 +191,105 @@
             Noise elimination is the ultimate trading edge. Select your tactical framework, study the mathematical models, and integrate professional risk protocols into your capital allocation.
         </p>
 
-        <!-- ANA STRATEJİ KARTLARI -->
+        <!-- STRATEJİ GRID (SÜTUN YAPISI) -->
         <div class="strategy-grid">
-            <div class="strategy-card" id="card-f">
-                <div class="strategy-card-top">
-                    <span class="tag" style="color: var(--color-foundation);">CLASS // 01</span>
-                    <span class="difficulty-badge badge-foundation">FOUNDATION</span>
+            
+            <!-- 1. SÜTUN: THE MATHEMATICIAN + TACTICAL -->
+            <div class="strategy-column" id="col-f">
+                <div class="strategy-card">
+                    <div class="strategy-card-top">
+                        <span class="tag" style="color: var(--color-foundation);">CLASS // 01</span>
+                        <span class="difficulty-badge badge-foundation">FOUNDATION</span>
+                    </div>
+                    <h3><a href="class-mathematician.html">The Mathematician</a></h3>
+                    <p>Focuses strictly on mathematical expectancy, risk-reward parameters, and position survival matrices rather than emotional price forecasting.</p>
+                    <div class="strategy-links">
+                        <ul>
+                            <li><a href="risk-reward-expectancy.html">&rarr; Risk-Reward Ratios & Expectancy</a></li>
+                            <li><a href="position-sizing.html">&rarr; Position Sizing Framework</a></li>
+                            <li><a href="psychology-of-loss.html">&rarr; Psychology of Loss</a></li>
+                            <li><a href="stop-loss-mechanics.html">&rarr; Stop Loss Mechanics</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <h3><a href="class-mathematician.html">The Mathematician</a></h3>
-                <p>Focuses strictly on mathematical expectancy, risk-reward parameters, and position survival matrices rather than emotional price forecasting.</p>
-                <div class="strategy-links">
-                    <ul>
-                        <li><a href="risk-reward-expectancy.html">&rarr; Risk-Reward Ratios & Expectancy</a></li>
-                        <li><a href="position-sizing.html">&rarr; Position Sizing Framework</a></li>
-                        <li><a href="psychology-of-loss.html">&rarr; Psychology of Loss</a></li>
-                        <li><a href="stop-loss-mechanics.html">&rarr; Stop Loss Mechanics</a></li>
+
+                <div class="strategy-card tactical-card">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--color-foundation); letter-spacing: 1px; display: block; margin-bottom: 0.8rem;">TACTICAL MODULES</span>
+                    <ul class="tactical-list">
+                        <li><a href="margin-types.html">&plus; Margin Types</a></li>
+                        <li><a href="account-margin-modes.html">&plus; Account Margin Modes</a></li>
+                        <li><a href="margin-modeling.html">&plus; Margin Modeling</a></li>
+                        <li><a href="leverage-101.html">&plus; Leverage 101</a></li>
+                        <li><a href="leverage-impact-models.html">&plus; Leverage Impact Models</a></li>
+                        <li><a href="volatility-skew.html">&plus; Volatility Skew</a></li>
+                        <li><a href="volatility-surface-smile-modeling.html">&plus; Volatility Surface & Smile Modeling</a></li>
+                        <li><a href="macro-liquidity.html">&plus; Macro Liquidity</a></li>
                     </ul>
                 </div>
             </div>
 
-            <div class="strategy-card" id="card-c">
-                <div class="strategy-card-top">
-                    <span class="tag" style="color: var(--color-core);">CLASS // 02</span>
-                    <span class="difficulty-badge badge-core">CORE</span>
+            <!-- 2. SÜTUN: THE LIQUIDITY HUNTER + TACTICAL -->
+            <div class="strategy-column" id="col-c">
+                <div class="strategy-card">
+                    <div class="strategy-card-top">
+                        <span class="tag" style="color: var(--color-core);">CLASS // 02</span>
+                        <span class="difficulty-badge badge-core">CORE</span>
+                    </div>
+                    <h3><a href="class-liquidity-hunter.html">The Liquidity Hunter</a></h3>
+                    <p>Specializes in tracking institutional footprints, order book imbalances, liquidity pool sweeps, and open interest structural buildups.</p>
+                    <div class="strategy-links">
+                        <ul>
+                            <li><a href="liquidity-pools.html">&rarr; Identifying Liquidity Pools</a></li>
+                            <li><a href="open-interest-analytics.html">&rarr; Open Interest Analytics</a></li>
+                            <li><a href="exchange-liquidity-depth-profiling.html">&rarr; Exchange Liquidity Profiling</a></li>
+                            <li><a href="order-book-analysis.html">&rarr; Order Book Imbalance Tracking</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <h3><a href="class-liquidity-hunter.html">The Liquidity Hunter</a></h3>
-                <p>Specializes in tracking institutional footprints, order book imbalances, liquidity pool sweeps, and open interest structural buildups.</p>
-                <div class="strategy-links">
-                    <ul>
-                        <li><a href="liquidity-pools.html">&rarr; Identifying Liquidity Pools</a></li>
-                        <li><a href="open-interest-analytics.html">&rarr; Open Interest Analytics</a></li>
-                        <li><a href="exchange-liquidity-depth-profiling.html">&rarr; Exchange Liquidity Profiling</a></li>
-                        <li><a href="order-book-analysis.html">&rarr; Order Book Imbalance Tracking</a></li>
+
+                <div class="strategy-card tactical-card">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--color-core); letter-spacing: 1px; display: block; margin-bottom: 0.8rem;">TACTICAL MODULES</span>
+                    <ul class="tactical-list">
+                        <li><a href="order-types-mechanics.html">&plus; Order Types Mechanics</a></li>
+                        <li><a href="order-flow-tape-reading-basics.html">&plus; Order Flow & Tape Reading Basics</a></li>
+                        <li><a href="liquidation-signals.html">&plus; Liquidation Signals</a></li>
+                        <li><a href="gamma-squeeze-dynamics.html">&plus; Gamma Squeeze Dynamics</a></li>
+                        <li><a href="crypto-market-cycles.html">&plus; Crypto Market Cycles</a></li>
+                        <li><a href="onchain-analysis.html">&plus; On-Chain Analysis</a></li>
+                        <li><a href="spot-vs-derivatives.html">&plus; Spot vs. Derivatives</a></li>
                     </ul>
                 </div>
             </div>
 
-            <div class="strategy-card" id="card-a">
-                <div class="strategy-card-top">
-                    <span class="tag" style="color: var(--color-advanced);">CLASS // 03</span>
-                    <span class="difficulty-badge badge-advanced">ADVANCED</span>
+            <!-- 3. SÜTUN: THE YIELD MASTER + TACTICAL -->
+            <div class="strategy-column" id="col-a">
+                <div class="strategy-card">
+                    <div class="strategy-card-top">
+                        <span class="tag" style="color: var(--color-advanced);">CLASS // 03</span>
+                        <span class="difficulty-badge badge-advanced">ADVANCED</span>
+                    </div>
+                    <h3><a href="class-yield-master.html">The Yield Master</a></h3>
+                    <p>Zero directional bias. Extracts consistent returns through funding rate mechanisms, cross-exchange basis trading, and delta-neutral arbitrage systems.</p>
+                    <div class="strategy-links">
+                        <ul>
+                            <li><a href="delta-neutral-arbitrage.html">&rarr; Delta-Neutral Arbitrage</a></li>
+                            <li><a href="funding-rates.html">&rarr; Funding Rates & Volatility</a></li>
+                            <li><a href="perpetual-swaps-vs-futures.html">&rarr; Perps vs. Traditional Futures</a></li>
+                            <li><a href="cross-exchange-basis-trading.html">&rarr; Cross-Exchange Basis Spread</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <h3><a href="class-yield-master.html">The Yield Master</a></h3>
-                <p>Zero directional bias. Extracts consistent returns through funding rate mechanisms, cross-exchange basis trading, and delta-neutral arbitrage systems.</p>
-                <div class="strategy-links">
-                    <ul>
-                        <li><a href="delta-neutral-arbitrage.html">&rarr; Delta-Neutral Arbitrage</a></li>
-                        <li><a href="funding-rates.html">&rarr; Funding Rates & Volatility</a></li>
-                        <li><a href="perpetual-swaps-vs-futures.html">&rarr; Perps vs. Traditional Futures</a></li>
-                        <li><a href="cross-exchange-basis-trading.html">&rarr; Cross-Exchange Basis Spread</a></li>
+
+                <div class="strategy-card tactical-card">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--color-advanced); letter-spacing: 1px; display: block; margin-bottom: 0.8rem;">TACTICAL MODULES</span>
+                    <ul class="tactical-list">
+                        <li><a href="delta-neutral-yield.html">&plus; Delta-Neutral Yield</a></li>
+                        <li><a href="stat-arb-framework.html">&plus; Stat-Arb Framework</a></li>
+                        <li><a href="crypto-options-put-call-ratios.html">&plus; Crypto Options Put-Call Ratios</a></li>
                     </ul>
                 </div>
             </div>
-        </div>
 
-        <!-- TACTICAL MODULES BÖLÜMÜ -->
-        <h2 class="section-divider-title">Tactical Modules</h2>
-        <div class="meta" style="text-align: left; margin-bottom: 1.5rem;">Granular execution modules aligned with your framework.</div>
-
-        <div class="strategy-grid">
-            <div class="strategy-card" id="module-card-f">
-                <div class="strategy-card-top">
-                    <span class="tag" style="color: var(--color-foundation);">MODULES // 01</span>
-                    <span class="difficulty-badge badge-foundation">FOUNDATION</span>
-                </div>
-                <h3>Mathematical Execution</h3>
-                <p style="margin-bottom: 1rem;">Core risk control, margin parameters, and volatility mechanics.</p>
-                <ul class="tactical-list">
-                    <li><a href="margin-types.html">&plus; Margin Types</a></li>
-                    <li><a href="account-margin-modes.html">&plus; Account Margin Modes</a></li>
-                    <li><a href="margin-modeling.html">&plus; Margin Modeling</a></li>
-                    <li><a href="leverage-101.html">&plus; Leverage 101</a></li>
-                    <li><a href="leverage-impact-models.html">&plus; Leverage Impact Models</a></li>
-                    <li><a href="volatility-skew.html">&plus; Volatility Skew</a></li>
-                    <li><a href="volatility-surface-smile-modeling.html">&plus; Volatility Surface & Smile Modeling</a></li>
-                    <li><a href="macro-liquidity.html">&plus; Macro Liquidity</a></li>
-                </ul>
-            </div>
-
-            <div class="strategy-card" id="module-card-c">
-                <div class="strategy-card-top">
-                    <span class="tag" style="color: var(--color-core);">MODULES // 02</span>
-                    <span class="difficulty-badge badge-core">CORE</span>
-                </div>
-                <h3>Order Flow & Structure</h3>
-                <p style="margin-bottom: 1rem;">Order book mechanics, tape reading, and market cycle tracking.</p>
-                <ul class="tactical-list">
-                    <li><a href="order-types-mechanics.html">&plus; Order Types Mechanics</a></li>
-                    <li><a href="order-flow-tape-reading-basics.html">&plus; Order Flow & Tape Reading Basics</a></li>
-                    <li><a href="liquidation-signals.html">&plus; Liquidation Signals</a></li>
-                    <li><a href="gamma-squeeze-dynamics.html">&plus; Gamma Squeeze Dynamics</a></li>
-                    <li><a href="crypto-market-cycles.html">&plus; Crypto Market Cycles</a></li>
-                    <li><a href="onchain-analysis.html">&plus; On-Chain Analysis</a></li>
-                    <li><a href="spot-vs-derivatives.html">&plus; Spot vs. Derivatives</a></li>
-                </ul>
-            </div>
-
-            <div class="strategy-card" id="module-card-a">
-                <div class="strategy-card-top">
-                    <span class="tag" style="color: var(--color-advanced);">MODULES // 03</span>
-                    <span class="difficulty-badge badge-advanced">ADVANCED</span>
-                </div>
-                <h3>Advanced Arbitrage & Yield</h3>
-                <p style="margin-bottom: 1rem;">Delta-neutral yield, statistical arbitrage, and options metrics.</p>
-                <ul class="tactical-list">
-                    <li><a href="delta-neutral-yield.html">&plus; Delta-Neutral Yield</a></li>
-                    <li><a href="stat-arb-framework.html">&plus; Stat-Arb Framework</a></li>
-                    <li><a href="crypto-options-put-call-ratios.html">&plus; Crypto Options Put-Call Ratios</a></li>
-                </ul>
-            </div>
         </div>
 
         <section class="faq-section">
