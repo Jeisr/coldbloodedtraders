@@ -55,7 +55,6 @@
             --text-main: #f0f6fc;
             --text-muted: #8b949e;
             --border-color: rgba(240, 246, 252, 0.1);
-            --table-header-bg: #161b22;
             --color-foundation: #00e676;
             --color-core: #ff9800;
             --color-advanced: #e91e63;
@@ -103,29 +102,46 @@
         }
 
         .meta { color: var(--text-muted); font-size: 0.9rem; text-align: center; margin-bottom: 2.5rem; }
+        
+        /* Grid yapıları */
         .strategy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.5rem; margin-top: 2rem; align-items: stretch; }
         
+        /* Ortak Kart Stili */
         .strategy-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column; transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; }
         
-        #card-f:hover { transform: translateY(-3px); border-color: var(--color-foundation); box-shadow: 0 0 15px rgba(0, 230, 118, 0.15); }
-        #card-c:hover { transform: translateY(-3px); border-color: var(--color-core); box-shadow: 0 0 15px rgba(255, 152, 0, 0.15); }
-        #card-a:hover { transform: translateY(-3px); border-color: var(--color-advanced); box-shadow: 0 0 15px rgba(233, 30, 99, 0.15); }
+        #card-f:hover, #module-card-f:hover { transform: translateY(-3px); border-color: var(--color-foundation); box-shadow: 0 0 15px rgba(0, 230, 118, 0.15); }
+        #card-c:hover, #module-card-c:hover { transform: translateY(-3px); border-color: var(--color-core); box-shadow: 0 0 15px rgba(255, 152, 0, 0.15); }
+        #card-a:hover, #module-card-a:hover { transform: translateY(-3px); border-color: var(--color-advanced); box-shadow: 0 0 15px rgba(233, 30, 99, 0.15); }
         
         .strategy-card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
         .strategy-card h3 { color: var(--text-main); font-size: 1.3rem; margin: 0 0 0.75rem 0; }
         .strategy-card h3 a { color: var(--text-main); text-decoration: none; transition: color 0.2s; }
         .strategy-card h3 a:hover { color: var(--accent-color); }
-        .strategy-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem; }
+        .strategy-card p { color: var(--text-muted); font-size: 0.95rem; margin: 0; }
         
-        /* Ana 4 link açıklamanın hemen altında yer alır */
-        .strategy-links ul { list-style: none; padding: 0; margin: 0 0 1rem 0; border-top: 1px solid var(--border-color); padding-top: 0.8rem; }
+        /* Ana 4 link alanı */
+        .strategy-links ul { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--border-color); padding-top: 0.8rem; margin-top: 1rem; }
         .strategy-links li { margin-bottom: 0.4rem; }
+        .strategy-links li:last-child { margin-bottom: 0; }
         .strategy-links a { color: var(--text-main); text-decoration: none; transition: color 0.2s; font-size: 0.9rem; display: block; }
         .strategy-links a:hover { color: var(--accent-color); }
         
-        /* Tactical modules alanı kartın en altına itilir, böylece hizalanır */
-        .tactical-modules-box { margin-top: auto; padding-top: 0.8rem; border-top: 1px dashed var(--border-color); }
-        
+        /* Bölüm Ayracı Başlığı */
+        .section-divider-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin: 4rem 0 0.5rem 0;
+            letter-spacing: 0.5px;
+        }
+
+        /* Tactical Modules listesi */
+        .tactical-list { list-style: none; padding: 0; margin: 0; }
+        .tactical-list li { margin-bottom: 0.4rem; }
+        .tactical-list li:last-child { margin-bottom: 0; }
+        .tactical-list a { font-size: 0.88rem; color: var(--text-muted); text-decoration: none; display: block; transition: color 0.2s; }
+        .tactical-list a:hover { color: var(--accent-color); }
+
         .faq-section { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
         .faq-title { color: var(--accent-color); font-size: 1.4rem; margin-bottom: 1.5rem; }
         .faq-item { margin-bottom: 1.5rem; }
@@ -177,6 +193,7 @@
             Noise elimination is the ultimate trading edge. Select your tactical framework, study the mathematical models, and integrate professional risk protocols into your capital allocation.
         </p>
 
+        <!-- ANA STRATEJİ KARTLARI -->
         <div class="strategy-grid">
             <div class="strategy-card" id="card-f">
                 <div class="strategy-card-top">
@@ -185,7 +202,6 @@
                 </div>
                 <h3><a href="class-mathematician.html">The Mathematician</a></h3>
                 <p>Focuses strictly on mathematical expectancy, risk-reward parameters, and position survival matrices rather than emotional price forecasting.</p>
-                
                 <div class="strategy-links">
                     <ul>
                         <li><a href="risk-reward-expectancy.html">&rarr; Risk-Reward Ratios & Expectancy</a></li>
@@ -193,18 +209,6 @@
                         <li><a href="psychology-of-loss.html">&rarr; Psychology of Loss</a></li>
                         <li><a href="stop-loss-mechanics.html">&rarr; Stop Loss Mechanics</a></li>
                     </ul>
-                </div>
-
-                <div class="tactical-modules-box">
-                    <span style="font-size: 0.7rem; color: var(--color-foundation); opacity: 0.8; letter-spacing: 1px; display: block; margin-bottom: 0.4rem;">TACTICAL MODULES</span>
-                    <a href="margin-types.html" style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.3rem;">&plus; Margin Types</a>
-                    <a href="account-margin-modes.html" style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.3rem;">&plus; Account Margin Modes</a>
-                    <a href="margin-modeling.html" style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.3rem;">&plus; Margin Modeling</a>
-                    <a href="leverage-101.html" style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.3rem;">&plus; Leverage 101</a>
-                    <a href="leverage-impact-models.html" style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.3rem;">&plus; Leverage Impact Models</a>
-                    <a href="volatility-skew.html" style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.3rem;">&plus; Volatility Skew</a>
-                    <a href="volatility-surface-smile-modeling.html" style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.3rem;">&plus; Volatility Surface & Smile Modeling</a>
-                    <a href="macro-liquidity.html" style="font-size: 0.85rem; color: var(--text-muted); display: block;">&plus; Macro Liquidity</a>
                 </div>
             </div>
 
@@ -215,7 +219,6 @@
                 </div>
                 <h3><a href="class-liquidity-hunter.html">The Liquidity Hunter</a></h3>
                 <p>Specializes in tracking institutional footprints, order book imbalances, liquidity pool sweeps, and open interest structural buildups.</p>
-                
                 <div class="strategy-links">
                     <ul>
                         <li><a href="liquidity-pools.html">&rarr; Identifying Liquidity Pools</a></li>
@@ -223,17 +226,6 @@
                         <li><a href="exchange-liquidity-depth-profiling.html">&rarr; Exchange Liquidity Profiling</a></li>
                         <li><a href="order-book-analysis.html">&rarr; Order Book Imbalance Tracking</a></li>
                     </ul>
-                </div>
-
-                <div class="tactical-modules-box">
-                    <span style="font-size: 0.7rem; color: var(--color-core); opacity: 0.8; letter-spacing: 1px; display: block; margin-bottom: 0.4rem;">TACTICAL MODULES</span>
-                    <a href="order-types-mechanics.html" style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.3rem;">&plus; Order Types Mechanics</a>
-                    <a href="order-flow-tape-reading-basics.html" style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.3rem;">&plus; Order Flow & Tape Reading Basics</a>
-                    <a href="liquidation-signals.html" style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.3rem;">&plus; Liquidation Signals</a>
-                    <a href="gamma-squeeze-dynamics.html" style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.3rem;">&plus; Gamma Squeeze Dynamics</a>
-                    <a href="crypto-market-cycles.html" style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.3rem;">&plus; Crypto Market Cycles</a>
-                    <a href="onchain-analysis.html" style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.3rem;">&plus; On-Chain Analysis</a>
-                    <a href="spot-vs-derivatives.html" style="font-size: 0.85rem; color: var(--text-muted); display: block;">&plus; Spot vs. Derivatives</a>
                 </div>
             </div>
 
@@ -244,7 +236,6 @@
                 </div>
                 <h3><a href="class-yield-master.html">The Yield Master</a></h3>
                 <p>Zero directional bias. Extracts consistent returns through funding rate mechanisms, cross-exchange basis trading, and delta-neutral arbitrage systems.</p>
-                
                 <div class="strategy-links">
                     <ul>
                         <li><a href="delta-neutral-arbitrage.html">&rarr; Delta-Neutral Arbitrage</a></li>
@@ -253,13 +244,63 @@
                         <li><a href="cross-exchange-basis-trading.html">&rarr; Cross-Exchange Basis Spread</a></li>
                     </ul>
                 </div>
+            </div>
+        </div>
 
-                <div class="tactical-modules-box">
-                    <span style="font-size: 0.7rem; color: var(--color-advanced); opacity: 0.8; letter-spacing: 1px; display: block; margin-bottom: 0.4rem;">TACTICAL MODULES</span>
-                    <a href="delta-neutral-yield.html" style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.3rem;">&plus; Delta-Neutral Yield</a>
-                    <a href="stat-arb-framework.html" style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.3rem;">&plus; Stat-Arb Framework</a>
-                    <a href="crypto-options-put-call-ratios.html" style="font-size: 0.85rem; color: var(--text-muted); display: block;">&plus; Crypto Options Put-Call Ratios</a>
+        <!-- TACTICAL MODULES BÖLÜMÜ -->
+        <h2 class="section-divider-title">Tactical Modules</h2>
+        <div class="meta" style="text-align: left; margin-bottom: 1.5rem;">Granular execution modules aligned with your framework.</div>
+
+        <div class="strategy-grid">
+            <div class="strategy-card" id="module-card-f">
+                <div class="strategy-card-top">
+                    <span class="tag" style="color: var(--color-foundation);">MODULES // 01</span>
+                    <span class="difficulty-badge badge-foundation">FOUNDATION</span>
                 </div>
+                <h3>Mathematical Execution</h3>
+                <p style="margin-bottom: 1rem;">Core risk control, margin parameters, and volatility mechanics.</p>
+                <ul class="tactical-list">
+                    <li><a href="margin-types.html">&plus; Margin Types</a></li>
+                    <li><a href="account-margin-modes.html">&plus; Account Margin Modes</a></li>
+                    <li><a href="margin-modeling.html">&plus; Margin Modeling</a></li>
+                    <li><a href="leverage-101.html">&plus; Leverage 101</a></li>
+                    <li><a href="leverage-impact-models.html">&plus; Leverage Impact Models</a></li>
+                    <li><a href="volatility-skew.html">&plus; Volatility Skew</a></li>
+                    <li><a href="volatility-surface-smile-modeling.html">&plus; Volatility Surface & Smile Modeling</a></li>
+                    <li><a href="macro-liquidity.html">&plus; Macro Liquidity</a></li>
+                </ul>
+            </div>
+
+            <div class="strategy-card" id="module-card-c">
+                <div class="strategy-card-top">
+                    <span class="tag" style="color: var(--color-core);">MODULES // 02</span>
+                    <span class="difficulty-badge badge-core">CORE</span>
+                </div>
+                <h3>Order Flow & Structure</h3>
+                <p style="margin-bottom: 1rem;">Order book mechanics, tape reading, and market cycle tracking.</p>
+                <ul class="tactical-list">
+                    <li><a href="order-types-mechanics.html">&plus; Order Types Mechanics</a></li>
+                    <li><a href="order-flow-tape-reading-basics.html">&plus; Order Flow & Tape Reading Basics</a></li>
+                    <li><a href="liquidation-signals.html">&plus; Liquidation Signals</a></li>
+                    <li><a href="gamma-squeeze-dynamics.html">&plus; Gamma Squeeze Dynamics</a></li>
+                    <li><a href="crypto-market-cycles.html">&plus; Crypto Market Cycles</a></li>
+                    <li><a href="onchain-analysis.html">&plus; On-Chain Analysis</a></li>
+                    <li><a href="spot-vs-derivatives.html">&plus; Spot vs. Derivatives</a></li>
+                </ul>
+            </div>
+
+            <div class="strategy-card" id="module-card-a">
+                <div class="strategy-card-top">
+                    <span class="tag" style="color: var(--color-advanced);">MODULES // 03</span>
+                    <span class="difficulty-badge badge-advanced">ADVANCED</span>
+                </div>
+                <h3>Advanced Arbitrage & Yield</h3>
+                <p style="margin-bottom: 1rem;">Delta-neutral yield, statistical arbitrage, and options metrics.</p>
+                <ul class="tactical-list">
+                    <li><a href="delta-neutral-yield.html">&plus; Delta-Neutral Yield</a></li>
+                    <li><a href="stat-arb-framework.html">&plus; Stat-Arb Framework</a></li>
+                    <li><a href="crypto-options-put-call-ratios.html">&plus; Crypto Options Put-Call Ratios</a></li>
+                </ul>
             </div>
         </div>
 
