@@ -1,5 +1,4 @@
-# I will create the requested HTML file with the provided code.
-html_content = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="canonical" href="https://coldbloodedtraders.com/strategy.html">
@@ -104,8 +103,10 @@ html_content = """<!DOCTYPE html>
         }
 
         .meta { color: var(--text-muted); font-size: 0.9rem; text-align: center; margin-bottom: 2.5rem; }
-        .strategy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
-        .strategy-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; }
+        .strategy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.5rem; margin-top: 2rem; align-items: stretch; }
+        
+        /* Kartların eşit yükseklikte olması ve boşlukların aşağıya atılması için güncellendi */
+        .strategy-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between; height: 100%; box-sizing: border-box; transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; }
         
         #card-f:hover { transform: translateY(-3px); border-color: var(--color-foundation); box-shadow: 0 0 15px rgba(0, 230, 118, 0.15); }
         #card-c:hover { transform: translateY(-3px); border-color: var(--color-core); box-shadow: 0 0 15px rgba(255, 152, 0, 0.15); }
@@ -282,6 +283,4 @@ html_content = """<!DOCTYPE html>
         window.onclick = (e) => { if (!e.target.matches('.dropdown-btn') && !e.target.closest('.dropdown')) { document.getElementById('toolsDropdown').classList.remove('active'); } }
     </script>
 </body>
-</html>"""
-with open("strategy.html", "w", encoding="utf-8") as f:
-    f.write(html_content)
+</html>
