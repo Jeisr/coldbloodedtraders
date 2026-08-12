@@ -105,11 +105,8 @@
         .meta { color: var(--text-muted); font-size: 0.9rem; text-align: center; margin-bottom: 2.5rem; }
         .strategy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.5rem; margin-top: 2rem; align-items: stretch; }
         
-        /* Kartların boyunu eşitleyen, kısa kalanların altını boş bırakan yapı */
-        .strategy-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between; height: 100%; box-sizing: border-box; transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; }
-        
-        /* Kart içerisindeki üst kısımların esneyip boşluğu alta itmesi için */
-        .strategy-card > div:first-child { display: flex; flex-direction: column; flex-grow: 1; }
+        /* Kartların içeriği düzgün sıralansın, aralarda boşluk uçurumu olmasın */
+        .strategy-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column; transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; }
         
         #card-f:hover { transform: translateY(-3px); border-color: var(--color-foundation); box-shadow: 0 0 15px rgba(0, 230, 118, 0.15); }
         #card-c:hover { transform: translateY(-3px); border-color: var(--color-core); box-shadow: 0 0 15px rgba(255, 152, 0, 0.15); }
@@ -120,11 +117,15 @@
         .strategy-card h3 a { color: var(--text-main); text-decoration: none; transition: color 0.2s; }
         .strategy-card h3 a:hover { color: var(--accent-color); }
         .strategy-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
-        .strategy-links { border-top: 1px solid var(--border-color); padding-top: 1rem; margin-top: auto; }
+        
+        /* Linklerin ve modüllerin yer aldığı alan; kısa kartlarda boşluğu en alta itmek için margin-top: auto */
+        .strategy-links { border-top: 1px solid var(--border-color); padding-top: 1rem; margin-top: auto; display: flex; flex-direction: column; }
+        
         .strategy-links ul { list-style: none; padding: 0; margin: 0; }
         .strategy-links li { margin-bottom: 0.4rem; }
         .strategy-links a { color: var(--text-main); text-decoration: none; transition: color 0.2s; font-size: 0.9rem; display: block; }
         .strategy-links a:hover { color: var(--accent-color); }
+        
         .faq-section { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
         .faq-title { color: var(--accent-color); font-size: 1.4rem; margin-bottom: 1.5rem; }
         .faq-item { margin-bottom: 1.5rem; }
