@@ -103,16 +103,12 @@
 
         .meta { color: var(--text-muted); font-size: 0.9rem; text-align: center; margin-bottom: 2.5rem; }
         
-        /* Ana grid: 3 sütunlu yapı */
         .strategy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.5rem; margin-top: 2rem; align-items: start; }
         
-        /* Sütun grubu: Her bir sütun kendi içinde üst üste yapışık iki kartı tutar */
-        .strategy-column { display: flex; flex-direction: column; gap: 0.75rem; }
+        .strategy-column { display: flex; flex-direction: column; gap: 0.75rem; height: 100%; }
 
-        /* Ortak Kart Stili */
         .strategy-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column; transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; }
         
-        .strategy-column:hover .strategy-card { /* İsteğe bağlı bütünsel hover efekti için */ }
         #col-f:hover .strategy-card { border-color: var(--color-foundation); box-shadow: 0 0 15px rgba(0, 230, 118, 0.15); }
         #col-c:hover .strategy-card { border-color: var(--color-core); box-shadow: 0 0 15px rgba(255, 152, 0, 0.15); }
         #col-a:hover .strategy-card { border-color: var(--color-advanced); box-shadow: 0 0 15px rgba(233, 30, 99, 0.15); }
@@ -123,17 +119,15 @@
         .strategy-card h3 a:hover { color: var(--accent-color); }
         .strategy-card p { color: var(--text-muted); font-size: 0.95rem; margin: 0; }
         
-        /* Ana 4 link alanı */
         .strategy-links ul { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--border-color); padding-top: 0.8rem; margin-top: 1rem; }
         .strategy-links li { margin-bottom: 0.4rem; }
         .strategy-links li:last-child { margin-bottom: 0; }
         .strategy-links a { color: var(--text-main); text-decoration: none; transition: color 0.2s; font-size: 0.9rem; display: block; }
         .strategy-links a:hover { color: var(--accent-color); }
         
-        /* Alt Modül Kartı özel boşlukları */
-        .tactical-card { padding: 1.25rem 1.75rem; }
+        /* Tactical Kartların Boyunu Eşitleme (Flex-grow ile) */
+        .tactical-card { padding: 1.25rem 1.75rem; flex-grow: 1; display: flex; flex-direction: column; }
         
-        /* Tactical Modules listesi */
         .tactical-list { list-style: none; padding: 0; margin: 0; }
         .tactical-list li { margin-bottom: 0.4rem; }
         .tactical-list li:last-child { margin-bottom: 0; }
@@ -191,10 +185,8 @@
             Noise elimination is the ultimate trading edge. Select your tactical framework, study the mathematical models, and integrate professional risk protocols into your capital allocation.
         </p>
 
-        <!-- STRATEJİ GRID (SÜTUN YAPISI) -->
         <div class="strategy-grid">
             
-            <!-- 1. SÜTUN: THE MATHEMATICIAN + TACTICAL -->
             <div class="strategy-column" id="col-f">
                 <div class="strategy-card">
                     <div class="strategy-card-top">
@@ -228,7 +220,6 @@
                 </div>
             </div>
 
-            <!-- 2. SÜTUN: THE LIQUIDITY HUNTER + TACTICAL -->
             <div class="strategy-column" id="col-c">
                 <div class="strategy-card">
                     <div class="strategy-card-top">
@@ -261,7 +252,6 @@
                 </div>
             </div>
 
-            <!-- 3. SÜTUN: THE YIELD MASTER + TACTICAL -->
             <div class="strategy-column" id="col-a">
                 <div class="strategy-card">
                     <div class="strategy-card-top">
