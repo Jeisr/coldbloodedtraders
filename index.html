@@ -1,4 +1,4 @@
-html_content = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta property="og:type" content="website">
@@ -209,8 +209,8 @@ html_content = """<!DOCTYPE html>
                 <a href="margin-types.html" class="article-card" data-category="RISK"><div><span class="article-tag" style="color: var(--color-foundation);">FOUNDATION</span><h2>Cross vs. Isolated Margin</h2><p>Deep dive into exchange liquidation engines.</p></div><div class="article-meta">August 2026 • 9 min read</div></a>
                 <a href="account-margin-modes.html" class="article-card" data-category="RISK"><div><span class="article-tag" style="color: var(--color-foundation);">FOUNDATION</span><h2>Margin Types & Account Modes</h2><p>Master cross and isolated margin mechanics, multi-asset account modes, and advanced risk strategies.</p></div><div class="article-meta">August 2026 • 8 min read</div></a>
                 <a href="order-types-mechanics.html" class="article-card" data-category="DERIVATIVES"><div><span class="article-tag" style="color: var(--color-foundation);">FOUNDATION</span><h2>Order Types & Execution Mechanics</h2><p>Master order types, execution mechanics, limit vs. market orders, and conditional triggers to eliminate execution slippage.</p></div><div class="article-meta">August 2026 • 7 min read</div></a>
-                <!-- NEW ARTICLE 1 -->
-                <a href="new-article-1.html" class="article-card" data-category="RISK"><div><span class="article-tag" style="color: var(--color-foundation);">FOUNDATION</span><h2>New Article 1 Title</h2><p>Description of the first new article.</p></div><div class="article-meta">August 2026 • 5 min read</div></a>
+                <!-- LIQUIDITY SWEEP VS TRUE BREAKOUT -->
+                <a href="liquidity-sweep-vs-true-breakout.html" class="article-card" data-category="LIQUIDITY"><div><span class="article-tag" style="color: var(--color-foundation);">FOUNDATION</span><h2>Liquidity Sweep vs. True Breakout</h2><p>Distinguishing structural fakeouts from genuine market breakouts.</p></div><div class="article-meta">August 2026 • 7 min read</div></a>
             </div>
         </section>
 
@@ -227,8 +227,8 @@ html_content = """<!DOCTYPE html>
                 <a href="volatility-skew.html" class="article-card" data-category="DERIVATIVES"><div><span class="article-tag" style="color: var(--color-core);">CORE</span><h2>Volatility Skew</h2><p>Options IV smiles and tail-risk signals.</p></div><div class="article-meta">August 2026 • 10 min read</div></a>
                 <a href="leverage-impact-models.html" class="article-card" data-category="RISK"><div><span class="article-tag" style="color: var(--color-core);">CORE</span><h2>Leverage Impact Models & Margin Stress Testing</h2><p>Quantitative leverage impact models and portfolio margin stress testing frameworks.</p></div><div class="article-meta">August 2026 • 8 min read</div></a>
                 <a href="order-flow-tape-reading-basics.html" class="article-card" data-category="LIQUIDITY"><div><span class="article-tag" style="color: var(--color-core);">CORE</span><h2>Order Flow & Tape Reading Basics</h2><p>Master time and sales, delta footprints, and real-time order flow dynamics to read aggressive market participants.</p></div><div class="article-meta">August 2026 • 9 min read</div></a>
-                <!-- NEW ARTICLE 2 -->
-                <a href="new-article-2.html" class="article-card" data-category="DERIVATIVES"><div><span class="article-tag" style="color: var(--color-core);">CORE</span><h2>New Article 2 Title</h2><p>Description of the second new article.</p></div><div class="article-meta">August 2026 • 6 min read</div></a>
+                <!-- LIQUIDATION HEATMAPS & CVD -->
+                <a href="liquidation-heatmaps-and-cvd.html" class="article-card" data-category="LIQUIDITY"><div><span class="article-tag" style="color: var(--color-core);">CORE</span><h2>Liquidation Heatmaps & CVD</h2><p>Tracking cumulative volume delta and liquidity cluster zones.</p></div><div class="article-meta">August 2026 • 8 min read</div></a>
             </div>
         </section>
 
@@ -245,8 +245,8 @@ html_content = """<!DOCTYPE html>
                 <a href="onchain-analysis.html" class="article-card" data-category="LIQUIDITY"><div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>Institutional Flow Dynamics</h2><p>Tracking miner reserves and whale flows.</p></div><div class="article-meta">August 2026 • 6 min read</div></a>
                 <a href="delta-neutral-yield.html" class="article-card" data-category="DERIVATIVES"><div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>Funding Arbitrage</h2><p>Mastering delta-neutral yield strategies.</p></div><div class="article-meta">August 2026 • 9 min read</div></a>
                 <a href="stat-arb-framework.html" class="article-card" data-category="DERIVATIVES"><div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>Statistical Arbitrage</h2><p>Mean reversion and cointegration models.</p></div><div class="article-meta">August 2026 • 10 min read</div></a>
-                <!-- NEW ARTICLE 3 -->
-                <a href="new-article-3.html" class="article-card" data-category="LIQUIDITY"><div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>New Article 3 Title</h2><p>Description of the third new article.</p></div><div class="article-meta">August 2026 • 7 min read</div></a>
+                <!-- CME GAP MECHANICS & OI OVERLAPS -->
+                <a href="cme-gap-mechanics-and-oi-overlaps.html" class="article-card" data-category="DERIVATIVES"><div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>CME Gap Mechanics & OI Overlaps</h2><p>Analyzing institutional footprints, gaps, and open interest overlaps.</p></div><div class="article-meta">August 2026 • 10 min read</div></a>
             </div>
         </section>
     </main>
@@ -329,7 +329,4 @@ html_content = """<!DOCTYPE html>
         });
     </script>
 </body>
-</html>"""
-
-with open('index.html', 'w', encoding='utf-8') as f:
-    f.write(html_content)
+</html>
