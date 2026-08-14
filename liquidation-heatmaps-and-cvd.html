@@ -130,7 +130,8 @@
             letter-spacing: 1.5px;
             text-transform: uppercase;
         }
-        .tag-order-flow { color: #ff9800; }
+        .tag-order-flow { color: var(--accent-color); }
+        .tag-market-structure { color: var(--accent-color); }
 
         .difficulty-badge {
             font-size: 0.75rem;
@@ -201,7 +202,7 @@
         }
         .related-card:hover { transform: translateY(-2px); border-color: var(--accent-color); }
         .related-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
-        .related-tag { font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+        .related-tag { font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--accent-color); }
         .related-card h4 { color: var(--text-main); font-size: 0.95rem; margin: 0; }
 
         footer { border-top: 1px solid var(--border-color); padding: 2rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
@@ -306,19 +307,19 @@
         <div class="related-articles">
             <h3 class="related-title">Related Frameworks</h3>
             <div class="related-grid">
-                <a href="liquidation-sweep-vs-true-breakout.html" class="related-card">
+                <a href="liquidity-sweep-vs-true-breakout.html" class="related-card">
                     <div class="related-card-header">
                         <span class="related-tag tag-market-structure">MARKET STRUCTURE</span>
                         <span class="difficulty-badge badge-foundation">FOUNDATION</span>
                     </div>
                     <h4>Liquidity Sweep vs. True Breakout: Spotting Market Traps &rarr;</h4>
                 </a>
-                <a href="risk-metrics.html" class="related-card">
+                <a href="order-block-mitigation-and-reentry.html" class="related-card">
                     <div class="related-card-header">
-                        <span class="related-tag" style="color: var(--color-core);">RISK MANAGEMENT</span>
+                        <span class="related-tag tag-order-flow">ORDER FLOW</span>
                         <span class="difficulty-badge badge-core">CORE</span>
                     </div>
-                    <h4>Risk Metrics: Managing Exposure & Drawdown &rarr;</h4>
+                    <h4>Order Block Mitigation & Re-entry Tactics &rarr;</h4>
                 </a>
             </div>
         </div>
