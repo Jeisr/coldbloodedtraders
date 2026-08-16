@@ -51,13 +51,15 @@
         :root {
             --bg-color: #0b0e14;
             --card-bg: rgba(22, 27, 34, 0.7);
-            --accent-color: #00f2fe;
-            --text-main: #f0f6fc;
-            --text-muted: #8b949e;
-            --border-color: rgba(240, 246, 252, 0.1);
-            --color-foundation: #00e676;
-            --color-core: #ff9800;
-            --color-advanced: #e91e63;
+            --accent-color: #38bdf8; /* Daha yumuşak, profesyonel gökyüzü mavisi */
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border-color: rgba(241, 245, 249, 0.1);
+            
+            /* Göz yormayan, rafine edilmiş tok tonlar */
+            --color-foundation: #10b981; /* Soft Emerald */
+            --color-core: #f59e0b;       /* Soft Amber */
+            --color-advanced: #f43f5e;   /* Soft Rose */
         }
         body { background-color: var(--bg-color); color: var(--text-main); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; line-height: 1.8; margin: 0; padding: 0; }
         
@@ -76,19 +78,19 @@
         .back-btn { color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 0.95rem; white-space: nowrap; }
         
         .dropdown { position: relative; display: inline-block; }
-        .dropdown-btn { color: var(--accent-color); background: transparent; font-weight: 700; border: 1px solid var(--accent-color); padding: 0.4rem 0.8rem; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; }
+        .dropdown-btn { color: var(--accent-color); background: transparent; font-weight: 700; border: 1px solid rgba(56, 189, 248, 0.3); padding: 0.4rem 0.8rem; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; }
         .dropdown-content { display: none; position: absolute; right: 0; top: 120%; background-color: #161b22; min-width: 220px; border: 1px solid var(--border-color); border-radius: 8px; z-index: 1001; box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
-        .dropdown-content a { color: var(--text-main); padding: 0.75rem 1rem; text-decoration: none; display: block; font-size: 0.85rem; border-bottom: 1px solid rgba(240, 246, 252, 0.05); }
-        .dropdown-content a:hover { background: rgba(0, 242, 254, 0.08); color: var(--accent-color); }
+        .dropdown-content a { color: var(--text-main); padding: 0.75rem 1rem; text-decoration: none; display: block; font-size: 0.85rem; border-bottom: 1px solid rgba(241, 245, 249, 0.05); }
+        .dropdown-content a:hover { background: rgba(56, 189, 248, 0.08); color: var(--accent-color); }
         .dropdown.active .dropdown-content { display: block; }
 
         .hub-container { max-width: 1000px; margin: 3rem auto 5rem auto; padding: 0 1.5rem; }
         .hub-header-meta { text-align: center; margin-bottom: 3rem; }
         .tag { font-weight: 700; font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase; }
         .difficulty-badge { font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 4px; letter-spacing: 1px; text-transform: uppercase; }
-        .badge-foundation { background: rgba(0, 230, 118, 0.15); color: var(--color-foundation); border: 1px solid rgba(0, 230, 118, 0.4); }
-        .badge-core { background: rgba(255, 152, 0, 0.15); color: var(--color-core); border: 1px solid rgba(255, 152, 0, 0.4); }
-        .badge-advanced { background: rgba(233, 30, 99, 0.15); color: var(--color-advanced); border: 1px solid rgba(233, 30, 99, 0.4); }
+        .badge-foundation { background: rgba(16, 185, 129, 0.12); color: var(--color-foundation); border: 1px solid rgba(16, 185, 129, 0.3); }
+        .badge-core { background: rgba(245, 158, 11, 0.12); color: var(--color-core); border: 1px solid rgba(245, 158, 11, 0.3); }
+        .badge-advanced { background: rgba(244, 63, 94, 0.12); color: var(--color-advanced); border: 1px solid rgba(244, 63, 94, 0.3); }
         
         h1.hub-title { 
             font-size: 2.6rem; 
@@ -96,7 +98,7 @@
             line-height: 1.25; 
             font-weight: 800; 
             text-align: center;
-            background: linear-gradient(90deg, #ffffff 0%, #00f2fe 50%, #4facfe 100%);
+            background: linear-gradient(90deg, #f1f5f9 0%, #38bdf8 50%, #818cf8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -132,14 +134,14 @@
 
         .strategy-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column; transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; position: relative; }
         
-        #col-f:hover .strategy-card { border-color: var(--color-foundation); box-shadow: 0 0 15px rgba(0, 230, 118, 0.15); }
-        #col-c:hover .strategy-card { border-color: var(--color-core); box-shadow: 0 0 15px rgba(255, 152, 0, 0.15); }
-        #col-a:hover .strategy-card { border-color: var(--color-advanced); box-shadow: 0 0 15px rgba(233, 30, 99, 0.15); }
+        #col-f:hover .strategy-card { border-color: var(--color-foundation); box-shadow: 0 0 15px rgba(16, 185, 129, 0.12); }
+        #col-c:hover .strategy-card { border-color: var(--color-core); box-shadow: 0 0 15px rgba(245, 158, 11, 0.12); }
+        #col-a:hover .strategy-card { border-color: var(--color-advanced); box-shadow: 0 0 15px rgba(244, 63, 94, 0.12); }
 
         /* Recommended Framework Glow & Ribbon Style */
-        .strategy-column.recommended #col-f-card { border-color: var(--color-foundation); box-shadow: 0 0 25px rgba(0, 230, 118, 0.3); }
-        .strategy-column.recommended #col-c-card { border-color: var(--color-core); box-shadow: 0 0 25px rgba(255, 152, 0, 0.3); }
-        .strategy-column.recommended #col-a-card { border-color: var(--color-advanced); box-shadow: 0 0 25px rgba(233, 30, 99, 0.3); }
+        .strategy-column.recommended#col-f #col-f-card { border-color: var(--color-foundation); box-shadow: 0 0 22px rgba(16, 185, 129, 0.22); }
+        .strategy-column.recommended#col-c #col-c-card { border-color: var(--color-core); box-shadow: 0 0 22px rgba(245, 158, 11, 0.22); }
+        .strategy-column.recommended#col-a #col-a-card { border-color: var(--color-advanced); box-shadow: 0 0 22px rgba(244, 63, 94, 0.22); }
 
         .recommended-badge { display: none; position: absolute; top: -12px; right: 20px; background: var(--accent-color); color: #0b0e14; font-size: 0.7rem; font-weight: 800; padding: 0.2rem 0.6rem; border-radius: 4px; letter-spacing: 1px; text-transform: uppercase; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 10; }
         .strategy-column.recommended .recommended-badge { display: block; }
@@ -346,7 +348,6 @@
             let completedCount = 0;
             const totalCount = checkboxes.length;
 
-            // Sütun bazlı okunan modül sayaçları
             const columnCounts = { 'col-f': 0, 'col-c': 0, 'col-a': 0 };
 
             checkboxes.forEach(cb => {
@@ -372,25 +373,31 @@
                 }
             });
 
-            // En çok okunan sütunu bul ve tavsiye rozeti/parlamayı ekle
+            // Tüm sütunlardan öneri sınıfını kaldır
             document.querySelectorAll('.strategy-column').forEach(colEl => {
                 colEl.classList.remove('recommended');
             });
 
             if (completedCount > 0) {
-                let maxCol = 'col-f';
-                let maxVal = columnCounts['col-f'];
+                let maxVal = -1;
+                let topCols = [];
 
+                // En yüksek okunma değerini bul
                 for (let key in columnCounts) {
                     if (columnCounts[key] > maxVal) {
                         maxVal = columnCounts[key];
-                        maxCol = key;
+                        topCols = [key]; // Yeni lider
+                    } else if (columnCounts[key] === maxVal) {
+                        topCols.push(key); // Eşitlik durumu (örn: hepsi 0 veya hepsi 2)
                     }
                 }
 
-                // Eğer eşitlik yoksa veya en yüksek okunma buradaysa parlat
+                // Eğer en yüksek değer 0'dan büyükse ve tüm sütunlar eşit okunmadıysa (veya hepsi eşitse)
+                // İstediğin gibi: 3'ü de eşitse hepsine recommended veriyoruz, biri öndeyse sadece o parlıyor.
                 if (maxVal > 0) {
-                    document.getElementById(maxCol).classList.add('recommended');
+                    topCols.forEach(colKey => {
+                        document.getElementById(colKey).classList.add('recommended');
+                    });
                 }
             }
 
