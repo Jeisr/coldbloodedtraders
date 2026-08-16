@@ -125,6 +125,34 @@
         .article-card p { color: var(--text-muted); font-size: 0.95rem; margin: 0 0 1.2rem 0; }
         .article-meta { color: var(--text-muted); font-size: 0.8rem; }
 
+        /* SEO Content Manifesto Section */
+        .seo-manifesto {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-top: 4rem;
+            margin-bottom: 2rem;
+        }
+        .seo-manifesto h2 {
+            font-size: 1.4rem;
+            color: var(--text-main);
+            margin-top: 0;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, var(--accent-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .seo-manifesto p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        .seo-manifesto p:last-child {
+            margin-bottom: 0;
+        }
+
         footer { border-top: 1px solid var(--border-color); padding: 3rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
         .footer-links { margin-bottom: 1.5rem; display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap; }
         .footer-btn { color: var(--accent-color); text-decoration: none; border: 1px solid var(--accent-color); padding: 0.5rem 1.2rem; border-radius: 20px; font-weight: 600; transition: all 0.3s; }
@@ -245,11 +273,19 @@
                 <a href="delta-neutral-arbitrage.html" class="article-card" data-category="ADVANCED"><div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>Delta-Neutral Arbitrage</h2><p>Generating consistent funding income.</p></div><div class="article-meta">August 2026 • 10 min read</div></a>
                 <a href="margin-modeling.html" class="article-card" data-category="RISK"><div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>Margin Modeling</h2><p>Portfolio-based risk metrics for volatility.</p></div><div class="article-meta">August 2026 • 9 min read</div></a>
                 <a href="liquidation-signals.html" class="article-card" data-category="LIQUIDITY"><div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>Liquidation Cascades</h2><p>Reading OI spikes to identify reversals.</p></div><div class="article-meta">August 2026 • 10 min read</div></a>
-                <a href="onchain-analysis.html" class="article-card" data-category="LIQUIDITY"><div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>Institutional Flow Dynamics</h2><p>Tracking miner reserves and whale flows.</p></div><div class="article-meta">August 2026 • 6 min read</div></a>
+                <a href="onchain-analysis.html" class="article-card" data-category="ADVANCED"><div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>Institutional Flow Dynamics</h2><p>Tracking miner reserves and whale flows.</p></div><div class="article-meta">August 2026 • 6 min read</div></a>
                 <a href="delta-neutral-yield.html" class="article-card" data-category="DERIVATIVES"><div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>Funding Arbitrage</h2><p>Mastering delta-neutral yield strategies.</p></div><div class="article-meta">August 2026 • 9 min read</div></a>
                 <a href="stat-arb-framework.html" class="article-card" data-category="DERIVATIVES"><div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>Statistical Arbitrage</h2><p>Mean reversion and cointegration models.</p></div><div class="article-meta">August 2026 • 10 min read</div></a>
                 <a href="cme-gap-mechanics-and-oi-overlaps.html" class="article-card" data-category="DERIVATIVES"><div><span class="article-tag" style="color: var(--color-advanced);">ADVANCED</span><h2>CME Gap Mechanics & OI Overlaps</h2><p>Analyzing institutional footprints, gaps, and open interest overlaps.</p></div><div class="article-meta">August 2026 • 10 min read</div></a>
             </div>
+        </section>
+
+        <!-- SEO Platform Overview & Manifesto Block -->
+        <section class="seo-manifesto">
+            <h2>ColdBloodedTraders: Institutional Quantitative Frameworks for Crypto Derivatives</h2>
+            <p>Welcome to <strong>ColdBloodedTraders</strong>, an advanced educational platform and analytical resource built for systematic crypto derivatives traders, quantitative risk managers, and market execution specialists. Our core mission is to bridge the gap between traditional institutional risk frameworks and decentralized cryptocurrency market structures, equipping participants with the mathematical and practical tools required to survive and compound capital across changing volatility regimes.</p>
+            <p>Modern cryptocurrency derivatives markets operate on extreme leverage, continuous liquidity shifts, and complex perpetual swap mechanics. Navigating these environments successfully requires much more than directional bias; it demands rigorous position sizing, strict margin management, and comprehensive order flow analysis. Through our carefully structured curriculum spanning Foundation, Core, and Advanced modules—alongside specialized interactive calculation tools—we deconstruct complex trading concepts including open interest dynamics, funding rates, liquidation cascades, volatility surfaces, and statistical mean reversion.</p>
+            <p>Whether you are engineering a delta-neutral funding arbitrage strategy, mapping exchange depth profiles, or establishing a disciplined pre-market daily routine, ColdBloodedTraders provides the analytical foundation needed to operate with absolute precision. Embrace cold-blooded execution, master calculated risk, and treat trading as a rigorous quantitative science.</p>
         </section>
     </main>
 
