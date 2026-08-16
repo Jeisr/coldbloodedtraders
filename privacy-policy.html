@@ -56,14 +56,18 @@
         .back-link:hover { text-decoration: underline; }
         
         .update-box {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1rem 1.5rem;
-            margin-bottom: 2rem;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 2rem;
+    font-size: 0.95rem; /* Biraz büyüttük */
+    color: var(--text-main); /* Ana beyaz tonuna çektik */
+}
+
+.update-box strong {
+    color: var(--accent-color); /* Başlık kısmını vurgulu yaptık */
+}
 
         footer { border-top: 1px solid var(--border-color); padding: 2rem 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
         .footer-disclaimer { margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted); opacity: 0.7; }
