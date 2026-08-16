@@ -103,8 +103,31 @@
 
         .meta { color: var(--text-muted); font-size: 0.9rem; text-align: center; margin-bottom: 2.5rem; }
         
-        .strategy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.5rem; margin-top: 2rem; align-items: start; }
+        /* Gamification Progress Bar Styles */
+        .progress-dashboard { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem 2rem; margin-bottom: 2.5rem; display: flex; flex-direction: column; gap: 0.8rem; }
+        .progress-info { display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; font-weight: 600; }
+        .progress-bar-bg { width: 100%; background: rgba(255,255,255,0.05); height: 8px; border-radius: 4px; overflow: hidden; }
+        .progress-bar-fill { height: 100%; background: linear-gradient(90deg, var(--color-foundation), var(--accent-color)); width: 0%; transition: width 0.4s ease; }
         
+        /* Item row adjustments for checkbox */
+        .strategy-links ul, .tactical-list { list-style: none; padding: 0; margin: 0; }
+        .strategy-links ul { border-top: 1px solid var(--border-color); padding-top: 0.8rem; margin-top: 1rem; }
+        .strategy-links li, .tactical-list li { margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; }
+        .strategy-links li:last-child, .tactical-list li:last-child { margin-bottom: 0; }
+        
+        .strategy-links a, .tactical-list a { color: var(--text-main); text-decoration: none; transition: color 0.2s; font-size: 0.9rem; flex-grow: 1; }
+        .tactical-list a { font-size: 0.88rem; color: var(--text-muted); }
+        .strategy-links a:hover, .tactical-list a:hover { color: var(--accent-color); }
+
+        /* Custom Checkbox */
+        .read-checkbox { appearance: none; -webkit-appearance: none; width: 18px; height: 18px; border: 2px solid var(--border-color); border-radius: 4px; background: rgba(255,255,255,0.03); cursor: pointer; position: relative; transition: all 0.2s; flex-shrink: 0; }
+        .read-checkbox:checked { background: var(--color-foundation); border-color: var(--color-foundation); }
+        .read-checkbox:checked::after { content: '✓'; position: absolute; color: #0b0e14; font-size: 12px; font-weight: 900; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        
+        /* Completed row text style */
+        li.completed-item a { opacity: 0.5; text-decoration: line-through; }
+
+        .strategy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.5rem; margin-top: 2rem; align-items: start; }
         .strategy-column { display: flex; flex-direction: column; gap: 0.75rem; height: 100%; }
 
         .strategy-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column; transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; }
@@ -119,19 +142,7 @@
         .strategy-card h3 a:hover { color: var(--accent-color); }
         .strategy-card p { color: var(--text-muted); font-size: 0.95rem; margin: 0; }
         
-        .strategy-links ul { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--border-color); padding-top: 0.8rem; margin-top: 1rem; }
-        .strategy-links li { margin-bottom: 0.4rem; }
-        .strategy-links li:last-child { margin-bottom: 0; }
-        .strategy-links a { color: var(--text-main); text-decoration: none; transition: color 0.2s; font-size: 0.9rem; display: block; }
-        .strategy-links a:hover { color: var(--accent-color); }
-        
         .tactical-card { padding: 1.25rem 1.75rem; flex-grow: 1; display: flex; flex-direction: column; }
-        
-        .tactical-list { list-style: none; padding: 0; margin: 0; }
-        .tactical-list li { margin-bottom: 0.4rem; }
-        .tactical-list li:last-child { margin-bottom: 0; }
-        .tactical-list a { font-size: 0.88rem; color: var(--text-muted); text-decoration: none; display: block; transition: color 0.2s; }
-        .tactical-list a:hover { color: var(--accent-color); }
 
         .faq-section { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
         .faq-title { color: var(--accent-color); font-size: 1.4rem; margin-bottom: 1.5rem; }
@@ -180,8 +191,19 @@
             <div class="meta">Select your core operational framework • Built for structural edge</div>
         </div>
 
+        <!-- Gamification Progress Dashboard -->
+        <div class="progress-dashboard">
+            <div class="progress-info">
+                <span>🎯 Akademi İlerlemesi</span>
+                <span id="progress-text">0 / 0 Tamamlandı (%0)</span>
+            </div>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill" id="progress-fill"></div>
+            </div>
+        </div>
+
         <p style="text-align: center; max-width: 700px; margin: 0 auto 3rem auto; color: var(--text-muted);">
-            Noise elimination is the ultimate trading edge. Select your tactical framework, study the mathematical models, and integrate professional risk protocols into your capital allocation.
+            Noise elimination is the ultimate trading edge. Select your tactical framework, study the mathematical models, and integrate professional risk protocols into your capital allocation. Check off modules as you master them to track your progression.
         </p>
 
         <div class="strategy-grid">
@@ -196,11 +218,11 @@
                     <p>Focuses strictly on mathematical expectancy, risk-reward parameters, and position survival matrices rather than emotional price forecasting.</p>
                     <div class="strategy-links">
                         <ul>
-                            <li><a href="risk-reward-expectancy.html">&rarr; Risk-Reward Ratios & Expectancy</a></li>
-                            <li><a href="position-sizing.html">&rarr; Position Sizing Framework</a></li>
-                            <li><a href="psychology-of-loss.html">&rarr; Psychology of Loss</a></li>
-                            <li><a href="stop-loss-mechanics.html">&rarr; Stop Loss Mechanics</a></li>
-                            <li><a href="trading-plan-daily-routine.html">&rarr; Trading Plan & Daily Routine</a></li>
+                            <li><a href="risk-reward-expectancy.html">&rarr; Risk-Reward Ratios & Expectancy</a><input type="checkbox" class="read-checkbox" data-slug="risk-reward-expectancy" onclick="updateProgress()"></li>
+                            <li><a href="position-sizing.html">&rarr; Position Sizing Framework</a><input type="checkbox" class="read-checkbox" data-slug="position-sizing" onclick="updateProgress()"></li>
+                            <li><a href="psychology-of-loss.html">&rarr; Psychology of Loss</a><input type="checkbox" class="read-checkbox" data-slug="psychology-of-loss" onclick="updateProgress()"></li>
+                            <li><a href="stop-loss-mechanics.html">&rarr; Stop Loss Mechanics</a><input type="checkbox" class="read-checkbox" data-slug="stop-loss-mechanics" onclick="updateProgress()"></li>
+                            <li><a href="trading-plan-daily-routine.html">&rarr; Trading Plan & Daily Routine</a><input type="checkbox" class="read-checkbox" data-slug="trading-plan-daily-routine" onclick="updateProgress()"></li>
                         </ul>
                     </div>
                 </div>
@@ -208,15 +230,15 @@
                 <div class="strategy-card tactical-card">
                     <span style="font-size: 0.75rem; font-weight: 700; color: var(--color-foundation); letter-spacing: 1px; display: block; margin-bottom: 0.8rem;">TACTICAL MODULES</span>
                     <ul class="tactical-list">
-                        <li><a href="margin-types.html">&plus; Margin Types</a></li>
-                        <li><a href="account-margin-modes.html">&plus; Account Margin Modes</a></li>
-                        <li><a href="margin-modeling.html">&plus; Margin Modeling</a></li>
-                        <li><a href="leverage-101.html">&plus; Leverage 101</a></li>
-                        <li><a href="leverage-impact-models.html">&plus; Leverage Impact Models</a></li>
-                        <li><a href="volatility-skew.html">&plus; Volatility Skew</a></li>
-                        <li><a href="volatility-surface-smile-modeling.html">&plus; Volatility Surface & Smile Modeling</a></li>
-                        <li><a href="volatility-regime-switching.html">&plus; Volatility Regime Switching</a></li>
-                        <li><a href="macro-liquidity.html">&plus; Macro Liquidity</a></li>
+                        <li><a href="margin-types.html">&plus; Margin Types</a><input type="checkbox" class="read-checkbox" data-slug="margin-types" onclick="updateProgress()"></li>
+                        <li><a href="account-margin-modes.html">&plus; Account Margin Modes</a><input type="checkbox" class="read-checkbox" data-slug="account-margin-modes" onclick="updateProgress()"></li>
+                        <li><a href="margin-modeling.html">&plus; Margin Modeling</a><input type="checkbox" class="read-checkbox" data-slug="margin-modeling" onclick="updateProgress()"></li>
+                        <li><a href="leverage-101.html">&plus; Leverage 101</a><input type="checkbox" class="read-checkbox" data-slug="leverage-101" onclick="updateProgress()"></li>
+                        <li><a href="leverage-impact-models.html">&plus; Leverage Impact Models</a><input type="checkbox" class="read-checkbox" data-slug="leverage-impact-models" onclick="updateProgress()"></li>
+                        <li><a href="volatility-skew.html">&plus; Volatility Skew</a><input type="checkbox" class="read-checkbox" data-slug="volatility-skew" onclick="updateProgress()"></li>
+                        <li><a href="volatility-surface-smile-modeling.html">&plus; Volatility Surface & Smile Modeling</a><input type="checkbox" class="read-checkbox" data-slug="volatility-surface-smile-modeling" onclick="updateProgress()"></li>
+                        <li><a href="volatility-regime-switching.html">&plus; Volatility Regime Switching</a><input type="checkbox" class="read-checkbox" data-slug="volatility-regime-switching" onclick="updateProgress()"></li>
+                        <li><a href="macro-liquidity.html">&plus; Macro Liquidity</a><input type="checkbox" class="read-checkbox" data-slug="macro-liquidity" onclick="updateProgress()"></li>
                     </ul>
                 </div>
             </div>
@@ -231,11 +253,11 @@
                     <p>Specializes in tracking institutional footprints, order book imbalances, liquidity pool sweeps, and open interest structural buildups.</p>
                     <div class="strategy-links">
                         <ul>
-                            <li><a href="liquidity-pools.html">&rarr; Identifying Liquidity Pools</a></li>
-                            <li><a href="liquidity-sweep-vs-true-breakout.html">&rarr; Liquidity Sweep vs. True Breakout</a></li>
-                            <li><a href="open-interest-analytics.html">&rarr; Open Interest Analytics</a></li>
-                            <li><a href="exchange-liquidity-depth-profiling.html">&rarr; Exchange Liquidity Profiling</a></li>
-                            <li><a href="order-book-analysis.html">&rarr; Order Book Imbalance Tracking</a></li>
+                            <li><a href="liquidity-pools.html">&rarr; Identifying Liquidity Pools</a><input type="checkbox" class="read-checkbox" data-slug="liquidity-pools" onclick="updateProgress()"></li>
+                            <li><a href="liquidity-sweep-vs-true-breakout.html">&rarr; Liquidity Sweep vs. True Breakout</a><input type="checkbox" class="read-checkbox" data-slug="liquidity-sweep-vs-true-breakout" onclick="updateProgress()"></li>
+                            <li><a href="open-interest-analytics.html">&rarr; Open Interest Analytics</a><input type="checkbox" class="read-checkbox" data-slug="open-interest-analytics" onclick="updateProgress()"></li>
+                            <li><a href="exchange-liquidity-depth-profiling.html">&rarr; Exchange Liquidity Profiling</a><input type="checkbox" class="read-checkbox" data-slug="exchange-liquidity-depth-profiling" onclick="updateProgress()"></li>
+                            <li><a href="order-book-analysis.html">&rarr; Order Book Imbalance Tracking</a><input type="checkbox" class="read-checkbox" data-slug="order-book-analysis" onclick="updateProgress()"></li>
                         </ul>
                     </div>
                 </div>
@@ -243,15 +265,15 @@
                 <div class="strategy-card tactical-card">
                     <span style="font-size: 0.75rem; font-weight: 700; color: var(--color-core); letter-spacing: 1px; display: block; margin-bottom: 0.8rem;">TACTICAL MODULES</span>
                     <ul class="tactical-list">
-                        <li><a href="order-types-mechanics.html">&plus; Order Types Mechanics</a></li>
-                        <li><a href="order-flow-tape-reading-basics.html">&plus; Order Flow & Tape Reading Basics</a></li>
-                        <li><a href="liquidation-signals.html">&plus; Liquidation Signals</a></li>
-                        <li><a href="liquidation-heatmaps-and-cvd.html">&plus; Liquidation Heatmaps & CVD</a></li>
-                        <li><a href="cme-gap-mechanics-and-oi-overlaps.html">&plus; CME Gap Mechanics & OI Overlaps</a></li>
-                        <li><a href="gamma-squeeze-dynamics.html">&plus; Gamma Squeeze Dynamics</a></li>
-                        <li><a href="crypto-market-cycles.html">&plus; Crypto Market Cycles</a></li>
-                        <li><a href="onchain-analysis.html">&plus; On-Chain Analysis</a></li>
-                        <li><a href="spot-vs-derivatives.html">&plus; Spot vs. Derivatives</a></li>
+                        <li><a href="order-types-mechanics.html">&plus; Order Types Mechanics</a><input type="checkbox" class="read-checkbox" data-slug="order-types-mechanics" onclick="updateProgress()"></li>
+                        <li><a href="order-flow-tape-reading-basics.html">&plus; Order Flow & Tape Reading Basics</a><input type="checkbox" class="read-checkbox" data-slug="order-flow-tape-reading-basics" onclick="updateProgress()"></li>
+                        <li><a href="liquidation-signals.html">&plus; Liquidation Signals</a><input type="checkbox" class="read-checkbox" data-slug="liquidation-signals" onclick="updateProgress()"></li>
+                        <li><a href="liquidation-heatmaps-and-cvd.html">&plus; Liquidation Heatmaps & CVD</a><input type="checkbox" class="read-checkbox" data-slug="liquidation-heatmaps-and-cvd" onclick="updateProgress()"></li>
+                        <li><a href="cme-gap-mechanics-and-oi-overlaps.html">&plus; CME Gap Mechanics & OI Overlaps</a><input type="checkbox" class="read-checkbox" data-slug="cme-gap-mechanics-and-oi-overlaps" onclick="updateProgress()"></li>
+                        <li><a href="gamma-squeeze-dynamics.html">&plus; Gamma Squeeze Dynamics</a><input type="checkbox" class="read-checkbox" data-slug="gamma-squeeze-dynamics" onclick="updateProgress()"></li>
+                        <li><a href="crypto-market-cycles.html">&plus; Crypto Market Cycles</a><input type="checkbox" class="read-checkbox" data-slug="crypto-market-cycles" onclick="updateProgress()"></li>
+                        <li><a href="onchain-analysis.html">&plus; On-Chain Analysis</a><input type="checkbox" class="read-checkbox" data-slug="onchain-analysis" onclick="updateProgress()"></li>
+                        <li><a href="spot-vs-derivatives.html">&plus; Spot vs. Derivatives</a><input type="checkbox" class="read-checkbox" data-slug="spot-vs-derivatives" onclick="updateProgress()"></li>
                     </ul>
                 </div>
             </div>
@@ -266,10 +288,10 @@
                     <p>Zero directional bias. Extracts consistent returns through funding rate mechanisms, cross-exchange basis trading, and delta-neutral arbitrage systems.</p>
                     <div class="strategy-links">
                         <ul>
-                            <li><a href="delta-neutral-arbitrage.html">&rarr; Delta-Neutral Arbitrage</a></li>
-                            <li><a href="funding-rates.html">&rarr; Funding Rates & Volatility</a></li>
-                            <li><a href="perpetual-swaps-vs-futures.html">&rarr; Perps vs. Traditional Futures</a></li>
-                            <li><a href="cross-exchange-basis-trading.html">&rarr; Cross-Exchange Basis Spread</a></li>
+                            <li><a href="delta-neutral-arbitrage.html">&rarr; Delta-Neutral Arbitrage</a><input type="checkbox" class="read-checkbox" data-slug="delta-neutral-arbitrage" onclick="updateProgress()"></li>
+                            <li><a href="funding-rates.html">&rarr; Funding Rates & Volatility</a><input type="checkbox" class="read-checkbox" data-slug="funding-rates" onclick="updateProgress()"></li>
+                            <li><a href="perpetual-swaps-vs-futures.html">&rarr; Perps vs. Traditional Futures</a><input type="checkbox" class="read-checkbox" data-slug="perpetual-swaps-vs-futures" onclick="updateProgress()"></li>
+                            <li><a href="cross-exchange-basis-trading.html">&rarr; Cross-Exchange Basis Spread</a><input type="checkbox" class="read-checkbox" data-slug="cross-exchange-basis-trading" onclick="updateProgress()"></li>
                         </ul>
                     </div>
                 </div>
@@ -277,10 +299,10 @@
                 <div class="strategy-card tactical-card">
                     <span style="font-size: 0.75rem; font-weight: 700; color: var(--color-advanced); letter-spacing: 1px; display: block; margin-bottom: 0.8rem;">TACTICAL MODULES</span>
                     <ul class="tactical-list">
-                        <li><a href="delta-neutral-yield.html">&plus; Delta-Neutral Yield</a></li>
-                        <li><a href="stat-arb-framework.html">&plus; Stat-Arb Framework</a></li>
-                        <li><a href="systematic-mean-reversion-using-z-scores.html">&plus; Systematic Mean Reversion (Z-Scores)</a></li>
-                        <li><a href="crypto-options-put-call-ratios.html">&plus; Crypto Options Put-Call Ratios</a></li>
+                        <li><a href="delta-neutral-yield.html">&plus; Delta-Neutral Yield</a><input type="checkbox" class="read-checkbox" data-slug="delta-neutral-yield" onclick="updateProgress()"></li>
+                        <li><a href="stat-arb-framework.html">&plus; Stat-Arb Framework</a><input type="checkbox" class="read-checkbox" data-slug="stat-arb-framework" onclick="updateProgress()"></li>
+                        <li><a href="systematic-mean-reversion-using-z-scores.html">&plus; Systematic Mean Reversion (Z-Scores)</a><input type="checkbox" class="read-checkbox" data-slug="systematic-mean-reversion-using-z-scores" onclick="updateProgress()"></li>
+                        <li><a href="crypto-options-put-call-ratios.html">&plus; Crypto Options Put-Call Ratios</a><input type="checkbox" class="read-checkbox" data-slug="crypto-options-put-call-ratios" onclick="updateProgress()"></li>
                     </ul>
                 </div>
             </div>
@@ -306,6 +328,41 @@
     <script>
         function toggleDropdown() { document.getElementById('toolsDropdown').classList.toggle('active'); }
         window.onclick = (e) => { if (!e.target.matches('.dropdown-btn') && !e.target.closest('.dropdown')) { document.getElementById('toolsDropdown').classList.remove('active'); } }
+
+        // Gamification Progress Logic using localStorage
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('.read-checkbox');
+            let completedCount = 0;
+            const totalCount = checkboxes.length;
+
+            checkboxes.forEach(cb => {
+                const slug = cb.getAttribute('data-slug');
+                const parentLi = cb.closest('li');
+                
+                if (event && event.type === 'click' && cb === event.target) {
+                    localStorage.setItem('cbt_read_' + slug, cb.checked);
+                }
+
+                const isChecked = localStorage.getItem('cbt_read_' + slug) === 'true';
+                cb.checked = isChecked;
+
+                if (isChecked) {
+                    completedCount++;
+                    if (parentLi) parentLi.classList.add('completed-item');
+                } else {
+                    if (parentLi) parentLi.classList.remove('completed-item');
+                }
+            });
+
+            const percentage = totalCount > 0 ? Math.round((completedCount / totalCount) * 100) : 0;
+            document.getElementById('progress-text').innerText = `${completedCount} / ${totalCount} Tamamlandı (%${percentage})`;
+            document.getElementById('progress-fill').style.width = percentage + '%';
+        }
+
+        // Sayfa ilk yüklendiğinde durumları getir
+        window.addEventListener('DOMContentLoaded', () => {
+            updateProgress();
+        });
     </script>
 </body>
 </html>
