@@ -69,8 +69,8 @@
             --bg-color: #0b0e14;
             --card-bg: rgba(22, 27, 34, 0.7);
             --accent-color: #00f2fe;
-            --color-core: #ff9800;       /* Turuncu - Core için */
-            --color-advanced: #ff5252;   /* Kırmızı - Advanced için */
+            --color-core: #ff9800;
+            --color-advanced: #ff5252;
             --text-main: #f0f6fc;
             --text-muted: #8b949e;
             --border-color: rgba(240, 246, 252, 0.1);
@@ -169,9 +169,9 @@
         <blockquote>"A price extreme is only as valid as its statistical distance from equilibrium. Z-scores transform subjective chart gazing into mathematical certainty."</blockquote>
 
         <h2>1. The Mathematical Foundation of Z-Scores</h2>
-        <p>The Z-score measures how many standard deviations ($σ$) an asset's current price or spread is away from its historical rolling mean ($\mu$). The core formula is expressed as:</p>
-        <p>$$Z = \frac{P_t - \mu_n}{\sigma_n}$$</p>
-        <p>Where $P_t$ represents the current asset price, $\mu_n$ is the moving average over a lookback window $n$, and $\sigma_n$ is the standard deviation over the same period. When markets stretch beyond standard thresholds (e.g., $\pm 2.0$), historical probability dictates a high likelihood of reversion back toward the mean.</p>
+        <p>The Z-score measures how many standard deviations (<i>&sigma;</i>) an asset's current price or spread is away from its historical rolling mean (<i>&mu;</i>). The core formula is expressed as:</p>
+        <p style="text-align: center; font-family: monospace; font-size: 1.1rem; color: var(--accent-color); margin: 1.5rem 0;">Z = (P<sub>t</sub> - &mu;<sub>n</sub>) / &sigma;<sub>n</sub></p>
+        <p>Where <i>P<sub>t</sub></i> represents the current asset price, <i>&mu;<sub>n</sub></i> is the moving average over a lookback window <i>n</i>, and <i>&sigma;<sub>n</sub></i> is the standard deviation over the same period. When markets stretch beyond standard thresholds (e.g., &plusmn;2.0), historical probability dictates a high likelihood of reversion back toward the mean.</p>
 
         <h2>2. Dynamic Thresholds and Lookback Optimization</h2>
         <p>Static thresholds can fail when market volatility regimes shift. Algorithmic operators must dynamically adjust lookback windows and trigger bands based on realized volatility profiles:</p>
@@ -187,19 +187,19 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>$|Z| \ge 2.5$</td>
+                    <td>|Z| &ge; 2.5</td>
                     <td>Extreme statistical divergence</td>
                     <td>Initiate heavy mean-reversion position / Scale-in tranche</td>
                     <td>High reward potential, requires tight structural stop-loss</td>
                 </tr>
                 <tr>
-                    <td>$|Z| = 1.5 \text{ to } 2.0$</td>
+                    <td>|Z| = 1.5 to 2.0</td>
                     <td>Moderate deviation zone</td>
                     <td>Initial probe entry or partial profit-taking baseline</td>
                     <td>Balanced risk-to-reward ratio</td>
                 </tr>
                 <tr>
-                    <td>$|Z| \le 0.5$</td>
+                    <td>|Z| &le; 0.5</td>
                     <td>Equilibrium / Mean convergence</td>
                     <td>Full position liquidation / Neutral state</td>
                     <td>Zero directional exposure</td>
@@ -208,7 +208,7 @@
         </table>
 
         <h2>3. Mitigating Trap Risks in Trending Markets</h2>
-        <p>The single greatest danger in Z-score mean reversion is trading against a structural breakout. If an asset enters a powerful macro trend, Z-scores can remain pinned at extreme levels ($|Z| > 3.0$), causing continuous liquidation of fading positions. Quantitative systems must incorporate secondary filters—such as the Hurst Exponent or cointegration tests—to verify that the underlying series is genuinely stationary before deploying capital.</p>
+        <p>The single greatest danger in Z-score mean reversion is trading against a structural breakout. If an asset enters a powerful macro trend, Z-scores can remain pinned at extreme levels (|Z| &gt; 3.0), causing continuous liquidation of fading positions. Quantitative systems must incorporate secondary filters—such as the Hurst Exponent or cointegration tests—to verify that the underlying series is genuinely stationary before deploying capital.</p>
 
         <p>To safeguard your algorithmic margin allocation during high-variance reversion phases, always cross-reference portfolio drawdown limits with our <a href="risk-metrics.html" style="color: var(--accent-color); text-decoration: underline;">Risk Metrics Calculator</a>.</p>
 
