@@ -56,7 +56,6 @@
             --text-muted: #94a3b8;
             --border-color: rgba(241, 245, 249, 0.1);
             
-            /* Göz yormayan, rafine edilmiş tok tonlar */
             --color-foundation: #10b981; /* Soft Emerald */
             --color-core: #f59e0b;       /* Soft Amber */
             --color-advanced: #f43f5e;   /* Soft Rose */
@@ -78,8 +77,7 @@
         .back-btn { color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 0.95rem; white-space: nowrap; }
         
         .dropdown { position: relative; display: inline-block; }
-        /* Menü butonunun rengi ve çerçevesi açık/canlı maviye sabitlendi */
-        .dropdown-btn { color: #38bdf8; background: rgba(56, 189, 248, 0.08); font-weight: 700; border: 1px solid rgba(56, 189, 248, 0.4); padding: 0.4rem 0.8rem; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; transition: all 0.2s ease; }
+        .dropdown-btn { color: var(--accent-color); background: rgba(56, 189, 248, 0.08); font-weight: 700; border: 1px solid rgba(56, 189, 248, 0.4); padding: 0.4rem 0.8rem; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; transition: all 0.2s ease; }
         .dropdown-btn:hover { background: rgba(56, 189, 248, 0.15); border-color: rgba(56, 189, 248, 0.7); }
         
         .dropdown-content { display: none; position: absolute; right: 0; top: 120%; background-color: #161b22; min-width: 220px; border: 1px solid var(--border-color); border-radius: 8px; z-index: 1001; box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
@@ -95,26 +93,23 @@
         .badge-core { background: rgba(245, 158, 11, 0.12); color: var(--color-core); border: 1px solid rgba(245, 158, 11, 0.3); }
         .badge-advanced { background: rgba(244, 63, 94, 0.12); color: var(--color-advanced); border: 1px solid rgba(244, 63, 94, 0.3); }
         
+        /* Geçişli/Gradyan efekt kaldırıldı, doğrudan canlı accent-color yapıldı */
         h1.hub-title { 
             font-size: 2.6rem; 
             margin: 0.5rem 0 1rem 0; 
             line-height: 1.25; 
             font-weight: 800; 
             text-align: center;
-            background: linear-gradient(90deg, #f1f5f9 0%, #38bdf8 50%, #818cf8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--accent-color);
         }
 
         .meta { color: var(--text-muted); font-size: 0.9rem; text-align: center; margin-bottom: 2.5rem; }
         
-        /* Gamification Progress Dashboard */
         .progress-dashboard { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem 2rem; margin-bottom: 2.5rem; display: flex; flex-direction: column; gap: 0.8rem; }
         .progress-info { display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; font-weight: 600; }
         .progress-bar-bg { width: 100%; background: rgba(255,255,255,0.05); height: 8px; border-radius: 4px; overflow: hidden; }
         .progress-bar-fill { height: 100%; background: linear-gradient(90deg, var(--color-foundation), var(--accent-color)); width: 0%; transition: width 0.4s ease; }
         
-        /* Item row adjustments for checkbox */
         .strategy-links ul, .tactical-list { list-style: none; padding: 0; margin: 0; }
         .strategy-links ul { border-top: 1px solid var(--border-color); padding-top: 0.8rem; margin-top: 1rem; }
         .strategy-links li, .tactical-list li { margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; }
@@ -124,12 +119,10 @@
         .tactical-list a { font-size: 0.88rem; color: var(--text-muted); }
         .strategy-links a:hover, .tactical-list a:hover { color: var(--accent-color); }
 
-        /* Custom Checkbox */
         .read-checkbox { appearance: none; -webkit-appearance: none; width: 18px; height: 18px; border: 2px solid var(--border-color); border-radius: 4px; background: rgba(255,255,255,0.03); cursor: pointer; position: relative; transition: all 0.2s; flex-shrink: 0; }
         .read-checkbox:checked { background: var(--color-foundation); border-color: var(--color-foundation); }
         .read-checkbox:checked::after { content: '✓'; position: absolute; color: #0b0e14; font-size: 12px; font-weight: 900; top: 50%; left: 50%; transform: translate(-50%, -50%); }
         
-        /* Completed row text style */
         li.completed-item a { opacity: 0.5; text-decoration: line-through; }
 
         .strategy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.5rem; margin-top: 2rem; align-items: start; }
@@ -141,7 +134,6 @@
         #col-c:hover .strategy-card { border-color: var(--color-core); box-shadow: 0 0 15px rgba(245, 158, 11, 0.12); }
         #col-a:hover .strategy-card { border-color: var(--color-advanced); box-shadow: 0 0 15px rgba(244, 63, 94, 0.12); }
 
-        /* Recommended Framework Glow & Ribbon Style */
         .strategy-column.recommended#col-f #col-f-card { border-color: var(--color-foundation); box-shadow: 0 0 22px rgba(16, 185, 129, 0.22); }
         .strategy-column.recommended#col-c #col-c-card { border-color: var(--color-core); box-shadow: 0 0 22px rgba(245, 158, 11, 0.22); }
         .strategy-column.recommended#col-a #col-a-card { border-color: var(--color-advanced); box-shadow: 0 0 22px rgba(244, 63, 94, 0.22); }
@@ -204,7 +196,6 @@
             <div class="meta">Select your core operational framework • Built for structural edge</div>
         </div>
 
-        <!-- Gamification Progress Dashboard -->
         <div class="progress-dashboard">
             <div class="progress-info">
                 <span>🎯 Academy Progress</span>
@@ -345,7 +336,6 @@
         function toggleDropdown() { document.getElementById('toolsDropdown').classList.toggle('active'); }
         window.onclick = (e) => { if (!e.target.matches('.dropdown-btn') && !e.target.closest('.dropdown')) { document.getElementById('toolsDropdown').classList.remove('active'); } }
 
-        // Gamification Progress & Intelligent Framework Recommender Logic
         function updateProgress() {
             const checkboxes = document.querySelectorAll('.read-checkbox');
             let completedCount = 0;
@@ -376,7 +366,6 @@
                 }
             });
 
-            // Tüm sütunlardan öneri sınıfını kaldır
             document.querySelectorAll('.strategy-column').forEach(colEl => {
                 colEl.classList.remove('recommended');
             });
@@ -385,13 +374,12 @@
                 let maxVal = -1;
                 let topCols = [];
 
-                // En yüksek okunma değerini bul
                 for (let key in columnCounts) {
                     if (columnCounts[key] > maxVal) {
                         maxVal = columnCounts[key];
-                        topCols = [key]; // Yeni lider
+                        topCols = [key];
                     } else if (columnCounts[key] === maxVal) {
-                        topCols.push(key); // Eşitlik durumu
+                        topCols.push(key);
                     }
                 }
 
@@ -407,7 +395,6 @@
             document.getElementById('progress-fill').style.width = percentage + '%';
         }
 
-        // Sayfa ilk yüklendiğinde durumları getir
         window.addEventListener('DOMContentLoaded', () => {
             updateProgress();
         });
