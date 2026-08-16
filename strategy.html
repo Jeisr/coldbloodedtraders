@@ -51,7 +51,7 @@
         :root {
             --bg-color: #0b0e14;
             --card-bg: rgba(22, 27, 34, 0.7);
-            --accent-color: #38bdf8; /* Daha yumuşak, profesyonel gökyüzü mavisi */
+            --accent-color: #38bdf8; /* Canlı, profesyonel gökyüzü mavisi */
             --text-main: #f1f5f9;
             --text-muted: #94a3b8;
             --border-color: rgba(241, 245, 249, 0.1);
@@ -78,7 +78,10 @@
         .back-btn { color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 0.95rem; white-space: nowrap; }
         
         .dropdown { position: relative; display: inline-block; }
-        .dropdown-btn { color: var(--accent-color); background: transparent; font-weight: 700; border: 1px solid rgba(56, 189, 248, 0.3); padding: 0.4rem 0.8rem; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; }
+        /* Menü butonunun rengi ve çerçevesi açık/canlı maviye sabitlendi */
+        .dropdown-btn { color: #38bdf8; background: rgba(56, 189, 248, 0.08); font-weight: 700; border: 1px solid rgba(56, 189, 248, 0.4); padding: 0.4rem 0.8rem; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; transition: all 0.2s ease; }
+        .dropdown-btn:hover { background: rgba(56, 189, 248, 0.15); border-color: rgba(56, 189, 248, 0.7); }
+        
         .dropdown-content { display: none; position: absolute; right: 0; top: 120%; background-color: #161b22; min-width: 220px; border: 1px solid var(--border-color); border-radius: 8px; z-index: 1001; box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
         .dropdown-content a { color: var(--text-main); padding: 0.75rem 1rem; text-decoration: none; display: block; font-size: 0.85rem; border-bottom: 1px solid rgba(241, 245, 249, 0.05); }
         .dropdown-content a:hover { background: rgba(56, 189, 248, 0.08); color: var(--accent-color); }
@@ -388,12 +391,10 @@
                         maxVal = columnCounts[key];
                         topCols = [key]; // Yeni lider
                     } else if (columnCounts[key] === maxVal) {
-                        topCols.push(key); // Eşitlik durumu (örn: hepsi 0 veya hepsi 2)
+                        topCols.push(key); // Eşitlik durumu
                     }
                 }
 
-                // Eğer en yüksek değer 0'dan büyükse ve tüm sütunlar eşit okunmadıysa (veya hepsi eşitse)
-                // İstediğin gibi: 3'ü de eşitse hepsine recommended veriyoruz, biri öndeyse sadece o parlıyor.
                 if (maxVal > 0) {
                     topCols.forEach(colKey => {
                         document.getElementById(colKey).classList.add('recommended');
