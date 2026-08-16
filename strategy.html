@@ -103,13 +103,11 @@
 
         .meta { color: var(--text-muted); font-size: 0.9rem; text-align: center; margin-bottom: 2.5rem; }
         
-        /* Gamification Progress Bar Styles */
         .progress-dashboard { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem 2rem; margin-bottom: 2.5rem; display: flex; flex-direction: column; gap: 0.8rem; }
         .progress-info { display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; font-weight: 600; }
         .progress-bar-bg { width: 100%; background: rgba(255,255,255,0.05); height: 8px; border-radius: 4px; overflow: hidden; }
         .progress-bar-fill { height: 100%; background: linear-gradient(90deg, var(--color-foundation), var(--accent-color)); width: 0%; transition: width 0.4s ease; }
         
-        /* Item row adjustments for checkbox */
         .strategy-links ul, .tactical-list { list-style: none; padding: 0; margin: 0; }
         .strategy-links ul { border-top: 1px solid var(--border-color); padding-top: 0.8rem; margin-top: 1rem; }
         .strategy-links li, .tactical-list li { margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; }
@@ -119,12 +117,10 @@
         .tactical-list a { font-size: 0.88rem; color: var(--text-muted); }
         .strategy-links a:hover, .tactical-list a:hover { color: var(--accent-color); }
 
-        /* Custom Checkbox */
         .read-checkbox { appearance: none; -webkit-appearance: none; width: 18px; height: 18px; border: 2px solid var(--border-color); border-radius: 4px; background: rgba(255,255,255,0.03); cursor: pointer; position: relative; transition: all 0.2s; flex-shrink: 0; }
         .read-checkbox:checked { background: var(--color-foundation); border-color: var(--color-foundation); }
         .read-checkbox:checked::after { content: '✓'; position: absolute; color: #0b0e14; font-size: 12px; font-weight: 900; top: 50%; left: 50%; transform: translate(-50%, -50%); }
         
-        /* Completed row text style */
         li.completed-item a { opacity: 0.5; text-decoration: line-through; }
 
         .strategy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.5rem; margin-top: 2rem; align-items: start; }
@@ -144,8 +140,18 @@
         
         .tactical-card { padding: 1.25rem 1.75rem; flex-grow: 1; display: flex; flex-direction: column; }
         
-        /* Recommended Label */
-        .recommended-badge { display: none; background: var(--accent-color); color: #0b0e14; font-size: 0.7rem; font-weight: 800; padding: 2px 6px; border-radius: 4px; margin-left: 8px; vertical-align: middle; }
+        /* Recommended Label GÜNCELLENDİ */
+        .recommended-badge { 
+            display: none; 
+            font-size: 0.75rem; 
+            font-weight: 800; 
+            margin-left: 8px; 
+            vertical-align: middle;
+            background: linear-gradient(90deg, #00f2fe, #4facfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+        }
         .show-recommended .recommended-badge { display: inline-block; }
 
         .faq-section { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
@@ -210,11 +216,10 @@
         </p>
 
         <div class="strategy-grid">
-            
             <div class="strategy-column" id="col-f">
                 <div class="strategy-card">
                     <div class="strategy-card-top">
-                        <span class="tag" style="color: var(--color-foundation);">CLASS // 01 <span class="recommended-badge">RECOMMENDED</span></span>
+                        <span class="tag" style="color: var(--color-foundation);">CLASS // 01 <span class="recommended-badge">Recommended</span></span>
                         <span class="difficulty-badge badge-foundation">FOUNDATION</span>
                     </div>
                     <h3><a href="class-mathematician.html">The Mathematician</a></h3>
@@ -229,7 +234,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="strategy-card tactical-card">
                     <span style="font-size: 0.75rem; font-weight: 700; color: var(--color-foundation); letter-spacing: 1px; display: block; margin-bottom: 0.8rem;">TACTICAL MODULES</span>
                     <ul class="tactical-list">
@@ -249,7 +253,7 @@
             <div class="strategy-column" id="col-c">
                 <div class="strategy-card">
                     <div class="strategy-card-top">
-                        <span class="tag" style="color: var(--color-core);">CLASS // 02 <span class="recommended-badge">RECOMMENDED</span></span>
+                        <span class="tag" style="color: var(--color-core);">CLASS // 02 <span class="recommended-badge">Recommended</span></span>
                         <span class="difficulty-badge badge-core">CORE</span>
                     </div>
                     <h3><a href="class-liquidity-hunter.html">The Liquidity Hunter</a></h3>
@@ -264,7 +268,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="strategy-card tactical-card">
                     <span style="font-size: 0.75rem; font-weight: 700; color: var(--color-core); letter-spacing: 1px; display: block; margin-bottom: 0.8rem;">TACTICAL MODULES</span>
                     <ul class="tactical-list">
@@ -284,7 +287,7 @@
             <div class="strategy-column" id="col-a">
                 <div class="strategy-card">
                     <div class="strategy-card-top">
-                        <span class="tag" style="color: var(--color-advanced);">CLASS // 03 <span class="recommended-badge">RECOMMENDED</span></span>
+                        <span class="tag" style="color: var(--color-advanced);">CLASS // 03 <span class="recommended-badge">Recommended</span></span>
                         <span class="difficulty-badge badge-advanced">ADVANCED</span>
                     </div>
                     <h3><a href="class-yield-master.html">The Yield Master</a></h3>
@@ -298,7 +301,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="strategy-card tactical-card">
                     <span style="font-size: 0.75rem; font-weight: 700; color: var(--color-advanced); letter-spacing: 1px; display: block; margin-bottom: 0.8rem;">TACTICAL MODULES</span>
                     <ul class="tactical-list">
@@ -309,7 +311,6 @@
                     </ul>
                 </div>
             </div>
-
         </div>
 
         <section class="faq-section">
@@ -336,8 +337,6 @@
             const checkboxes = document.querySelectorAll('.read-checkbox');
             let completedCount = 0;
             const totalCount = checkboxes.length;
-
-            // Class Bazlı Sayım
             const counts = { 'col-f': 0, 'col-c': 0, 'col-a': 0 };
 
             checkboxes.forEach(cb => {
@@ -361,7 +360,6 @@
                 }
             });
 
-            // "Recommended" Mantığı
             const max = Math.max(counts['col-f'], counts['col-c'], counts['col-a']);
             document.querySelectorAll('.strategy-column').forEach(col => {
                 const colCount = counts[col.id];
