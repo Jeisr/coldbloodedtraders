@@ -16,6 +16,10 @@
     <loc>https://coldbloodedtraders.com/privacy-policy.html</loc>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://coldbloodedtraders.com/terms.html</loc>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Hub / Classes -->
   <url><loc>https://coldbloodedtraders.com/class-liquidity-hunter.html</loc><priority>0.85</priority></url>
