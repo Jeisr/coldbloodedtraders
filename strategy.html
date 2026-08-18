@@ -246,6 +246,7 @@
                         <li><a href="margin-modeling.html">&plus; Margin Modeling</a><input type="checkbox" class="read-checkbox" data-slug="margin-modeling" onclick="updateProgress()"></li>
                         <li><a href="leverage-101.html">&plus; Leverage 101</a><input type="checkbox" class="read-checkbox" data-slug="leverage-101" onclick="updateProgress()"></li>
                         <li><a href="leverage-impact-models.html">&plus; Leverage Impact Models</a><input type="checkbox" class="read-checkbox" data-slug="leverage-impact-models" onclick="updateProgress()"></li>
+                        <li><a href="order-routing-execution-slippage.html">&plus; Order Routing & Execution Slippage</a><input type="checkbox" class="read-checkbox" data-slug="order-routing-execution-slippage" onclick="updateProgress()"></li>
                         <li><a href="volatility-skew.html">&plus; Volatility Skew</a><input type="checkbox" class="read-checkbox" data-slug="volatility-skew" onclick="updateProgress()"></li>
                         <li><a href="volatility-surface-smile-modeling.html">&plus; Volatility Surface & Smile Modeling</a><input type="checkbox" class="read-checkbox" data-slug="volatility-surface-smile-modeling" onclick="updateProgress()"></li>
                         <li><a href="volatility-regime-switching.html">&plus; Volatility Regime Switching</a><input type="checkbox" class="read-checkbox" data-slug="volatility-regime-switching" onclick="updateProgress()"></li>
@@ -282,6 +283,7 @@
                         <li><a href="order-flow-tape-reading-basics.html">&plus; Order Flow & Tape Reading Basics</a><input type="checkbox" class="read-checkbox" data-slug="order-flow-tape-reading-basics" onclick="updateProgress()"></li>
                         <li><a href="liquidation-signals.html">&plus; Liquidation Signals</a><input type="checkbox" class="read-checkbox" data-slug="liquidation-signals" onclick="updateProgress()"></li>
                         <li><a href="liquidation-heatmaps-and-cvd.html">&plus; Liquidation Heatmaps & CVD</a><input type="checkbox" class="read-checkbox" data-slug="liquidation-heatmaps-and-cvd" onclick="updateProgress()"></li>
+                        <li><a href="cumulative-volume-delta-cvd-divergences.html">&plus; Cumulative Volume Delta (CVD) Divergences</a><input type="checkbox" class="read-checkbox" data-slug="cumulative-volume-delta-cvd-divergences" onclick="updateProgress()"></li>
                         <li><a href="cme-gap-mechanics-and-oi-overlaps.html">&plus; CME Gap Mechanics & OI Overlaps</a><input type="checkbox" class="read-checkbox" data-slug="cme-gap-mechanics-and-oi-overlaps" onclick="updateProgress()"></li>
                         <li><a href="gamma-squeeze-dynamics.html">&plus; Gamma Squeeze Dynamics</a><input type="checkbox" class="read-checkbox" data-slug="gamma-squeeze-dynamics" onclick="updateProgress()"></li>
                         <li><a href="crypto-market-cycles.html">&plus; Crypto Market Cycles</a><input type="checkbox" class="read-checkbox" data-slug="crypto-market-cycles" onclick="updateProgress()"></li>
@@ -314,6 +316,7 @@
                 <div class="strategy-card tactical-card">
                     <span style="font-size: 0.75rem; font-weight: 700; color: var(--color-advanced); letter-spacing: 1px; display: block; margin-bottom: 0.8rem;">TACTICAL MODULES</span>
                     <ul class="tactical-list">
+                        <li><a href="hidden-liquidity-iceberg-order-detection.html">&plus; Hidden Liquidity & Iceberg Order Detection</a><input type="checkbox" class="read-checkbox" data-slug="hidden-liquidity-iceberg-order-detection" onclick="updateProgress()"></li>
                         <li><a href="delta-neutral-yield.html">&plus; Delta-Neutral Yield</a><input type="checkbox" class="read-checkbox" data-slug="delta-neutral-yield" onclick="updateProgress()"></li>
                         <li><a href="stat-arb-framework.html">&plus; Stat-Arb Framework</a><input type="checkbox" class="read-checkbox" data-slug="stat-arb-framework" onclick="updateProgress()"></li>
                         <li><a href="systematic-mean-reversion-using-z-scores.html">&plus; Systematic Mean Reversion (Z-Scores)</a><input type="checkbox" class="read-checkbox" data-slug="systematic-mean-reversion-using-z-scores" onclick="updateProgress()"></li>
@@ -348,7 +351,6 @@
             let completedCount = 0;
             const totalCount = checkboxes.length;
             
-            // Kolon bazlı istatistikler için nesne yapısı
             const colStats = {
                 'col-f': { checked: 0, total: 0, percentage: 0 },
                 'col-c': { checked: 0, total: 0, percentage: 0 },
@@ -382,7 +384,6 @@
                 }
             });
 
-            // Her kolonun kendi içindeki yüzdesini hesapla
             let maxPercentage = -1;
             for (let id in colStats) {
                 const stat = colStats[id];
@@ -394,10 +395,8 @@
                 }
             }
 
-            // En yüksek yüzdeye sahip olan (veya max yüzdeye eşit olan) kolonlara Recommended rozeti ver
             document.querySelectorAll('.strategy-column').forEach(col => {
                 const stat = colStats[col.id];
-                // maxPercentage > 0 şartı, hiç tik atılmamışken hiçbirinin recommended olmamasını sağlar
                 if (maxPercentage > 0 && Math.abs(stat.percentage - maxPercentage) < 0.01) {
                     col.classList.add('show-recommended');
                 } else {
