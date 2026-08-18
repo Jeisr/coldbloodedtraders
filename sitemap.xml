@@ -40,11 +40,13 @@
   <url><loc>https://coldbloodedtraders.com/cross-exchange-basis-trading.html</loc><priority>0.9</priority></url>
   <url><loc>https://coldbloodedtraders.com/crypto-market-cycles.html</loc><priority>0.9</priority></url>
   <url><loc>https://coldbloodedtraders.com/crypto-options-put-call-ratios.html</loc><priority>0.9</priority></url>
+  <url><loc>https://coldbloodedtraders.com/cumulative-volume-delta-divergences.html</loc><priority>0.9</priority></url>
   <url><loc>https://coldbloodedtraders.com/delta-neutral-arbitrage.html</loc><priority>0.9</priority></url>
   <url><loc>https://coldbloodedtraders.com/delta-neutral-yield.html</loc><priority>0.9</priority></url>
   <url><loc>https://coldbloodedtraders.com/exchange-liquidity-depth-profiling.html</loc><priority>0.9</priority></url>
   <url><loc>https://coldbloodedtraders.com/funding-rates.html</loc><priority>0.9</priority></url>
   <url><loc>https://coldbloodedtraders.com/gamma-squeeze-dynamics.html</loc><priority>0.9</priority></url>
+  <url><loc>https://coldbloodedtraders.com/hidden-liquidity-iceberg-order-detection.html</loc><priority>0.9</priority></url>
   <url><loc>https://coldbloodedtraders.com/leverage-101.html</loc><priority>0.9</priority></url>
   <url><loc>https://coldbloodedtraders.com/leverage-impact-models.html</loc><priority>0.9</priority></url>
   <url><loc>https://coldbloodedtraders.com/liquidation-heatmaps-and-cvd.html</loc><priority>0.9</priority></url>
@@ -58,6 +60,7 @@
   <url><loc>https://coldbloodedtraders.com/open-interest-analytics.html</loc><priority>0.9</priority></url>
   <url><loc>https://coldbloodedtraders.com/order-book-analysis.html</loc><priority>0.9</priority></url>
   <url><loc>https://coldbloodedtraders.com/order-flow-tape-reading-basics.html</loc><priority>0.9</priority></url>
+  <url><loc>https://coldbloodedtraders.com/order-routing-execution-slippage.html</loc><priority>0.9</priority></url>
   <url><loc>https://coldbloodedtraders.com/order-types-mechanics.html</loc><priority>0.9</priority></url>
   <url><loc>https://coldbloodedtraders.com/perpetual-swaps-vs-futures.html</loc><priority>0.9</priority></url>
   <url><loc>https://coldbloodedtraders.com/position-sizing.html</loc><priority>0.9</priority></url>
