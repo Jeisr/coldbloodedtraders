@@ -224,7 +224,7 @@
         <h1>Anatomy of Market Microstructure: How Markets Really Move</h1>
         <div class="meta">Published: August 2026 • 8 min read • By ColdBloodedTraders</div>
 
-        <p>Before you can predict where the market is going, you must understand how it gets there. Market microstructure is the study of the mechanics, processes, and players that facilitate price formation in financial markets.</p>
+        <p>Before you can predict where the market is going, you must understand how it gets there. Market microstructure is the study of the mechanics, processes, and players that facilitate price formation in financial markets. For a crypto trader, it is the difference between guessing price direction and understanding the intent of the market participants.</p>
 
         <blockquote>
             "Price is not merely a number; it is the equilibrium point where the aggression of buyers meets the conviction of sellers within a specific liquidity structure."
@@ -232,15 +232,48 @@
 
         <h2>1. The Order Book Dynamics</h2>
         <p>The order book is the visual representation of all open limit orders at different price levels. It is the battlefield of liquidity.</p>
-        
+        <ul>
+            <li><strong>The Bid (Buy) Side:</strong> Represents demand. These are traders looking to purchase an asset at or below the current market price.</li>
+            <li><strong>The Ask (Sell) Side:</strong> Represents supply. These are traders looking to offload an asset at or above the current market price.</li>
+            <li><strong>Market Depth:</strong> The total volume of orders at each price level. Significant "walls" here often indicate institutional intent or algorithmic defense zones.</li>
+        </ul>
+
         <h2>2. Market Orders vs. Limit Orders</h2>
         <p>Understanding the distinction between these two is the first step toward mastering execution slippage and order routing.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Order Type</th>
+                    <th>Role</th>
+                    <th>Execution</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Limit (Maker)</td>
+                    <td>Provides Liquidity</td>
+                    <td>Executes at specified price or better.</td>
+                </tr>
+                <tr>
+                    <td>Market (Taker)</td>
+                    <td>Removes Liquidity</td>
+                    <td>Executes immediately at best available price.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>3. The Process of Price Discovery</h2>
+        <p>Price discovery occurs when market participants (takers) consume the liquidity placed by limit order providers (makers). When taker aggression overwhelms the available limit orders at a specific level, the price must "sweep" into the next level of liquidity to find a new equilibrium. This constant cycle is the engine behind every chart pattern you see.</p>
 
         <section class="faq-section">
             <h3 class="faq-title">Frequently Asked Questions</h3>
             <div class="faq-item">
                 <h4>What is the difference between maker and taker orders?</h4>
                 <p>Maker orders add liquidity to the order book by waiting to be filled, while taker orders remove liquidity by immediately executing against existing orders.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Why is the order book important for retail traders?</h4>
+                <p>The order book reveals institutional interest, supply and demand imbalances, and potential areas of support or resistance through visual depth.</p>
             </div>
         </section>
 
